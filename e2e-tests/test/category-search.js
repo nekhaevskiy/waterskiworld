@@ -21,14 +21,14 @@ describe('Search', function () {
             expect(inputValue).to.equal('водные лыжи');
         });
 
-        it('should not redirect to another search page after submit empty field', () => {
+        it('should not redirect to another search page after submit empty field', function () {
             searchPage.searchInput.setValue('');
             searchPage.searchBtn.click();
             const inputHasFocus = searchPage.searchInput.hasFocus();
             expect(inputHasFocus).to.be.true;
         });
 
-        it('should redirect to another search page after input correct value and submit', () => {
+        it('should redirect to another search page after input correct value and submit', function () {
             searchPage.searchInput.setValue('василий');
             searchPage.searchBtn.click();
 
