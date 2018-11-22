@@ -1,6 +1,6 @@
 class Records {
-    get pageHeader() {
-        return $('.page-header');
+    get pageHeading() {
+        return $('.page-header h1');
     }
     get boatRecordsHeading() {
         return $('.article h2:nth-of-type(1)');

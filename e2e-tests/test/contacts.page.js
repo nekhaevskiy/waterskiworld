@@ -1,5 +1,5 @@
 class Contacts {
-    get title() {
+    get heading() {
         return $('.page-header h1');
     }
     get nameInput() {

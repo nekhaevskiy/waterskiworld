@@ -5,7 +5,7 @@ class Sidebar {
     get searchBtn() {
         return $('.sidebar-module:nth-child(1) button.btn');
     }
-    get commentsHeader() {
+    get commentsHeading() {
         return $('.sidebar-module:nth-child(2) h4');
     }
     get commentsItems() {
@@ -14,19 +14,19 @@ class Sidebar {
     get firstCommentLink() {
         return $('.sidebar-module:nth-child(2) .hc__mix__link a');
     }
-    get facebookHeader() {
+    get facebookHeading() {
         return $('.sidebar-module:nth-child(3) h4');
     }
     get facebookBody() {
         return $('.sidebar-module:nth-child(3) iframe');
     }
-    get vkHeader() {
+    get vkHeading() {
         return $('.sidebar-module:nth-child(4) h4');
     }
     get vkBody() {
         return $('.sidebar-module:nth-child(4) #vk_groups');
     }
-    get subscribeHeader() {
+    get subscribeHeading() {
         return $('.sidebar-module:nth-child(5) h4');
     }
     get subscribeInput() {

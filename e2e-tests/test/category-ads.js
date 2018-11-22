@@ -6,7 +6,7 @@ describe('Adverts', function () {
     });
 
     it('should have correct page header', function () {
-        const pageHeader = techniquePage.pageHeader.getText();
+        const pageHeader = techniquePage.categoryHeading.getText();
         expect(pageHeader).to.equal('Объявления');
     });
 
@@ -16,7 +16,7 @@ describe('Adverts', function () {
     });
 
     it('should have 2 advert titles', function () {
-        const titles = techniquePage.titles;
+        const titles = techniquePage.itemsHeadings;
         expect(titles).to.have.lengthOf(2);
     });
 
@@ -46,8 +46,8 @@ describe('Adverts', function () {
     });
 
     describe('First item', function () {
-        it('should have correct and clickable title', function () {
-            const articleTitle = techniquePage.titles[0];
+        it('should have correct and clickable heading', function () {
+            const articleTitle = techniquePage.itemsHeadings[0];
             const text = articleTitle.getText();
             articleTitle.click();
             const pageTitle = browser.getTitle();
@@ -63,7 +63,7 @@ describe('Adverts', function () {
         });
 
         it('should have correct and clickable Read More link', function () {
-            const articleTitle = techniquePage.titles[0].getText();
+            const articleTitle = techniquePage.itemsHeadings[0].getText();
             const readMoreLink = techniquePage.readMoreLinks[0];
 
             const linkText = readMoreLink.getText();

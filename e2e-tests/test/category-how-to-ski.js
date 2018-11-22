@@ -7,7 +7,7 @@ describe('How To Ski articles', function () {
         });
 
         it('should have correct page header', function () {
-            const pageHeader = howToSkiPage.pageHeader.getText();
+            const pageHeader = howToSkiPage.categoryHeading.getText();
             expect(pageHeader).to.equal('Техника катания');
         });
 
@@ -17,7 +17,7 @@ describe('How To Ski articles', function () {
         });
 
         it('should have 10 article titles', function () {
-            const titles = howToSkiPage.titles;
+            const titles = howToSkiPage.itemsHeadings;
             expect(titles).to.have.lengthOf(10);
         });
 
@@ -47,8 +47,8 @@ describe('How To Ski articles', function () {
         });
 
         describe('First item', function () {
-            it('should have correct and clickable title', function () {
-                const articleTitle = howToSkiPage.titles[0];
+            it('should have correct and clickable heading', function () {
+                const articleTitle = howToSkiPage.itemsHeadings[0];
                 const text = articleTitle.getText();
                 articleTitle.click();
                 const pageTitle = browser.getTitle();
@@ -64,7 +64,7 @@ describe('How To Ski articles', function () {
             });
 
             it('should have correct and clickable Read More link', function () {
-                const articleTitle = howToSkiPage.titles[0].getText();
+                const articleTitle = howToSkiPage.itemsHeadings[0].getText();
                 const readMoreLink = howToSkiPage.readMoreLinks[0];
 
                 const linkText = readMoreLink.getText();

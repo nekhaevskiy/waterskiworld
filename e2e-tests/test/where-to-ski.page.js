@@ -1,5 +1,5 @@
 class WhereToSki {
-    get pageHeader() {
+    get heading() {
         return $('.page-header');
     }
     get clubsTable() {

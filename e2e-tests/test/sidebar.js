@@ -23,7 +23,7 @@ describe('Sidebar', function () {
 
     describe('Comments', function () {
         it('should have correct header', function () {
-            const headerText = sidebar.commentsHeader.getText();
+            const headerText = sidebar.commentsHeading.getText();
             expect(headerText).to.equal('Последние комментарии');
         });
 
@@ -47,7 +47,7 @@ describe('Sidebar', function () {
 
     describe('Facebook', function () {
         it('should have correct header', function () {
-            const headerText = sidebar.facebookHeader.getText();
+            const headerText = sidebar.facebookHeading.getText();
             expect(headerText).to.equal('Facebook');
         });
 
@@ -59,7 +59,7 @@ describe('Sidebar', function () {
 
     describe('VK', function () {
         it('should have correct header', function () {
-            const headerText = sidebar.vkHeader.getText();
+            const headerText = sidebar.vkHeading.getText();
             expect(headerText).to.equal('ВКонтакте');
         });
 
@@ -71,7 +71,7 @@ describe('Sidebar', function () {
 
     describe('Subscribe', function () {
         it('should have correct header', function () {
-            const headerText = sidebar.subscribeHeader.getText();
+            const headerText = sidebar.subscribeHeading.getText();
             expect(headerText).to.equal('Подписка');
         });
 

@@ -5,8 +5,8 @@ describe('Records Page', function () {
         browser.url('./rekordy');
     });
 
-    it('should have correct title', function () {
-        const titleText = recordsPage.pageHeader.getText();
+    it('should have correct heading', function () {
+        const titleText = recordsPage.pageHeading.getText();
         expect(titleText).to.equal('Рекорды в водных лыжах');
     });
 

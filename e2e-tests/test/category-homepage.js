@@ -12,7 +12,7 @@ describe('Homepage articles', function () {
         });
 
         it('should have 10 article titles', function () {
-            const titles = homepage.titles;
+            const titles = homepage.itemsHeadings;
             expect(titles).to.have.lengthOf(10);
         });
 
@@ -42,8 +42,8 @@ describe('Homepage articles', function () {
         });
 
         describe('First item', function () {
-            it('should have correct and clickable title', function () {
-                const articleTitle = homepage.titles[0];
+            it('should have correct and clickable heading', function () {
+                const articleTitle = homepage.itemsHeadings[0];
                 const text = articleTitle.getText();
                 articleTitle.click();
                 const pageTitle = browser.getTitle();
@@ -59,7 +59,7 @@ describe('Homepage articles', function () {
             });
 
             it('should have correct and clickable Read More link', function () {
-                const articleTitle = homepage.titles[0].getText();
+                const articleTitle = homepage.itemsHeadings[0].getText();
                 const readMoreLink = homepage.readMoreLinks[0];
 
                 const linkText = readMoreLink.getText();

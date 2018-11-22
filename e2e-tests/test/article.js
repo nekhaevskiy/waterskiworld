@@ -7,13 +7,13 @@ describe('Article', function () {
     describe('First', function () {
         beforeEach(function () {
             browser.url('./');
-            firstArticleTitle = homepage.titles[0].getText();
-            secondArticleTitle = homepage.titles[1].getText();
-            homepage.titles[0].click();
+            firstArticleTitle = homepage.itemsHeadings[0].getText();
+            secondArticleTitle = homepage.itemsHeadings[1].getText();
+            homepage.itemsHeadings[0].click();
         });
 
         it('should have correct header', function () {
-            const titleText = article.title.getText();
+            const titleText = article.heading.getText();
             expect(titleText).to.equal(firstArticleTitle);
         });
 
@@ -67,14 +67,14 @@ describe('Article', function () {
     describe('Second', function () {
         beforeEach(function () {
             browser.url('./');
-            firstArticleTitle = homepage.titles[0].getText();
-            secondArticleTitle = homepage.titles[1].getText();
-            thirdArticleTitle = homepage.titles[2].getText();
-            homepage.titles[1].click();
+            firstArticleTitle = homepage.itemsHeadings[0].getText();
+            secondArticleTitle = homepage.itemsHeadings[1].getText();
+            thirdArticleTitle = homepage.itemsHeadings[2].getText();
+            homepage.itemsHeadings[1].click();
         });
 
         it('should have correct header', function () {
-            const titleText = article.title.getText();
+            const titleText = article.heading.getText();
             expect(titleText).to.equal(secondArticleTitle);
         });
 
@@ -135,7 +135,7 @@ describe('Article', function () {
         });
 
         it('should have correct header', function () {
-            const titleText = article.title.getText();
+            const titleText = article.heading.getText();
             expect(titleText).to.equal('Кубок мира 2008 по водным лыжам и вейкборду');
         });
 

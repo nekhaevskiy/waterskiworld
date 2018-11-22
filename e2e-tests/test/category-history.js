@@ -8,7 +8,7 @@ describe('History articles', function () {
         });
 
         it('should have correct page header', function () {
-            const pageHeader = historyPage.pageHeader.getText();
+            const pageHeader = historyPage.categoryHeading.getText();
             expect(pageHeader).to.equal('История');
         });
 
@@ -18,7 +18,7 @@ describe('History articles', function () {
         });
 
         it('should have 10 article titles', function () {
-            const titles = historyPage.titles;
+            const titles = historyPage.itemsHeadings;
             expect(titles).to.have.lengthOf(10);
         });
 
@@ -102,8 +102,8 @@ describe('History articles', function () {
         });
 
         describe('First item', function () {
-            it('should have correct and clickable title', function () {
-                const articleTitle = historyPage.titles[0];
+            it('should have correct and clickable heading', function () {
+                const articleTitle = historyPage.itemsHeadings[0];
                 const text = articleTitle.getText();
                 articleTitle.click();
                 const pageTitle = browser.getTitle();
@@ -119,7 +119,7 @@ describe('History articles', function () {
             });
 
             it('should have correct and clickable Read More link', function () {
-                const articleTitle = historyPage.titles[0].getText();
+                const articleTitle = historyPage.itemsHeadings[0].getText();
                 const readMoreLink = historyPage.readMoreLinks[0];
 
                 const linkText = readMoreLink.getText();

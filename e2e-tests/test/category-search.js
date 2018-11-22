@@ -6,13 +6,13 @@ describe('Search', function () {
             browser.url('./?s=водные+лыжи');
         });
 
-        it('should have correct title', function () {
+        it('should have correct heading', function () {
             const title = browser.getTitle();
             expect(title).to.equal('Вы искали водные лыжи - WaterSkiWorld.ru');
         });
 
         it('should have correct heading', function () {
-            const pageHeader = searchPage.pageHeader.getText();
+            const pageHeader = searchPage.categoryHeading.getText();
             expect(pageHeader).to.equal('Результаты поиска');
         });
 
@@ -42,7 +42,7 @@ describe('Search', function () {
         });
 
         it('should have 10 article titles', function () {
-            const titles = searchPage.titles;
+            const titles = searchPage.itemsHeadings;
             expect(titles).to.have.lengthOf(10);
         });
 
@@ -72,8 +72,8 @@ describe('Search', function () {
         });
 
         describe('First item', function () {
-            it('should have correct and clickable title', function () {
-                const articleTitle = searchPage.titles[0];
+            it('should have correct and clickable heading', function () {
+                const articleTitle = searchPage.itemsHeadings[0];
                 const text = articleTitle.getText();
                 articleTitle.click();
                 const pageTitle = browser.getTitle();
@@ -89,7 +89,7 @@ describe('Search', function () {
             });
 
             it('should have correct and clickable Read More link', function () {
-                const articleTitle = searchPage.titles[0].getText();
+                const articleTitle = searchPage.itemsHeadings[0].getText();
                 const readMoreLink = searchPage.readMoreLinks[0];
 
                 const linkText = readMoreLink.getText();

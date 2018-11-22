@@ -1,5 +1,5 @@
 class Article {
-    get title() {
+    get heading() {
         return $('.article__title');
     }
     get meta() {

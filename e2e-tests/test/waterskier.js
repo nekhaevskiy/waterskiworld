@@ -6,13 +6,13 @@ describe('Waterskier', function () {
             browser.url('./vodnolyzhniki/361-jepsen-maj');
         });
 
-        it('should have correct title', function () {
-            const titleText = waterskierPage.title.getText();
+        it('should have correct heading', function () {
+            const titleText = waterskierPage.pageHeading.getText();
             expect(titleText).to.equal('Мэй Лунд Йепсен \nMaj Lund Jepsen');
         });
 
-        it('should have correct subtitle', function () {
-            const subtitleText = waterskierPage.subtitle.getText();
+        it('should have correct subheading', function () {
+            const subtitleText = waterskierPage.pageSubheading.getText();
             expect(subtitleText).to.equal('Бронзовый призер Чемпионата мира в прыжках с трамплина\nЧемпионка Европы в прыжках с трамплина\nЧемпионка Кубка мира в прыжках с трамплина');
         });
 
@@ -56,13 +56,13 @@ describe('Waterskier', function () {
             browser.url('./vodnolyzhniki/345-potes-inessa');
         });
 
-        it('should have correct title', function () {
-            const titleText = waterskierPage.title.getText();
+        it('should have correct heading', function () {
+            const titleText = waterskierPage.pageHeading.getText();
             expect(titleText).to.equal('Инесса Потэс ');
         });
 
-        it('should have correct subtitle', function () {
-            const subtitleText = waterskierPage.subtitle.getText();
+        it('should have correct subheading', function () {
+            const subtitleText = waterskierPage.pageSubheading.getText();
             expect(subtitleText).to.equal('Заслуженный мастер спорта СССР\nСудья высшей международной категории');
         });
 
@@ -105,13 +105,13 @@ describe('Waterskier', function () {
             browser.url('./vodnolyzhniki/31-kovalenko-anna');
         });
 
-        it('should have correct title', function () {
-            const titleText = waterskierPage.title.getText();
+        it('should have correct heading', function () {
+            const titleText = waterskierPage.pageHeading.getText();
             expect(titleText).to.equal('Анна Коваленко');
         });
 
-        it('should have correct subtitle', function () {
-            const subtitleText = waterskierPage.subtitle.getText();
+        it('should have correct subheading', function () {
+            const subtitleText = waterskierPage.pageSubheading.getText();
             expect(subtitleText).to.equal('Мастер Спорта');
         });
 

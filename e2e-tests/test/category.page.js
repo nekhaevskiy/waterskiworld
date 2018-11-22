@@ -1,6 +1,6 @@
 class Category {
-    get pageHeader() {
-        return $('.page-header');
+    get categoryHeading() {
+        return $('.page-header h1');
     }
     get description() {
         return $('.description');
@@ -11,7 +11,7 @@ class Category {
     get items() {
         return $$('.article');
     }
-    get titles() {
+    get itemsHeadings() {
         return $$('.article__title');
     }
     get metaBlocks() {

@@ -1,8 +1,8 @@
 class Waterskier {
-    get title() {
+    get pageHeading() {
         return $('.article h2');
     }
-    get subtitle() {
+    get pageSubheading() {
         return $('.article h3');
     }
     get photo() {

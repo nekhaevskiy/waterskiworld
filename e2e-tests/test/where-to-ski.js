@@ -5,8 +5,8 @@ describe('Where to Ski Page', function () {
         browser.url('./gde-katatsya');
     });
 
-    it('should have correct title', function () {
-        const titleText = whereToSkiPage.pageHeader.getText();
+    it('should have correct heading', function () {
+        const titleText = whereToSkiPage.heading.getText();
         expect(titleText).to.equal('Где кататься на водных лыжах');
     });
 

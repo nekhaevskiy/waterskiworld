@@ -6,13 +6,13 @@ describe('Logo', function () {
             browser.url('/');
         });
 
-        it('should have correct title', function () {
-            const titleText = logo.title.getText();
+        it('should have correct heading', function () {
+            const titleText = logo.heading.getText();
             expect(titleText).to.be.equal('WaterSkiWorld.ru');
         });
 
-        it('should have correct subtitle', function () {
-            const subtitleText = logo.subtitle.getText();
+        it('should have correct subheading', function () {
+            const subtitleText = logo.subheading.getText();
             expect(subtitleText).to.be.equal('Воднолыжный Мир');
         });
 

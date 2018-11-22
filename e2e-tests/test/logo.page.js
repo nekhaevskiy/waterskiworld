@@ -1,8 +1,8 @@
 class Logo {
-    get title() {
+    get heading() {
         return $('.header__title');
     }
-    get subtitle() {
+    get subheading() {
         return $('.header__description');
     }
     get link() {

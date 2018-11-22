@@ -5,8 +5,8 @@ describe('Waterskiers Page', function () {
         browser.url('./category/vodnolyzhniki');
     });
 
-    it('should have correct title', function () {
-        const titleText = waterskiersPage.pageHeader.getText();
+    it('should have correct heading', function () {
+        const titleText = waterskiersPage.categoryHeading.getText();
         expect(titleText).to.equal('Воднолыжники');
     });
 

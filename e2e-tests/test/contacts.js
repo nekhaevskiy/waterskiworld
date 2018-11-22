@@ -5,8 +5,8 @@ describe('Contacts page', function () {
         browser.url('./kontaktyi');
     });
 
-    it('should have correct title', function () {
-        const titleText = contactsPage.title.getText();
+    it('should have correct heading', function () {
+        const titleText = contactsPage.heading.getText();
         expect(titleText).to.equal('Контакты');
     });
 

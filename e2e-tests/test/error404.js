@@ -5,7 +5,7 @@ describe('Error 404 page', function () {
         browser.url('./abracadabra');
     });
 
-    it('should have correct title', function () {
+    it('should have correct heading', function () {
         const pageTitle = browser.getTitle();
         expect(pageTitle).to.equal('Страница не найдена - WaterSkiWorld.ru');
     });

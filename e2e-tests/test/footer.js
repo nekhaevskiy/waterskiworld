@@ -20,12 +20,12 @@ describe('Footer', function () {
         it('should scroll to top after click', function () {
             browser.scroll(footer.linkToTopSelector);
 
-            let logoVisibleWithinViewport = logo.title.isVisibleWithinViewport();
+            let logoVisibleWithinViewport = logo.heading.isVisibleWithinViewport();
             expect(logoVisibleWithinViewport).to.be.false;
 
             footer.linkToTop.click();
 
-            logoVisibleWithinViewport = logo.title.isVisibleWithinViewport();
+            logoVisibleWithinViewport = logo.heading.isVisibleWithinViewport();
             expect(logoVisibleWithinViewport).to.be.true;
         });
     });
