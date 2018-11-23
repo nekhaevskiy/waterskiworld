@@ -1,7 +1,14 @@
-var baseUrl = 'http://st3.waterskiworld.ru/';
+var baseUrl;
 
-if (process.env.SERVER === 'prod') {
-    baseUrl = 'http://waterskiworld.ru/ ';
+switch (process.env.SERVER) {
+    case 'prod':
+        baseUrl = 'http://waterskiworld.ru/';
+        break;
+    case 'st3':
+        baseUrl = 'http://st3.waterskiworld.ru/';
+        break;
+    default:
+        baseUrl = 'http://waterskiworld.test/';
 }
 
 var timeout = process.env.DEBUG ? 99999999 : 10000;

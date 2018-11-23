@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "wdio",
+    "test:st3": "SERVER=st3 wdio",
     "test:prod": "SERVER=prod wdio"
   },
   "keywords": [],
