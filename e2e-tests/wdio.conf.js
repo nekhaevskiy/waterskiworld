@@ -1,3 +1,9 @@
+var baseUrl = 'http://st3.waterskiworld.ru/';
+
+if (process.env.SERVER === 'prod') {
+    baseUrl = 'http://waterskiworld.ru/ ';
+}
+
 var timeout = process.env.DEBUG ? 99999999 : 10000;
 
 exports.config = {
@@ -79,7 +85,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'http://waterskiworld.ru',
+    baseUrl: baseUrl,
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
