@@ -1,0 +1,346 @@
+/* Globals */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  color: #555;
+  margin-bottom: 141px;
+}
+
+/* Override Bootstrap's default container. */
+@media (min-width: 992px) {
+  .container {
+    width: 910px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 910px;
+  }
+}
+
+/* Header */
+.header {
+  display: none;
+}
+@media (min-width: 768px) {
+  .header {
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .header__link:hover,
+  .header__link:focus {
+    text-decoration: none;
+  }
+  .header__title {
+    margin-top: 30px;
+    margin-bottom: 0;
+    font-size: 36px;
+    font-weight: 500;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.1;
+    color: #337ab7;
+  }
+  .header__description {
+    font-size: 28px;
+    font-weight: 500;
+    color: #337ab7;
+  }
+  /* Reset logo for internal pages */
+  .header__link > .header__title,
+  .header__link > .header__description {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+@media (min-width: 992px) {
+  .header {
+    background-image: url("../img/header-bg.png");
+    background-repeat: no-repeat;
+    background-position: 55% 50%;
+  }
+}
+
+/* Social icons */
+.socials {
+  margin: 0;
+  padding: 0;
+  float: right;
+  list-style: none;
+  height: 130px;
+  line-height: 130px;
+}
+.socials__item {
+  display: inline-block;
+  vertical-align: middle;
+  width: 40px;
+  height: 40px;
+  margin-left: 5px;
+  background-repeat: no-repeat;
+}
+.socials__item_twitter {
+  background-image: url("../img/twitter.png");
+}
+.socials__item_facebook {
+  background-image: url("../img/facebook.png");
+}
+.socials__item_vk {
+  background-image: url("../img/vk.png");
+}
+.socials__item_youtube {
+  background-image: url("../img/youtube.png");
+}
+.socials__item_rss {
+  background-image: url("../img/rss.png");
+}
+.socials__item > a {
+  display: block;
+  height: 40px;
+  text-indent: 40px;
+  overflow: hidden;
+}
+
+/* Navbar */
+.navbar {
+  margin-bottom: 30px;
+}
+.navbar-default .navbar-nav > .current-menu-item > a,
+.navbar-default .navbar-nav > .current-menu-item > a:focus,
+.navbar-default .navbar-nav > .current-menu-item > a:hover {
+  color: #555;
+  background-color: #e7e7e7;
+}
+@media (min-width: 992px) {
+  .navbar {
+    font-size: 16px;
+  }
+}
+
+/* Main column */
+.main {
+  font-size: 16px;
+  line-height: 1.5;
+}
+.main_no-sidebar {
+  font-size: 17px;
+}
+@media (min-width: 992px) {
+  .main {
+    font-size: 15px;
+  }
+  .main_no-sidebar {
+    font-size: 17px;
+  }
+}
+
+/* Page header */
+.page-header {
+  margin-top: 10px;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+.page-header > h1 {
+  margin-top: 0;
+}
+
+/* Articles */
+.article {
+  margin-bottom: 60px;
+}
+.article_single {
+  margin-bottom: 30px;
+}
+.article__link:hover,
+.article__link:focus {
+  text-decoration: none;
+}
+.article__title {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 28px;
+}
+.article__title_single {
+  font-size: 32px;
+}
+.article__meta {
+  margin-bottom: 10px;
+  color: #999;
+}
+.article__thumb {
+  display: block;
+  margin: 0 auto 10px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.article__summary {
+  position: relative;
+}
+.article__summary > p {
+  margin-bottom: 0;
+}
+.article__summary::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 1) 90%
+  );
+}
+.article .alignright {
+  float: right;
+  margin: 0 0 1em 1em;
+}
+.article .alignleft {
+  float: left;
+  margin: 0 1em 1em 0;
+}
+.article .aligncenter {
+  display: block;
+  margin: 0 auto 10px;
+  text-align: center;
+}
+.article figure,
+.article figure > img {
+  max-width: 100%;
+  height: auto;
+}
+.article figure figcaption {
+  font-size: 15px;
+}
+@media (min-width: 768px) {
+  .article__thumb {
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 992px) {
+  .article__title {
+    font-size: 26px;
+  }
+  .article__title_single {
+    font-size: 32px;
+  }
+}
+
+/* Pagination */
+.pager {
+  margin-bottom: 60px;
+  text-align: left;
+}
+.pager > li > a {
+  width: 140px;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 30px;
+}
+
+/* Sidebar */
+.sidebar {
+  padding-left: 37px;
+}
+.sidebar-module {
+  padding: 15px;
+  margin: 0 -15px 15px;
+}
+
+/* Footer */
+.footer {
+  position: absolute;
+  bottom: 0;
+  height: 141px;
+  width: 100%;
+  padding: 40px 0;
+  color: #999;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-top: 1px solid #e5e5e5;
+}
+.blog-footer p:last-child {
+  margin-bottom: 0;
+}
+
+/* Author */
+.author-avatar {
+  margin: 0 auto 1em;
+  text-align: center;
+}
+.author-avatar > img {
+  border-radius: 6px;
+}
+.author-name {
+  margin-top: 0;
+  font-size: 32px;
+  text-align: center;
+}
+.jumbotron .author-descr {
+  margin-bottom: 0;
+  font-size: 17px;
+  font-weight: normal;
+}
+.author-articles {
+  font-size: 32px;
+  font-weight: 500;
+  margin: 40px 0 20px;
+}
+@media (min-width: 768px) {
+  .author-avatar {
+    float: left;
+    margin: 0 1em 1em 0;
+  }
+  .jumbotron .author-name {
+    font-size: 32px;
+    text-align: left;
+  }
+}
+
+/* Description */
+.description {
+  margin: 0 0 30px;
+  padding-bottom: 10px;
+}
+.description__heading {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+.description .panel-title {
+  font-size: 17px;
+}
+.description .list-group {
+  font-size: 15px;
+}
+
+/* Tiny MCE in the Admin Panel */
+body#tinymce {
+  padding: 10px;
+}
+
+/* HyperComments */
+#hypercomments_mix .hc__mix {
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+#hypercomments_mix .hc__mix__title,
+#hypercomments_mix .hc__mix__avatar {
+  display: none;
+}
+#hypercomments_mix .hcc {
+  margin-left: 0;
+}
+#hypercomments_mix .hc__nick {
+  margin-right: 5px;
+  color: #337ab7;
+}
+#hypercomments_mix .hc__mix__link a:hover,
+#hypercomments_mix .hc__mix__link a:focus {
+  color: #23527c;
+}
