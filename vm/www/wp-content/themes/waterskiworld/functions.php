@@ -66,5 +66,8 @@ function waterskiworld_add_editor_styles() {
 add_action( 'admin_init', 'waterskiworld_add_editor_styles' );
 
 
-//Defining home page thumbnail size
+// Defining home page thumbnail size
 add_image_size('excerpt-thumbnail', 220, 220, true);
+
+// Disable top panel
+add_filter('show_admin_bar', '__return_false');
