@@ -5,7 +5,9 @@ node_modules/
 e2e-tests/errorShots/
 vm/.vagrant
 vm/backup/
-vm/www/awstats/
+vm/logs/
+vm/maxsite-cache-full/
+vm/www/cache/
 vm/www/cgi-bin/
 vm/www/wp-admin/
 vm/www/wp-content/*
