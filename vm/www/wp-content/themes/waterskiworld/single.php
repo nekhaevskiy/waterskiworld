@@ -9,6 +9,9 @@
             <?php get_template_part( 'content-single', get_post_format() ); ?>
           <?php } ?>
         <?php endwhile; ?>
+        
+        <?php get_template_part( 'partials/facebook-like-button' ); ?>
+
         <nav>
           <ul class="pager">
             <li class="previous"><?php next_post_link( '%link', '<span aria-hidden="true">&larr;</span> След.', true ); ?></li>

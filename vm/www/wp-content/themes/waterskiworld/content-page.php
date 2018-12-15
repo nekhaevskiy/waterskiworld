@@ -4,6 +4,9 @@
 <div class="article article_single">
   <?php the_content(); ?>
   <p class="article__meta">Обновлено: <?php the_modified_date(); ?></p>
+
+  <?php get_template_part( 'partials/facebook-like-button' ); ?>
+
   <?php if (! is_page('kontaktyi')) { ?>
     <div id="hypercomments_widget"></div>
     <script type="text/javascript">
