@@ -35,6 +35,11 @@ describe('Records Page', function () {
         expect(dateText).to.equal('Обновлено: 24.10.2018');
     });
 
+    it('should have a Facebook container with height > 0', function() {
+        const containerHeight = recordsPage.facebookContainer.getElementSize('height');
+        expect(containerHeight).to.be.above(0);
+    });
+
     it('should have comments block', function () {
         const commentsAreExisting = recordsPage.commentsBlock.isExisting();
         expect(commentsAreExisting).to.be.true;

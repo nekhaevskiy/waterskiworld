@@ -44,6 +44,11 @@ describe('Article', function () {
             expect(paragrapsQty).to.be.at.least(1);
         });
 
+        it('should have a Facebook container with height > 0', function() {
+            const containerHeight = article.facebookContainer.getElementSize('height');
+            expect(containerHeight).to.be.above(0);
+        });
+
         it('should have correct link to the previous article', function () {
             const prevArticleLinkText = article.prevArticleLink.getText();
             expect(prevArticleLinkText).to.equal('Пред. →');
@@ -105,6 +110,11 @@ describe('Article', function () {
             expect(paragrapsQty).to.be.at.least(1);
         });
 
+        it('should have a Facebook container with height > 0', function() {
+            const containerHeight = article.facebookContainer.getElementSize('height');
+            expect(containerHeight).to.be.above(0);
+        });
+
         it('should have correct link to the previous article', function () {
             const prevArticleLinkText = article.prevArticleLink.getText();
             expect(prevArticleLinkText).to.equal('Пред. →');
@@ -161,6 +171,11 @@ describe('Article', function () {
         it('should have 8 paragraphs', function () {
             const paragrapsQty = article.paragraphs.length;
             expect(paragrapsQty).to.equal(8);
+        });
+
+        it('should have a Facebook container with height > 0', function() {
+            const containerHeight = article.facebookContainer.getElementSize('height');
+            expect(containerHeight).to.be.above(0);
         });
 
         it('should not have link to the previous article', function () {

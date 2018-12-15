@@ -11,6 +11,9 @@ class WhereToSki {
     get metaBlock() {
         return $('.article__meta');
     }
+    get facebookContainer() {
+        return $('.fb-like');
+    }
     get commentsBlock() {
         return $('#hypercomments_widget');
     }

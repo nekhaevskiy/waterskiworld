@@ -31,6 +31,11 @@ describe('Waterskier', function () {
             expect(metaText).to.equal('Обновлено: 08.11.2013');
         });
 
+        it('should have a Facebook container with height > 0', function() {
+            const containerHeight = waterskierPage.facebookContainer.getElementSize('height');
+            expect(containerHeight).to.be.above(0);
+        });
+
         it('should have correct link to the previous waterskier page', function () {
             const prevPageLinkText = waterskierPage.prevPageLink.getText();
             expect(prevPageLinkText).to.equal('Пред. →');

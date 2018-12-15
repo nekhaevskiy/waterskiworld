@@ -25,6 +25,11 @@ describe('Where to Ski Page', function () {
         expect(dateText).to.equal('Обновлено: 29.10.2017');
     });
 
+    it('should have a Facebook container with height > 0', function() {
+        const containerHeight = whereToSkiPage.facebookContainer.getElementSize('height');
+        expect(containerHeight).to.be.above(0);
+    });
+
     it('should have comments block', function () {
         const commentsAreExisting = whereToSkiPage.commentsBlock.isExisting();
         expect(commentsAreExisting).to.be.true;
