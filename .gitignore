@@ -20,5 +20,6 @@ vm/www/*.html
 vm/www/*.php
 vm/www/*.txt
 vm/Vagrantfile
+/DEPLOY.md
 /RESET.md
 /UPDATE.md
