@@ -39,9 +39,4 @@ describe('Records Page', function () {
         const containerHeight = recordsPage.facebookContainer.getElementSize('height');
         expect(containerHeight).to.be.above(0);
     });
-
-    it('should have comments block', function () {
-        const commentsAreExisting = recordsPage.commentsBlock.isExisting();
-        expect(commentsAreExisting).to.be.true;
-    });
 });

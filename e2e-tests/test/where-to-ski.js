@@ -29,9 +29,4 @@ describe('Where to Ski Page', function () {
         const containerHeight = whereToSkiPage.facebookContainer.getElementSize('height');
         expect(containerHeight).to.be.above(0);
     });
-
-    it('should have comments block', function () {
-        const commentsAreExisting = whereToSkiPage.commentsBlock.isExisting();
-        expect(commentsAreExisting).to.be.true;
-    });
 });

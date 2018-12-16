@@ -49,11 +49,6 @@ describe('Waterskier', function () {
             const nextPageLinkIsExisting = waterskierPage.nextPageLink.isExisting();
             expect(nextPageLinkIsExisting).to.be.false;
         });
-
-        it('should have comments block', function () {
-            const commentsAreExisting = waterskierPage.comments.isExisting();
-            expect(commentsAreExisting).to.be.true;
-        });
     });
 
     describe('Second', function () {
@@ -98,11 +93,6 @@ describe('Waterskier', function () {
             const pageTitle = browser.getTitle();
             expect(pageTitle).to.equal('Мэй Лунд Йепсен (Maj Lund Jepsen)');
         });
-
-        it('should have comments block', function () {
-            const commentsAreExisting = waterskierPage.comments.isExisting();
-            expect(commentsAreExisting).to.be.true;
-        });
     });
 
     describe('Last', function () {
@@ -142,11 +132,6 @@ describe('Waterskier', function () {
             waterskierPage.nextPageLink.click();
             const pageTitle = browser.getTitle();
             expect(pageTitle).to.equal('Ветров Дмитрий - WaterSkiWorld.ru');
-        });
-
-        it('should have comments block', function () {
-            const commentsAreExisting = waterskierPage.comments.isExisting();
-            expect(commentsAreExisting).to.be.true;
         });
     });
 });

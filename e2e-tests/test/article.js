@@ -62,11 +62,6 @@ describe('Article', function () {
             const nextArticleLinkIsExisting = article.nextArticleLink.isExisting();
             expect(nextArticleLinkIsExisting).to.be.false;
         });
-
-        it('should have comments block', function () {
-            const commentsAreExisting = article.comments.isExisting();
-            expect(commentsAreExisting).to.be.true;
-        });
     });
 
     describe('Second', function () {
@@ -132,11 +127,6 @@ describe('Article', function () {
             const pageTitle = browser.getTitle();
             expect(pageTitle).to.include(firstArticleTitle);
         });
-
-        it('should have comments block', function () {
-            const commentsAreExisting = article.comments.isExisting();
-            expect(commentsAreExisting).to.be.true;
-        });
     });
 
     describe('Last', function () {
@@ -190,11 +180,6 @@ describe('Article', function () {
            article.nextArticleLink.click();
            const pageTitle = browser.getTitle();
            expect(pageTitle).to.equal('Избран новый Президент Федерации воднолыжного спорта России - WaterSkiWorld.ru');
-        });
-
-        it('should have comments block', function () {
-            const commentsAreExisting = article.comments.isExisting();
-            expect(commentsAreExisting).to.be.true;
         });
     });
 });
