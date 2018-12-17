@@ -76,6 +76,11 @@ describe('Waterskier', function () {
             expect(metaText).to.equal('Обновлено: 31.10.2013');
         });
 
+        it('should have a Facebook container with height > 0', function() {
+            const containerHeight = waterskierPage.facebookContainer.getElementSize('height');
+            expect(containerHeight).to.be.above(0);
+        });
+
         it('should have correct link to the previous waterskier page', function () {
             const prevPageLinkText = waterskierPage.prevPageLink.getText();
             expect(prevPageLinkText).to.equal('Пред. →');
@@ -118,6 +123,11 @@ describe('Waterskier', function () {
         it('should have correct meta', function () {
             const metaText = waterskierPage.metaBlock.getText();
             expect(metaText).to.equal('Обновлено: 22.10.2013');
+        });
+
+        it('should have a Facebook container with height > 0', function() {
+            const containerHeight = waterskierPage.facebookContainer.getElementSize('height');
+            expect(containerHeight).to.be.above(0);
         });
 
         it('should not have link to the previous waterskier page', function () {

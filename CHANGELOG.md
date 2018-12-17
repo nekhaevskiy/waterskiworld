@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning].
 ### Added
 - Add WordPress Comments
 
-## [0.3.0] - 2018-12-16
+## [0.3.0] - 2018-12-17
 ### Added
 - Add WordPress Theme files
 - Add Facebook Like/Share button and e2e-tests for it
