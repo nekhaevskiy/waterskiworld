@@ -1,0 +1,15 @@
+{
+  "name": "waterskiworld-fe",
+  "version": "1.0.0",
+  "description": "Frontend part of WaterSkiWorld.ru",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^4.0.0"
+  }
+}
