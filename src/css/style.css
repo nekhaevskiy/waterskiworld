@@ -317,8 +317,3 @@ body {
 .description .list-group {
   font-size: 15px;
 }
-
-/* Tiny MCE in the Admin Panel */
-body#tinymce {
-  padding: 10px;
-}
