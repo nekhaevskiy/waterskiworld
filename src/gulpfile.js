@@ -22,7 +22,7 @@ gulp.task('clean', function () {
     });
     
 gulp.task('styles', function () {
-    return gulp.src('css/**/*.{css,map}')
+    return gulp.src('css/**/*.css')
         .pipe(gulp.dest('../vm/www/wp-content/themes/waterskiworld/css'));
 });
 
