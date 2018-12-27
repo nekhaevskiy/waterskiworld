@@ -1,6 +1,7 @@
 'use strict';
 
 const gulp = require('gulp');
+const concat = require('gulp-concat');
 // const stylus = require('gulp-stylus');
 // const sourcemaps = require('gulp-sourcemaps');
 // const debug = require('gulp-debug');
@@ -22,7 +23,12 @@ gulp.task('clean', function () {
     });
     
 gulp.task('styles', function () {
-    return gulp.src('css/**/*.css')
+    return gulp.src([
+        'css/bootstrap.min.css',
+        'css/ie10-viewport-bug-workaround.css',
+        'css/style.css'
+    ])
+        .pipe(concat('style.css'))
         .pipe(gulp.dest('../vm/www/wp-content/themes/waterskiworld/css'));
 });
 

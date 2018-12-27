@@ -10,6 +10,9 @@
   "license": "ISC",
   "devDependencies": {
     "del": "^3.0.0",
-    "gulp": "^4.0.0"
-  }
+    "gulp": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "tachyons": "^4.11.1"
+  },
+  "dependencies": {}
 }
