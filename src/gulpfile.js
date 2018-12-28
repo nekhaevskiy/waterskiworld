@@ -1,14 +1,16 @@
 'use strict';
 
-const gulp = require('gulp');
+// const autoprefixer = require('autoprefixer');
+const atImport = require('postcss-import');
 const concat = require('gulp-concat');
-// const stylus = require('gulp-stylus');
-// const sourcemaps = require('gulp-sourcemaps');
-// const debug = require('gulp-debug');
-// const gulpIf = require('gulp-if');
 const del = require('del');
+const gulp = require('gulp');
+const gulpIf = require('gulp-if');
+const postcss = require('gulp-postcss');
+const sourcemaps = require('gulp-sourcemaps');
+// const debug = require('gulp-debug');
 
-// const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
+const isDev = !process.env.NODE_ENV || process.env.NODE_ENV === 'dev';
 
 gulp.task('clean', function () {
     return del(
@@ -26,9 +28,13 @@ gulp.task('styles', function () {
     return gulp.src([
         'css/bootstrap.min.css',
         'css/ie10-viewport-bug-workaround.css',
-        'css/style.css'
+        'css/style.css',
+        'css/tachyons/tachyons.css'
     ])
+        .pipe(gulpIf(isDev, sourcemaps.init()))
+        .pipe(postcss([ atImport() ]))
         .pipe(concat('style.css'))
+        .pipe(gulpIf(isDev, sourcemaps.write()))
         .pipe(gulp.dest('../vm/www/wp-content/themes/waterskiworld/css'));
 });
 
