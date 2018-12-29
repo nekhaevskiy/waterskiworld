@@ -39,12 +39,12 @@ gulp.task('styles', function () {
 });
 
 gulp.task('scripts', function () {
-    return gulp.src('js/**/*.js')
+    return gulp.src('js/**/*.js', {since: gulp.lastRun('scripts')})
         .pipe(gulp.dest('../vm/www/wp-content/themes/waterskiworld/js'));
 });
 
 gulp.task('assets', function () {
-    return gulp.src('assets/**')
+    return gulp.src('assets/**', {since: gulp.lastRun('assets')})
         .pipe(gulp.dest('../vm/www/wp-content/themes/waterskiworld'));
 });
 
@@ -52,3 +52,11 @@ gulp.task('build', gulp.series(
     'clean', 
     gulp.parallel('styles', 'scripts', 'assets')
 ));
+
+gulp.task('watch', function () {
+    gulp.watch('css/**/*.css', gulp.series('styles'));
+    gulp.watch('js/**/*.js', gulp.series('scripts'));
+    gulp.watch('assets/**/*.*', gulp.series('assets'));
+})
+
+gulp.task('dev', gulp.series('build', 'watch'));
