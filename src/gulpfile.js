@@ -2,6 +2,7 @@
 
 // const autoprefixer = require('autoprefixer');
 const atImport = require('postcss-import');
+const browserSync = require('browser-sync').create();
 const concat = require('gulp-concat');
 const del = require('del');
 const gulp = require('gulp');
@@ -23,7 +24,8 @@ gulp.task('clean', function () {
         {force: true}
         );
     });
-    
+
+// TODO: Optimize task to use only changed files
 gulp.task('styles', function () {
     return gulp.src([
         'css/bootstrap.min.css',
@@ -59,4 +61,17 @@ gulp.task('watch', function () {
     gulp.watch('assets/**/*.*', gulp.series('assets'));
 })
 
-gulp.task('dev', gulp.series('build', 'watch'));
+gulp.task('serve', function () {
+    browserSync.init({
+        proxy: 'http://waterskiworld.test'
+    });
+    browserSync.watch('../vm/www/wp-content/themes/**/*.*', function (event) {
+        if (event === 'change') {
+            browserSync.reload();
+        }
+    });
+});
+
+gulp.task('dev', 
+    gulp.series('build', gulp.parallel('watch', 'serve'))
+);
