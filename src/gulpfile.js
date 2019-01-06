@@ -7,6 +7,8 @@ const concat = require('gulp-concat');
 const del = require('del');
 const gulp = require('gulp');
 const gulpIf = require('gulp-if');
+const multipipe = require('multipipe');
+const notify = require('gulp-notify');
 const postcss = require('gulp-postcss');
 const sourcemaps = require('gulp-sourcemaps');
 // const debug = require('gulp-debug');
@@ -27,17 +29,19 @@ gulp.task('clean', function () {
 
 // TODO: Optimize task to use only changed files
 gulp.task('styles', function () {
-    return gulp.src([
-        'css/bootstrap.min.css',
-        'css/ie10-viewport-bug-workaround.css',
-        'css/style.css',
-        'css/tachyons/tachyons.css'
-    ])
-        .pipe(gulpIf(isDev, sourcemaps.init()))
-        .pipe(postcss([ atImport() ]))
-        .pipe(concat('style.css'))
-        .pipe(gulpIf(isDev, sourcemaps.write()))
-        .pipe(gulp.dest('../vm/www/wp-content/themes/waterskiworld/css'));
+    return multipipe(
+        gulp.src([
+            'css/bootstrap.min.css',
+            'css/ie10-viewport-bug-workaround.css',
+            'css/style.css',
+            'css/tachyons/tachyons.css'
+        ]),
+        gulpIf(isDev, sourcemaps.init()),
+        postcss([ atImport() ]),
+        concat('style.css'),
+        gulpIf(isDev, sourcemaps.write()),
+        gulp.dest('../vm/www/wp-content/themes/waterskiworld/css')
+    ).on('error', notify.onError());
 });
 
 gulp.task('scripts', function () {
