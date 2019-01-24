@@ -52,18 +52,6 @@ function waterskiworld_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'waterskiworld_scripts' );
 
-/**
- * Registers an editor stylesheet for the theme.
- */
-function waterskiworld_add_editor_styles() {
-    add_editor_style( array(
-		'/css/bootstrap.min.css',
-		'/css/style.css'
-	) );
-}
-add_action( 'admin_init', 'waterskiworld_add_editor_styles' );
-
-
 // Defining home page thumbnail size
 add_image_size('excerpt-thumbnail', 220, 220, true);
 
