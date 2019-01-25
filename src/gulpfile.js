@@ -12,12 +12,7 @@ function lazyRequireTask(taskName, path, options) {
 }
 
 lazyRequireTask('clean', './tasks/clean.js', {
-    dst: [
-        '../vm/www/wp-content/themes/waterskiworld/css',
-        '../vm/www/wp-content/themes/waterskiworld/fonts',
-        '../vm/www/wp-content/themes/waterskiworld/img',
-        '../vm/www/wp-content/themes/waterskiworld/favicon.ico'
-    ],
+    dst: '../vm/www/wp-content/themes/waterskiworld',
     force: true
 });
 
@@ -42,6 +37,11 @@ lazyRequireTask('assets', './tasks/assets.js', {
     dst: '../vm/www/wp-content/themes/waterskiworld'
 });
 
+lazyRequireTask('php', './tasks/php.js', {
+    src: 'php/**',
+    dst: '../vm/www/wp-content/themes/waterskiworld'
+});
+
 lazyRequireTask('serve', './tasks/serve.js', {
     proxy: 'http://waterskiworld.test',
     dst: '../vm/www/wp-content/themes/**/*.*'
@@ -49,7 +49,7 @@ lazyRequireTask('serve', './tasks/serve.js', {
 
 gulp.task('build', gulp.series(
     'clean', 
-    gulp.parallel('styles', 'scripts', 'assets')
+    gulp.parallel('styles', 'scripts', 'assets', 'php')
 ));
 
 gulp.task('watch', function () {
