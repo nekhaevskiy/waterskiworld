@@ -3,6 +3,7 @@ node_modules/
 .DS_Store
 
 e2e-tests/errorShots/
+src/manifest/
 vm/
 /DEPLOY.md
 /RESET.md

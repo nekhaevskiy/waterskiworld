@@ -1,6 +1,7 @@
 'use strict';
 
 const gulp = require('gulp');
+const revReplace = require('gulp-rev-replace');
 
 function lazyRequireTask(taskName, path, options) {
     options = options || {};
@@ -49,7 +50,8 @@ lazyRequireTask('serve', './tasks/serve.js', {
 
 gulp.task('build', gulp.series(
     'clean', 
-    gulp.parallel('styles', 'scripts', 'assets', 'php')
+    gulp.parallel('styles', 'scripts', 'assets'),
+    'php'
 ));
 
 gulp.task('watch', function () {
