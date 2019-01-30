@@ -1,6 +1,6 @@
 'use strict';
 
-// const autoprefixer = require('autoprefixer');
+const autoprefixer = require('autoprefixer');
 const atImport = require('postcss-import');
 const concat = require('gulp-concat');
 const cssnano = require('cssnano');
@@ -21,7 +21,10 @@ module.exports = function (options) {
         return multipipe(
             gulp.src(options.src),
             gulpIf(isDev, sourcemaps.init()),
-            postcss([atImport()]),
+            postcss([
+                atImport(),
+                autoprefixer()
+            ]),
             concat(options.concatFile),
             gulpIf(isDev, sourcemaps.write()),
             gulpIf(!isDev, multipipe(postcss([cssnano()]), rev())),
