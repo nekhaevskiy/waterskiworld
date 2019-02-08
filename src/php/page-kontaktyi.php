@@ -1,110 +1,167 @@
 <?php
-if(isset($_POST['submitted'])) {
-  if(trim($_POST['contact_name']) === '') {
-    $nameError = 'Введите имя';
-    $hasError = true;
-  } else {
-    $name = trim($_POST['contact_name']);
-  }
+    //user posted variables
+    $name = isset($_POST['message_name']) ? $_POST['message_name'] : '';
+    $email = isset($_POST['message_email']) ? $_POST['message_email'] : '';
+    $msg = isset($_POST['message_text']) ? $_POST['message_text'] : '';
+    $human = isset($_POST['message_human']) ? $_POST['message_human'] : '';
+    $submitted = isset($_POST['message_submitted']);
+    
+    //php mailer variables
+    $to = get_option('admin_email');
+    $subject = "Сообщение с сайта " . get_bloginfo('name') . ' от ' . $name;
+    $headers = 'From: '. $email . "\r\n" . 'Reply-To: ' . $email . "\r\n";
 
-  if(!filter_var($_POST['contact_email'], FILTER_VALIDATE_EMAIL)) {
-    $emailError = 'Введите корректный e-mail';
-    $hasError = true;
-  } else {
-    $email = trim($_POST['contact_email']);
-  }
+    $nameError = false;
+    $emailError = false;
+    $msgError = false;
+    $humanError = false;
+    $validationError = false;
+    $sent = false;
 
-  if(trim($_POST['contact_msg']) === '') {
-    $msgError = 'Введите текст сообщения';
-    $hasError = true;
-  } else {
-    if(function_exists('stripslashes')) {
-      $msg = stripslashes(trim($_POST['contact_msg']));
-    } else {
-      $msg = trim($_POST['contact_msg']);
+    if ($submitted) {
+        $nameError = empty($name);
+        $emailError = !filter_var($email, FILTER_VALIDATE_EMAIL);
+        $msgError = empty($msg);
+        $humanError = empty($human) || $human != 2;
+        
+        $validationError = $nameError || $emailError || $msgError || $humanError;
+
+        if (!$validationError) {
+            $sent = wp_mail($to, $subject, strip_tags($msg), $headers);
+        }
     }
-  }
-
-  if(!isset($hasError)) {
-    $emailTo = 'yury.nekhaevskiy@gmail.com';
-    $subject = 'Сообщение с сайта WaterSkiWorld.ru от '.$name;
-    $body = "Имя: $name \n\nE-mail: $email \n\nСообщение: $msg";
-    $headers = 'From: '.$name.' <'.$email.'>' . "\r\n" . 'Reply-To: ' . $email;
-    wp_mail($emailTo, $subject, $body, $headers);
-    $emailSent = true;
-  }
-} ?>
+?>
 
 <?php get_header(); ?>
 
-<div class="row">
-    <main class="col-md-10 col-md-offset-1 main main_no-sidebar">
+<?php while ( have_posts() ) : the_post(); ?>
+    <main class="center measure-wide f4 mb5 bg-white black-70 sans-serif">
+        <h1 class="f1 mt2 mb4 pb4 lh-solid fw5 serif b--light-gray bb" data-qa="blockPageHeader">
+            <?php the_title(); ?>
+        </h1>
 
-    <?php if ( have_posts() ) { ?>
-        <?php while ( have_posts() ) { ?>
-            <?php the_post(); ?>
-            <div class="page-header">
-                <h1><?php the_title(); ?></h1>
-            </div>
-            <div class="article article_single">
-            
-                <?php the_content(); ?>
-
-                <?php if(isset($emailSent) && $emailSent == true) { ?>
-                  <div class="alert alert-success" role="alert">Спасибо! Ваше сообщение отправлено.</div>
-                <?php } else { ?>
-                  <?php if(isset($hasError) || isset($captchaError)) { ?>
-                    <div class="alert alert-danger" role="alert">Сообщение не было отправлено. Пожалуйста, проверьте коректность введенной информации и попробуйте еще раз.</div>
-                  <?php } ?>
-                  <form action="<?php the_permalink(); ?>" method="post">
-                    <?php if(isset($nameError) and $nameError != '') { ?>
-                      <div class="form-group has-error">
-                        <label for="contacts-name">Ваше имя</label>
-                        <input id="contacts-name" class="form-control" type="text" name="contact_name" placeholder="Имя" value="<?php if(isset($_POST['contact_name'])) echo $_POST['contact_name'];?>" required/>
-                        <span class="help-block"><?=$nameError;?></span>
-                      </div>
-                    <?php } else { ?>
-                      <div class="form-group">
-                        <label for="contacts-name">Ваше имя</label>
-                        <input id="contacts-name" class="form-control" type="text" name="contact_name" placeholder="Имя" value="<?php if(isset($_POST['contact_name'])) echo $_POST['contact_name'];?>" required/>
-                      </div>
-                    <?php } ?>
-
-                    <?php if(isset($emailError) and $emailError != '') { ?>
-                      <div class="form-group has-error">
-                        <label for="contacts-email">Email для обратной связи</label>
-                        <input id="contacts-email" class="form-control" type="email" name="contact_email" placeholder="Email" value="<?php if(isset($_POST['contact_email'])) echo $_POST['contact_email'];?>" required/>
-                        <span class="help-block"><?=$emailError;?></span>
-                      </div>
-                    <?php } else { ?>
-                      <div class="form-group">
-                        <label for="contacts-email">Email для обратной связи</label>
-                        <input id="contacts-email" class="form-control" type="email" name="contact_email" placeholder="Email" value="<?php if(isset($_POST['contact_email'])) echo $_POST['contact_email'];?>" required/>
-                      </div>
-                    <?php } ?>
-
-                    <?php if(isset($msgError) and $msgError != '') { ?>
-                      <div class="form-group has-error">
-                        <label for="contacts-msg">Ваше сообщение</label>
-                        <textarea id="contacts-msg" class="form-control" name="contact_msg" placeholder="Текст сообщения" required><?php if(isset($_POST['contact_msg'])) { if(function_exists('stripslashes')) { echo stripslashes($_POST['contact_msg']); } else { echo $_POST['contact_msg']; } } ?></textarea>
-                        <span class="help-block"><?=$msgError;?></span>
-                      </div>
-                    <?php } else { ?>
-                      <div class="form-group">
-                        <label for="contacts-msg">Ваше сообщение</label>
-                        <textarea id="contacts-msg" class="form-control" name="contact_msg" placeholder="Текст сообщения" required><?php if(isset($_POST['contact_msg'])) { if(function_exists('stripslashes')) { echo stripslashes($_POST['contact_msg']); } else { echo $_POST['contact_msg']; } } ?></textarea>
-                      </div>
-                    <?php } ?>
-                    
-                    <input type="hidden" name="submitted" value="true">
-                    <button class="btn btn-primary btn-lg center-block" type="submit">Отправить</button>
-                  </form>
-                <?php } ?>
+        <?php if (!$submitted) { ?>
+            <div class="mb3 lh-copy" data-qa="blockPageContent">
+                <p>Связаться с командой WaterSkiWorld.ru можно написав нам в социальных сетях:</p>
+                <ul>
+                    <li><a class="hover-light-blue blue link" href="https://www.facebook.com/waterskiworld/">Facebook</a></li>
+                    <li><a class="hover-light-blue blue link" href="https://vk.com/waterskiworld">ВКонтакте</a></li>
+                </ul>
+                <p>или воспользовавшись формой ниже:</p>
             </div>
         <?php } ?>
-    <?php } ?> 
-    
-    </main>
-</div> <!-- .row -->
 
+        <?php if ($submitted && $validationError) { ?>
+            <div class="mb3 pa3 bg-washed-red dark-red br2 b--light-pink ba" data-qa="alertValidationError">
+                Пожалуйста, введите всю необходимую информацию
+            </div>
+        <?php } ?>
+            
+        <?php if ($submitted && !$validationError && !$sent) { ?>
+            <div class="mb3 pa3 bg-washed-red dark-red br2 b--light-pink ba" data-qa="alertFailure">
+                Сообщение не было отправлено. Пожалуйста, попробуйте еще раз
+            </div>
+        <?php } ?>
+            
+        <?php if ($sent) { ?>
+            <div class="mb3 pa3 bg-washed-green dark-green br2 b--light-green ba" data-qa="alertSuccess">
+                Спасибо! Ваше сообщение отправлено
+            </div>
+        <?php } ?>
+        
+        <?php if (!$sent) { ?>
+            <form action="<?php the_permalink(); ?>" method="post" data-qa="blockForm">
+                <label class="f6 mb2 b db" for="name">
+                    Ваше имя
+                    <span class="normal black-60">(обязательное поле)</span>
+                </label>
+                <?php $nameBorderColor = $nameError ? 'b--dark-red' : 'b--black-20'; ?>
+                <input class="mb2 pa2 w-100 input-reset db br2 ba <?=$nameBorderColor;?>" 
+                    data-qa="inputName"
+                    id="name" 
+                    name="message_name" 
+                    placeholder="Имя" 
+                    required
+                    type="text" 
+                    value="<?php if (isset($_POST['message_name'])) echo esc_attr($_POST['message_name']); ?>" 
+                />
+                <?php if ($nameError) { ?>
+                    <small class="f6 dark-red db mb2">
+                        Пожалуйста, введите имя
+                    </small>
+                <?php } ?>
+
+                <label class="f6 mt3 mb2 b db" for="email">
+                    Email для обратной связи
+                    <span class="normal black-60">(обязательное поле)</span>
+                </label>
+                <?php $emailBorderColor = $emailError ? 'b--dark-red' : 'b--black-20'; ?>
+                <input class="mb2 pa2 w-100 input-reset db br2 ba <?=$emailBorderColor;?>"
+                    data-qa="inputEmail"
+                    id="email" 
+                    name="message_email" 
+                    placeholder="Email" 
+                    required
+                    type="email" 
+                    value="<?php if (isset($_POST['message_email'])) echo esc_attr($_POST['message_email']); ?>" 
+                />
+                <?php if ($emailError) { ?>
+                    <small class="f6 dark-red db mb2">
+                        Пожалуйста, введите корректный email
+                    </small>
+                <?php } ?>
+
+                <label class="f6 mt3 mb2 b db" for="text">
+                    Ваше сообщение
+                    <span class="normal black-60">(обязательное поле)</span>
+                </label>
+                <?php $msgBorderColor = $msgError ? 'b--dark-red' : 'b--black-20'; ?>
+                <textarea class="mb2 pa2 w-100 input-reset db br2 ba <?=$msgBorderColor;?>"
+                    data-qa="inputMsg"
+                    id="text" 
+                    name="message_text" 
+                    placeholder="Текст сообщения" 
+                    required
+                    rows="5"
+                ><?php if (isset($_POST['message_text'])) echo esc_textarea($_POST['message_text']); ?></textarea>
+                <?php if ($msgError) { ?>
+                    <small class="f6 dark-red db mb2">
+                        Пожалуйста, введите текст сообщения
+                    </small>
+                <?php } ?>
+
+                <label class="f6 mt3 mb2 b db" for="human">
+                    Подтвердите, что вы не робот
+                    <span class="normal black-60">(обязательное поле)</span>
+                </label>
+                <?php $humanBorderColor = $humanError ? 'b--dark-red' : 'b--black-20'; ?>
+                <input class="mb2 pa2 w3 input-reset dib br2 ba <?=$humanBorderColor;?>" 
+                    data-qa="inputHuman"
+                    id="human" 
+                    name="message_human" 
+                    required
+                    type="text" 
+                    value="" 
+                />
+                + 3 = 5
+                <?php if ($humanError) { ?>
+                    <small class="f6 dark-red db mb2" data-qa="textHumanError">
+                        Пожалуйста, введите правильное слагаемое
+                    </small>
+                <?php } ?>
+                
+                <input type="hidden" name="message_submitted" value="true">
+                <div class="tc mt3">
+                    <button class="f5 ph3 pv2 bg-dark-blue white link dim dib br2" 
+                        data-qa="btnSubmit"
+                        type="submit"
+                    >
+                        Отправить
+                    </button>
+                </div>
+            </form>
+        <?php } ?>
+    </main>
+<?php endwhile; ?>
+    
 <?php get_footer(); ?>

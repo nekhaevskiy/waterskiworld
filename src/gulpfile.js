@@ -55,6 +55,7 @@ gulp.task('build', gulp.series(
 ));
 
 gulp.task('watch', function () {
+    gulp.watch('php/**/*.php', gulp.series('php'));
     gulp.watch('css/**/*.css', gulp.series('styles'));
     gulp.watch('js/**/*.js', gulp.series('scripts'));
     gulp.watch('assets/**/*.*', gulp.series('assets'));
