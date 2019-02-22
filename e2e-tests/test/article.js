@@ -44,6 +44,11 @@ describe('Article', function () {
             expect(paragrapsQty).to.be.at.least(1);
         });
 
+        it('should have a Facebook container with height > 0', function() {
+            const containerHeight = article.facebookContainer.getElementSize('height');
+            expect(containerHeight).to.be.above(0);
+        });
+
         it('should have correct link to the previous article', function () {
             const prevArticleLinkText = article.prevArticleLink.getText();
             expect(prevArticleLinkText).to.equal('Пред. →');
@@ -56,11 +61,6 @@ describe('Article', function () {
         it('should not have link to the next article', function () {
             const nextArticleLinkIsExisting = article.nextArticleLink.isExisting();
             expect(nextArticleLinkIsExisting).to.be.false;
-        });
-
-        it('should have comments block', function () {
-            const commentsAreExisting = article.comments.isExisting();
-            expect(commentsAreExisting).to.be.true;
         });
     });
 
@@ -105,6 +105,11 @@ describe('Article', function () {
             expect(paragrapsQty).to.be.at.least(1);
         });
 
+        it('should have a Facebook container with height > 0', function() {
+            const containerHeight = article.facebookContainer.getElementSize('height');
+            expect(containerHeight).to.be.above(0);
+        });
+
         it('should have correct link to the previous article', function () {
             const prevArticleLinkText = article.prevArticleLink.getText();
             expect(prevArticleLinkText).to.equal('Пред. →');
@@ -121,11 +126,6 @@ describe('Article', function () {
             article.nextArticleLink.click();
             const pageTitle = browser.getTitle();
             expect(pageTitle).to.include(firstArticleTitle);
-        });
-
-        it('should have comments block', function () {
-            const commentsAreExisting = article.comments.isExisting();
-            expect(commentsAreExisting).to.be.true;
         });
     });
 
@@ -163,6 +163,11 @@ describe('Article', function () {
             expect(paragrapsQty).to.equal(8);
         });
 
+        it('should have a Facebook container with height > 0', function() {
+            const containerHeight = article.facebookContainer.getElementSize('height');
+            expect(containerHeight).to.be.above(0);
+        });
+
         it('should not have link to the previous article', function () {
             const prevArticleLinkIsExisting = article.prevArticleLink.isExisting();
             expect(prevArticleLinkIsExisting).to.be.false;
@@ -175,11 +180,6 @@ describe('Article', function () {
            article.nextArticleLink.click();
            const pageTitle = browser.getTitle();
            expect(pageTitle).to.equal('Избран новый Президент Федерации воднолыжного спорта России - WaterSkiWorld.ru');
-        });
-
-        it('should have comments block', function () {
-            const commentsAreExisting = article.comments.isExisting();
-            expect(commentsAreExisting).to.be.true;
         });
     });
 });

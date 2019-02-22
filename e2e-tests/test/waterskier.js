@@ -31,6 +31,11 @@ describe('Waterskier', function () {
             expect(metaText).to.equal('Обновлено: 08.11.2013');
         });
 
+        it('should have a Facebook container with height > 0', function() {
+            const containerHeight = waterskierPage.facebookContainer.getElementSize('height');
+            expect(containerHeight).to.be.above(0);
+        });
+
         it('should have correct link to the previous waterskier page', function () {
             const prevPageLinkText = waterskierPage.prevPageLink.getText();
             expect(prevPageLinkText).to.equal('Пред. →');
@@ -43,11 +48,6 @@ describe('Waterskier', function () {
         it('should not have link to the next waterskier page', function () {
             const nextPageLinkIsExisting = waterskierPage.nextPageLink.isExisting();
             expect(nextPageLinkIsExisting).to.be.false;
-        });
-
-        it('should have comments block', function () {
-            const commentsAreExisting = waterskierPage.comments.isExisting();
-            expect(commentsAreExisting).to.be.true;
         });
     });
 
@@ -76,6 +76,11 @@ describe('Waterskier', function () {
             expect(metaText).to.equal('Обновлено: 31.10.2013');
         });
 
+        it('should have a Facebook container with height > 0', function() {
+            const containerHeight = waterskierPage.facebookContainer.getElementSize('height');
+            expect(containerHeight).to.be.above(0);
+        });
+
         it('should have correct link to the previous waterskier page', function () {
             const prevPageLinkText = waterskierPage.prevPageLink.getText();
             expect(prevPageLinkText).to.equal('Пред. →');
@@ -92,11 +97,6 @@ describe('Waterskier', function () {
             waterskierPage.nextPageLink.click();
             const pageTitle = browser.getTitle();
             expect(pageTitle).to.equal('Мэй Лунд Йепсен (Maj Lund Jepsen)');
-        });
-
-        it('should have comments block', function () {
-            const commentsAreExisting = waterskierPage.comments.isExisting();
-            expect(commentsAreExisting).to.be.true;
         });
     });
 
@@ -125,6 +125,11 @@ describe('Waterskier', function () {
             expect(metaText).to.equal('Обновлено: 22.10.2013');
         });
 
+        it('should have a Facebook container with height > 0', function() {
+            const containerHeight = waterskierPage.facebookContainer.getElementSize('height');
+            expect(containerHeight).to.be.above(0);
+        });
+
         it('should not have link to the previous waterskier page', function () {
             const prevPageLinkIsExisting = waterskierPage.prevPageLink.isExisting();
             expect(prevPageLinkIsExisting).to.be.false;
@@ -137,11 +142,6 @@ describe('Waterskier', function () {
             waterskierPage.nextPageLink.click();
             const pageTitle = browser.getTitle();
             expect(pageTitle).to.equal('Ветров Дмитрий - WaterSkiWorld.ru');
-        });
-
-        it('should have comments block', function () {
-            const commentsAreExisting = waterskierPage.comments.isExisting();
-            expect(commentsAreExisting).to.be.true;
         });
     });
 });

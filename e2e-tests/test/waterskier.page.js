@@ -14,6 +14,9 @@ class Waterskier {
     get metaBlock() {
         return $('.article__meta');
     }
+    get facebookContainer() {
+        return $('.fb-like');
+    }
     get prevPageLink() {
         return $('.pager .next a');
     }

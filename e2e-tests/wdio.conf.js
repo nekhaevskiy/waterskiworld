@@ -4,8 +4,8 @@ switch (process.env.SERVER) {
     case 'prod':
         baseUrl = 'http://waterskiworld.ru/';
         break;
-    case 'st3':
-        baseUrl = 'http://st3.waterskiworld.ru/';
+    case 'st':
+        baseUrl = 'http://st.waterskiworld.ru/';
         break;
     default:
         baseUrl = 'http://waterskiworld.test/';

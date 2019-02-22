@@ -21,29 +21,29 @@ describe('Sidebar', function () {
         });
     });
 
-    describe('Comments', function () {
-        it('should have correct header', function () {
-            const headerText = sidebar.commentsHeading.getText();
-            expect(headerText).to.equal('Последние комментарии');
-        });
+    // describe('Comments', function () {
+    //     it('should have correct header', function () {
+    //         const headerText = sidebar.commentsHeading.getText();
+    //         expect(headerText).to.equal('Последние комментарии');
+    //     });
 
-        it('should have at least 1 item and at most 5 items', function () {
-            const commentsQty = sidebar.commentsItems.length;
-            expect(commentsQty).to.be.at.least(1);
-            expect(commentsQty).to.be.at.most(5);
-        });
+    //     it('should have at least 1 item and at most 5 items', function () {
+    //         const commentsQty = sidebar.commentsItems.length;
+    //         expect(commentsQty).to.be.at.least(1);
+    //         expect(commentsQty).to.be.at.most(5);
+    //     });
 
-        it('should have first item with link that opens new tab with corresponding article after click', function () {
-            const linkText = sidebar.firstCommentLink.getText();
+    //     it('should have first item with link that opens new tab with corresponding article after click', function () {
+    //         const linkText = sidebar.firstCommentLink.getText();
 
-            sidebar.firstCommentLink.click();
-            const tabIds = browser.getTabIds();
-            browser.switchTab(tabIds[1]);
+    //         sidebar.firstCommentLink.click();
+    //         const tabIds = browser.getTabIds();
+    //         browser.switchTab(tabIds[1]);
 
-            const pageTitle = browser.getTitle();
-            expect(pageTitle).to.equal(linkText);
-        });
-    });
+    //         const pageTitle = browser.getTitle();
+    //         expect(pageTitle).to.equal(linkText);
+    //     });
+    // });
 
     describe('Facebook', function () {
         it('should have correct header', function () {

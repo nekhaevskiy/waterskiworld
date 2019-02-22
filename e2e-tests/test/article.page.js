@@ -20,6 +20,9 @@ class Article {
     get paragraphs() {
         return $$('.article p:not(.article__meta)');
     }
+    get facebookContainer() {
+        return $('.fb-like');
+    }
     get comments() {
         return $('#hypercomments_widget');
     }

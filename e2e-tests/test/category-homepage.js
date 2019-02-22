@@ -114,7 +114,7 @@ describe('Homepage articles', function () {
 
     describe('Last page', function () {
         beforeEach(function () {
-            browser.url('./page/61');
+            browser.url('./page/62');
         });
 
         it('should have correct link to the next page', function () {
@@ -123,7 +123,7 @@ describe('Homepage articles', function () {
 
             homepage.nextLink.click();
             const pageTitle = browser.getTitle();
-            expect(pageTitle).to.include('Страница 60');
+            expect(pageTitle).to.include('Страница 61');
         });
 
         it('should not have link to the previous page', function () {

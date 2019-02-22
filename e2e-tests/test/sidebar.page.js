@@ -15,25 +15,25 @@ class Sidebar {
         return $('.sidebar-module:nth-child(2) .hc__mix__link a');
     }
     get facebookHeading() {
-        return $('.sidebar-module:nth-child(3) h4');
+        return $('.sidebar-module:nth-child(2) h4');
     }
     get facebookBody() {
-        return $('.sidebar-module:nth-child(3) iframe');
+        return $('.sidebar-module:nth-child(2) iframe');
     }
     get vkHeading() {
-        return $('.sidebar-module:nth-child(4) h4');
+        return $('.sidebar-module:nth-child(3) h4');
     }
     get vkBody() {
-        return $('.sidebar-module:nth-child(4) #vk_groups');
+        return $('.sidebar-module:nth-child(3) #vk_groups');
     }
     get subscribeHeading() {
-        return $('.sidebar-module:nth-child(5) h4');
+        return $('.sidebar-module:nth-child(4) h4');
     }
     get subscribeInput() {
-        return $('.sidebar-module:nth-child(5) #subscriber-email');
+        return $('.sidebar-module:nth-child(4) #subscriber-email');
     }
     get subscribeBtn() {
-        return $('.sidebar-module:nth-child(5) button[type="submit"]');
+        return $('.sidebar-module:nth-child(4) button[type="submit"]');
     }
 }
 

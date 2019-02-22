@@ -46,7 +46,8 @@ describe('Contacts page', function () {
     it('should show success message after submitting form', function () {
         contactsPage.nameInput.setValue('WebdriverIO');
         contactsPage.emailInput.setValue('webdriverio@waterskiworld.ru');
-        contactsPage.msgInput.setValue('test');
+        const SERVER = process.env.SERVER ? process.env.SERVER : 'dev';
+        contactsPage.msgInput.setValue('test ' + SERVER);
         contactsPage.submitBtn.click();
 
         const successMsgText = contactsPage.successMsg.getText();
