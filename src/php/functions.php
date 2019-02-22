@@ -46,25 +46,11 @@ add_action( 'after_setup_theme', 'waterskiworld_setup' );
 
 // Add scripts and stylesheets
 function waterskiworld_scripts() {
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.3.7' );
-	wp_enqueue_style( 'ie10-viewport-bug-workaround', get_template_directory_uri() . '/css/ie10-viewport-bug-workaround.css' );
 	wp_enqueue_style( 'style', get_template_directory_uri() . '/css/style.css' );
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '3.3.7', true );
 	wp_enqueue_script( 'ie10-viewport-bug-workaround', get_template_directory_uri() . '/js/ie10-viewport-bug-workaround.js', array(), false, true );
 }
 add_action( 'wp_enqueue_scripts', 'waterskiworld_scripts' );
-
-/**
- * Registers an editor stylesheet for the theme.
- */
-function waterskiworld_add_editor_styles() {
-    add_editor_style( array(
-		'/css/bootstrap.min.css',
-		'/css/style.css'
-	) );
-}
-add_action( 'admin_init', 'waterskiworld_add_editor_styles' );
-
 
 // Defining home page thumbnail size
 add_image_size('excerpt-thumbnail', 220, 220, true);

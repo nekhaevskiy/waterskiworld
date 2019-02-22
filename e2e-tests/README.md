@@ -6,12 +6,15 @@
 * Run `npm install`
 
 ## Run tests on dev site
-
+### Run all tests
     npm test
 
-## Run tests on st3 site
+### Run single test
+    wdio --spec=test/category-ads.js
 
-    npm run test:st3
+## Run tests on st site
+
+    npm run test:st
 
 ## Run tests on prod site
 

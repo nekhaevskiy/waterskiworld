@@ -3,23 +3,8 @@ node_modules/
 .DS_Store
 
 e2e-tests/errorShots/
-vm/.vagrant
-vm/backup/
-vm/logs/
-vm/maxsite-cache-full/
-vm/replace/
-vm/www/cache/
-vm/www/cgi-bin/
-vm/www/wp-admin/
-vm/www/wp-content/*
-!vm/www/wp-content/themes/waterskiworld/
-vm/www/wp-includes/
-vm/www/wp-snapshots/
-vm/www/.htaccess
-vm/www/*.html
-vm/www/*.php
-vm/www/*.txt
-vm/Vagrantfile
+src/manifest/
+vm/
 /DEPLOY.md
 /RESET.md
 /UPDATE.md

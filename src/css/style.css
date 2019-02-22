@@ -317,30 +317,3 @@ body {
 .description .list-group {
   font-size: 15px;
 }
-
-/* Tiny MCE in the Admin Panel */
-body#tinymce {
-  padding: 10px;
-}
-
-/* HyperComments */
-#hypercomments_mix .hc__mix {
-  border: none;
-  box-shadow: none;
-  padding: 0;
-}
-#hypercomments_mix .hc__mix__title,
-#hypercomments_mix .hc__mix__avatar {
-  display: none;
-}
-#hypercomments_mix .hcc {
-  margin-left: 0;
-}
-#hypercomments_mix .hc__nick {
-  margin-right: 5px;
-  color: #337ab7;
-}
-#hypercomments_mix .hc__mix__link a:hover,
-#hypercomments_mix .hc__mix__link a:focus {
-  color: #23527c;
-}
