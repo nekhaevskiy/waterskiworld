@@ -10,39 +10,39 @@ describe('Adverts', function () {
         expect(pageHeader).to.equal('Объявления');
     });
 
-    it('should have 2 items', function () {
+    it('should have 1 item', function () {
         const items = techniquePage.items;
-        expect(items).to.have.lengthOf(2);
+        expect(items).to.have.lengthOf(1);
     });
 
-    it('should have 2 advert titles', function () {
+    it('should have 1 advert title', function () {
         const titles = techniquePage.itemsHeadings;
-        expect(titles).to.have.lengthOf(2);
+        expect(titles).to.have.lengthOf(1);
     });
 
-    it('should have 2 meta blocks', function () {
+    it('should have 1 meta block', function () {
         const metaBlocks = techniquePage.metaBlocks;
-        expect(metaBlocks).to.have.lengthOf(2);
+        expect(metaBlocks).to.have.lengthOf(1);
     });
 
-    it('should have 2 links to author', function () {
+    it('should have 1 links to author', function () {
         const authorLinks = techniquePage.authorLinks;
-        expect(authorLinks).to.have.lengthOf(2);
+        expect(authorLinks).to.have.lengthOf(1);
     });
 
-    it('should have 2 thumbs', function () {
+    it('should have 1 thumb', function () {
         const thumbs = techniquePage.thumbs;
-        expect(thumbs).to.have.lengthOf(2);
+        expect(thumbs).to.have.lengthOf(1);
     });
 
-    it('should have 2 summaries', function () {
+    it('should have 1 summary', function () {
         const summmaries = techniquePage.summaries;
-        expect(summmaries).to.have.lengthOf(2);
+        expect(summmaries).to.have.lengthOf(1);
     });
 
-    it('should have 2 Read More links', function () {
+    it('should have 1 Read More links', function () {
         const readMoreLinks = techniquePage.readMoreLinks;
-        expect(readMoreLinks).to.have.lengthOf(2);
+        expect(readMoreLinks).to.have.lengthOf(1);
     });
 
     describe('First item', function () {
