@@ -80,7 +80,6 @@
                     data-qa="inputName"
                     id="name" 
                     name="message_name" 
-                    placeholder="Имя" 
                     required
                     type="text" 
                     value="<?php if (isset($_POST['message_name'])) echo esc_attr($_POST['message_name']); ?>" 
@@ -100,7 +99,6 @@
                     data-qa="inputEmail"
                     id="email" 
                     name="message_email" 
-                    placeholder="Email" 
                     required
                     type="email" 
                     value="<?php if (isset($_POST['message_email'])) echo esc_attr($_POST['message_email']); ?>" 
@@ -120,7 +118,6 @@
                     data-qa="inputMsg"
                     id="text" 
                     name="message_text" 
-                    placeholder="Текст сообщения" 
                     required
                     rows="5"
                 ><?php if (isset($_POST['message_text'])) echo esc_textarea($_POST['message_text']); ?></textarea>
