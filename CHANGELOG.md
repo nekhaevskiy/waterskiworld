@@ -5,8 +5,12 @@ The format is based on [Keep a Changelog],
 and this project adheres to [Semantic Versioning].
 
 ## Unreleased
+### Changed
+- Create the only one `package.json` for folders *e2e-tests* and *src*
+- Create the only one README.md for folders *e2e-tests* and *src*
+
 ### Fixed
-- Links in CHANGELOG
+- Links in CHANGELOG.md
 
 ## [0.4.0] - 2019-02-19
 ### Added
@@ -19,7 +23,7 @@ and this project adheres to [Semantic Versioning].
 
 ### Changed
 - Concatination all styles in one file
-- Update README fot e2e-tests
+- Update README.md fot e2e-tests
 - Update Contacts page with Tachyons
 - Improve BE validation on Contacts page
 
@@ -28,7 +32,7 @@ and this project adheres to [Semantic Versioning].
 
 ### Removed
 - Remove Hypercomments' styles
-- Map for bootstrap.min.css
+- Map for `bootstrap.min.css`
 - Frontend output from Git
 
 ## [0.3.0] - 2018-12-17

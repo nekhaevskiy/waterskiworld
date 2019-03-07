@@ -1,10 +1,5 @@
-.idea/
+errorShots/
+manifest/
 node_modules/
-.DS_Store
-
-e2e-tests/errorShots/
-src/manifest/
 vm/
-/DEPLOY.md
-/RESET.md
-/UPDATE.md
+.DS_Store
