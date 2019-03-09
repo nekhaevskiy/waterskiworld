@@ -44,7 +44,7 @@ lazyRequireTask('php', './src/tasks/php.js', {
 });
 
 lazyRequireTask('serve', './src/tasks/serve.js', {
-    proxy: 'http://waterskiworld.test',
+    proxy: 'waterskiworld.test',
     dst: './vm/www/wp-content/themes/**/*.*'
 });
 
