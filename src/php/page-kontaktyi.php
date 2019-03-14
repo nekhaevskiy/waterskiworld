@@ -35,13 +35,13 @@
 <?php get_header(); ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
-    <main class="center measure-wide f4 mb5 bg-white black-70 sans-serif">
+    <main class="center measure-wide f4 mb5 bg-white black-70 lh-copy sans-serif">
         <h1 class="f1 mt2 mb4 pb4 lh-solid fw5 serif b--light-gray bb" data-qa="blockPageHeader">
             <?php the_title(); ?>
         </h1>
 
         <?php if (!$submitted) { ?>
-            <div class="mb3 lh-copy" data-qa="blockPageContent">
+            <div class="mb3" data-qa="blockPageContent">
                 <p>Связаться с командой WaterSkiWorld.ru можно написав нам в социальных сетях:</p>
                 <ul>
                     <li><a class="hover-light-blue blue link" href="https://www.facebook.com/waterskiworld/">Facebook</a></li>
