@@ -5,7 +5,7 @@
   <div class="mt3 cf nested-copy-separator nested-img">
     <?php the_content(); ?>
   </div>
-  <p class="f5 tr mt3 silver i">
+  <p class="f5 tr mt2 silver i">
     Опубликовано:
     <span>
       <?php the_date(); ?>
