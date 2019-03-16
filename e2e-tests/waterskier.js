@@ -38,16 +38,19 @@ describe('Waterskier', function () {
 
         it('should have correct link to the previous waterskier page', function () {
             const prevPageLinkText = waterskierPage.prevPageLink.getText();
-            expect(prevPageLinkText).to.equal('Пред. →');
+            expect(prevPageLinkText).to.equal('Пред. chevronRight icon');
 
             waterskierPage.prevPageLink.click();
             const pageTitle = browser.getTitle();
             expect(pageTitle).to.equal('Потэс Инесса - WaterSkiWorld.ru');
         });
 
-        it('should not have link to the next waterskier page', function () {
-            const nextPageLinkIsExisting = waterskierPage.nextPageLink.isExisting();
-            expect(nextPageLinkIsExisting).to.be.false;
+        it('should have link to the next waterskier page with correct text but without href attribute', function () {
+            const text = waterskierPage.nextPageLink.getText();
+            expect(text).to.equal('chevronLeft icon След.');
+
+            const href = waterskierPage.nextPageLink.getAttribute('href');
+            expect(href).to.be.null;
         });
     });
 
@@ -83,7 +86,7 @@ describe('Waterskier', function () {
 
         it('should have correct link to the previous waterskier page', function () {
             const prevPageLinkText = waterskierPage.prevPageLink.getText();
-            expect(prevPageLinkText).to.equal('Пред. →');
+            expect(prevPageLinkText).to.equal('Пред. chevronRight icon');
 
             waterskierPage.prevPageLink.click();
             const pageTitle = browser.getTitle();
@@ -92,7 +95,7 @@ describe('Waterskier', function () {
 
         it('should have correct link to the next waterskier page', function () {
             const nextPageLinkText = waterskierPage.nextPageLink.getText();
-            expect(nextPageLinkText).to.equal('← След.');
+            expect(nextPageLinkText).to.equal('chevronLeft icon След.');
 
             waterskierPage.nextPageLink.click();
             const pageTitle = browser.getTitle();
@@ -130,14 +133,17 @@ describe('Waterskier', function () {
             expect(containerHeight).to.be.above(0);
         });
 
-        it('should not have link to the previous waterskier page', function () {
-            const prevPageLinkIsExisting = waterskierPage.prevPageLink.isExisting();
-            expect(prevPageLinkIsExisting).to.be.false;
+        it('should have link to the previous waterskier page with correct text but without href attribute', function () {
+            const text = waterskierPage.prevPageLink.getText();
+            expect(text).to.equal('Пред. chevronRight icon');
+
+            const href = waterskierPage.prevPageLink.getAttribute('href');
+            expect(href).to.be.null;
         });
 
         it('should have correct link to the next waterskier page', function () {
             const nextPageLinkText = waterskierPage.nextPageLink.getText();
-            expect(nextPageLinkText).to.equal('← След.');
+            expect(nextPageLinkText).to.equal('chevronLeft icon След.');
 
             waterskierPage.nextPageLink.click();
             const pageTitle = browser.getTitle();

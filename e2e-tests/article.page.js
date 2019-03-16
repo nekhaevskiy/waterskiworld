@@ -27,10 +27,10 @@ class Article {
         return $('#hypercomments_widget');
     }
     get prevArticleLink() {
-        return $('.pager .next a');
+        return $('[data-qa="linkPrevPage"]');
     }
     get nextArticleLink() {
-        return $('.pager .previous a');
+        return $('[data-qa="linkNextPage"]');
     }
 }
 

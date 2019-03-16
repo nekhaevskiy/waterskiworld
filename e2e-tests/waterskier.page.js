@@ -18,10 +18,10 @@ class Waterskier {
         return $('.fb-like');
     }
     get prevPageLink() {
-        return $('.pager .next a');
+        return $('[data-qa="linkPrevPage"]');
     }
     get nextPageLink() {
-        return $('.pager .previous a');
+        return $('[data-qa="linkNextPage"]');
     }
     get comments() {
         return $('#hypercomments_widget');

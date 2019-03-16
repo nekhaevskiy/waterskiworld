@@ -28,10 +28,9 @@
             <span class="v-mid pl1">След.</span>
           ';
           if (!empty($next_post)) {
-            echo '
-              <a class="f5 mr2 ph3 pv2 dark-blue link dim fw5 dib br2 ba bw1" href="' . get_permalink($next_post->ID) .'">' . $next_post_text . '</a>';
+            echo '<a class="f5 mr2 ph3 pv2 dark-blue link dim fw5 dib br2 ba bw1" href="' . get_permalink($next_post->ID) .'" data-qa="linkNextPage">' . $next_post_text . '</a>';
           } else {
-            echo '<a class="f5 mr2 ph3 pv2 silver hover-silver link fw5 dib br2 ba bw1">' . $next_post_text . '</a>';
+            echo '<a class="f5 mr2 ph3 pv2 silver hover-silver link fw5 dib br2 ba bw1" data-qa="linkNextPage">' . $next_post_text . '</a>';
           }
           
           $prev_post = get_adjacent_post(true, '', true);
@@ -43,9 +42,9 @@
             </svg>
             ';
           if (!empty($prev_post)) {
-            echo '<a class="f5 ml2 ph3 pv2 dark-blue link dim fw5 dib br2 ba bw1" href="' . get_permalink($prev_post->ID) .'">' . $prev_post_text . '</a>';
+            echo '<a class="f5 ml2 ph3 pv2 dark-blue link dim fw5 dib br2 ba bw1" href="' . get_permalink($prev_post->ID) .'" data-qa="linkPrevPage">' . $prev_post_text . '</a>';
           } else {
-            echo '<a class="f5 ml2 ph3 pv2 silver hover-silver link fw5 dib br2 ba bw1">' . $prev_post_text . '</a>';
+            echo '<a class="f5 ml2 ph3 pv2 silver hover-silver link fw5 dib br2 ba bw1" data-qa="linkPrevPage">' . $prev_post_text . '</a>';
           }
         ?>
       </nav>

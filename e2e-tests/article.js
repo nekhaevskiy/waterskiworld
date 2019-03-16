@@ -51,16 +51,19 @@ describe('Article', function () {
 
         it('should have correct link to the previous article', function () {
             const prevArticleLinkText = article.prevArticleLink.getText();
-            expect(prevArticleLinkText).to.equal('Пред. →');
+            expect(prevArticleLinkText).to.equal('Пред. chevronRight icon');
 
             article.prevArticleLink.click();
             const pageTitle = browser.getTitle();
             expect(pageTitle).to.include(secondArticleTitle);
         });
 
-        it('should not have link to the next article', function () {
-            const nextArticleLinkIsExisting = article.nextArticleLink.isExisting();
-            expect(nextArticleLinkIsExisting).to.be.false;
+        it('should have link to the next article with correct text but without href attribute', function () {
+            const nextArticleLinkText = article.nextArticleLink.getText();
+            expect(nextArticleLinkText).to.equal('chevronLeft icon След.');
+
+            const href = article.nextArticleLink.getAttribute('href');
+            expect(href).to.be.null;
         });
     });
 
@@ -112,7 +115,7 @@ describe('Article', function () {
 
         it('should have correct link to the previous article', function () {
             const prevArticleLinkText = article.prevArticleLink.getText();
-            expect(prevArticleLinkText).to.equal('Пред. →');
+            expect(prevArticleLinkText).to.equal('Пред. chevronRight icon');
 
             article.prevArticleLink.click();
             const pageTitle = browser.getTitle();
@@ -121,7 +124,7 @@ describe('Article', function () {
 
         it('should have correct link to the next article', function () {
             const nextArticleLinkText = article.nextArticleLink.getText();
-            expect(nextArticleLinkText).to.equal('← След.');
+            expect(nextArticleLinkText).to.equal('chevronLeft icon След.');
 
             article.nextArticleLink.click();
             const pageTitle = browser.getTitle();
@@ -168,14 +171,17 @@ describe('Article', function () {
             expect(containerHeight).to.be.above(0);
         });
 
-        it('should not have link to the previous article', function () {
-            const prevArticleLinkIsExisting = article.prevArticleLink.isExisting();
-            expect(prevArticleLinkIsExisting).to.be.false;
+        it('should have link to the previous article with correct text but without href attribute', function () {
+            const prevArticleLinkText = article.prevArticleLink.getText();
+            expect(prevArticleLinkText).to.equal('Пред. chevronRight icon');
+
+            const href = article.prevArticleLink.getAttribute('href');
+            expect(href).to.be.null;
         });
 
         it('should have correct link to the next article', function () {
            const nextArticleLinkText = article.nextArticleLink.getText();
-           expect(nextArticleLinkText).to.equal('← След.');
+           expect(nextArticleLinkText).to.equal('chevronLeft icon След.');
 
            article.nextArticleLink.click();
            const pageTitle = browser.getTitle();
