@@ -35,13 +35,13 @@
 }
 
 .nested-copy-separator p+p {
-  margin-top: 1.5em;
+  margin-top: 0.8em;
 }
 
 .nested-img img {
-  width: 100%;
   max-width: 100%;
   display: block;
+  height: auto;
 }
 
 .nested-links a {
