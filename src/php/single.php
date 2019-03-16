@@ -20,17 +20,32 @@
       <nav class="mt4 tc">
         <?php
           $next_post = get_adjacent_post(true, '', false);
+          $next_post_text = '
+            <svg class="v-mid w1" data-icon="chevronLeft" viewBox="0 0 32 32" style="fill:currentcolor">
+              <title>chevronLeft icon</title>
+              <path d="M20 1 L24 5 L14 16 L24 27 L20 31 L6 16 z"></path>
+            </svg>
+            <span class="v-mid pl1">След.</span>
+          ';
           if (!empty($next_post)) {
-            echo '<a class="f5 mr2 ph3 pv2 dark-blue link dim fw5 dib br1 ba bw1" href="' . get_permalink($next_post->ID) .'"><span aria-hidden="true">&larr;</span> След.</a>';
+            echo '
+              <a class="f5 mr2 ph3 pv2 dark-blue link dim fw5 dib br2 ba bw1" href="' . get_permalink($next_post->ID) .'">' . $next_post_text . '</a>';
           } else {
-            echo '<a class="f5 mr2 ph3 pv2 silver hover-silver link fw5 dib br1 ba bw1"><span aria-hidden="true">&larr;</span> След.</a>';
+            echo '<a class="f5 mr2 ph3 pv2 silver hover-silver link fw5 dib br2 ba bw1">' . $next_post_text . '</a>';
           }
           
           $prev_post = get_adjacent_post(true, '', true);
+          $prev_post_text = '
+            <span class="v-mid pr1">Пред.</span>
+            <svg class="v-mid w1" data-icon="chevronRight" viewBox="0 0 32 32" style="fill:currentcolor">
+              <title>chevronRight icon</title>
+              <path d="M12 1 L26 16 L12 31 L8 27 L18 16 L8 5 z"></path>
+            </svg>
+            ';
           if (!empty($prev_post)) {
-            echo '<a class="f5 ml2 ph3 pv2 dark-blue link dim fw5 dib br1 ba bw1" href="' . get_permalink($prev_post->ID) .'">Пред. <span aria-hidden="true">&rarr;</span></a>';
+            echo '<a class="f5 ml2 ph3 pv2 dark-blue link dim fw5 dib br2 ba bw1" href="' . get_permalink($prev_post->ID) .'">' . $prev_post_text . '</a>';
           } else {
-            echo '<a class="f5 ml2 ph3 pv2 silver hover-silver link fw5 dib br1 ba bw1">Пред. <span aria-hidden="true">&rarr;</span></a>';
+            echo '<a class="f5 ml2 ph3 pv2 silver hover-silver link fw5 dib br2 ba bw1">' . $prev_post_text . '</a>';
           }
         ?>
       </nav>
