@@ -6,6 +6,20 @@
 
 */
 
+.nested p {
+  margin: 0;
+}
+
+.nested p + p {
+  margin-top: 0.8em;
+}
+
+.nested img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
 .nested-copy-line-height p,
 .nested-copy-line-height ul,
 .nested-copy-line-height ol {
@@ -34,15 +48,6 @@
   margin-bottom: 0;
 }
 
-.nested-copy-separator p+p {
-  margin-top: 0.8em;
-}
-
-.nested-img img {
-  max-width: 100%;
-  display: block;
-  height: auto;
-}
 
 .nested-links a {
   color: var(--blue);
@@ -54,4 +59,3 @@
   color: var(--light-blue);
   transition: color .15s ease-in;
 }
-
