@@ -6,19 +6,58 @@
 
 */
 
-.nested p {
+.nested p,
+.nested ul,
+.nested ol {
   margin: 0;
 }
 
-.nested p + p {
-  margin-top: 0.8em;
-}
-
+.nested figure,
 .nested img {
   max-width: 100%;
   display: block;
   height: auto;
 }
+
+.nested figcaption {
+  font-size: 0.8em;
+  font-style: italic;
+  text-align: center;
+  margin-top: 0.25em;
+}
+
+.nested p + p,
+.nested p + figure,
+.nested p + img,
+.nested p + ul,
+.nested p + ol,
+.nested figure + p,
+.nested figure + ul,
+.nested figure + ol,
+.nested img + p,
+.nested img + ul,
+.nested img + ol,
+.nested ul + p,
+.nested ul + figure,
+.nested ul + img,
+.nested ol + p,
+.nested ol + figure,
+.nested ol + img {
+  margin-top: 0.8em;
+}
+
+.nested a {
+  color: var(--blue);
+  transition: color .15s ease-in;
+}
+
+.nested a:hover,
+.nested a:focus {
+  color: var(--light-blue);
+  transition: color .15s ease-in;
+}
+
+
 
 .nested-copy-line-height p,
 .nested-copy-line-height ul,
@@ -46,16 +85,4 @@
   text-indent: 1em;
   margin-top: 0;
   margin-bottom: 0;
-}
-
-
-.nested-links a {
-  color: var(--blue);
-  transition: color .15s ease-in;
-}
-
-.nested-links a:hover,
-.nested-links a:focus {
-  color: var(--light-blue);
-  transition: color .15s ease-in;
 }

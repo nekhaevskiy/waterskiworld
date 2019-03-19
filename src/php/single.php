@@ -13,7 +13,7 @@
         ?>
       <?php endwhile; ?>
       
-      <div class="mt3">
+      <div class="mt4">
         <?php get_template_part( 'partials/facebook-like-button' ); ?>
       </div>
 

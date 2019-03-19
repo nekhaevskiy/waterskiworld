@@ -31,7 +31,7 @@
 /* Modules */
 /* @import './_box-sizing'; */
 /* @import './_aspect-ratios'; */
-/* @import './_images'; */
+@import './_images';
 /* @import './_background-size'; */
 /* @import './_background-position'; */
 /* @import './_outlines'; */
@@ -46,7 +46,7 @@
 @import './_clears';
 @import './_display';
 /* @import './_flexbox'; */
-/* @import './_floats'; */
+@import './_floats';
 @import './_font-family';
 @import './_font-style';
 @import './_font-weight';
