@@ -1,41 +1,27 @@
 const article = require('./article.page');
 const homepage = require('./category.page');
 
-let firstArticleTitle, secondArticleTitle, thirdArticleTitle;
+let firstArticleHeading, secondArticleHeading, thirdArticleHeading;
 
 describe('Article', function () {
     describe('First', function () {
         beforeEach(function () {
             browser.url('./');
-            firstArticleTitle = homepage.itemsHeadings[0].getText();
-            secondArticleTitle = homepage.itemsHeadings[1].getText();
+            firstArticleHeading = homepage.itemsHeadings[0].getText();
+            secondArticleHeading = homepage.itemsHeadings[1].getText();
             homepage.itemsHeadings[0].click();
         });
 
-        it('should have correct header', function () {
-            const titleText = article.heading.getText();
-            expect(titleText).to.equal(firstArticleTitle);
+        it('should have correct heading', function () {
+            const heading = article.heading.getText();
+            expect(heading).to.equal(firstArticleHeading);
         });
 
-        it('should have correct meta', function () {
-            const metaText = article.meta.getText();
-            const regExpTest = article.metaRegExp.test(metaText);
-            expect(regExpTest).to.be.true;
-        });
-
-        it('should have clickable author', function () {
-            const authorText = article.authorLink.getText();
-            article.authorLink.click();
-
-            const pageTitle = browser.getTitle();
-            expect(pageTitle).to.include(authorText);
-        });
-
-        it('should have image with caption', function () {
-            const imgIsExisting = article.image.isExisting();
+        it('should have main image with caption', function () {
+            const imgIsExisting = article.mainImage.isExisting();
             expect(imgIsExisting).to.be.true;
 
-            const imgCaptionIsExisting = article.imageCaption.isExisting();
+            const imgCaptionIsExisting = article.mainImageCaption.isExisting();
             expect(imgCaptionIsExisting).to.be.true;
         });
 
@@ -44,62 +30,68 @@ describe('Article', function () {
             expect(paragrapsQty).to.be.at.least(1);
         });
 
+        it('should have correct author info', function () {
+            const info = article.authorInfo.getText();
+            const regExpTest = article.authorInfoRegExp.test(info);
+            expect(regExpTest).to.be.true;
+        });
+
+        it('should have clickable author link', function () {
+            const linkText = article.authorLink.getText();
+            article.authorLink.click();
+
+            const pageTitle = browser.getTitle();
+            expect(pageTitle).to.include(linkText);
+        });
+
+        it('should have correct date info', function () {
+            const dateInfo = article.dateInfo.getText();
+            const regExpTest = article.dateInfoRegExp.test(dateInfo);
+            expect(regExpTest).to.be.true;
+        });
+
         it('should have a Facebook container with height > 0', function() {
             const containerHeight = article.facebookContainer.getElementSize('height');
             expect(containerHeight).to.be.above(0);
         });
 
-        it('should have correct link to the previous article', function () {
-            const prevArticleLinkText = article.prevArticleLink.getText();
-            expect(prevArticleLinkText).to.equal('Пред. chevronRight icon');
+        it('should have a link to the previous article with correct text but without href attribute', function () {
+            const text = article.linkPrev.getText();
+            expect(text).to.equal('chevronLeft icon Пред.');
 
-            article.prevArticleLink.click();
-            const pageTitle = browser.getTitle();
-            expect(pageTitle).to.include(secondArticleTitle);
+            const href = article.linkPrev.getAttribute('href');
+            expect(href).to.be.null;
         });
 
-        it('should have link to the next article with correct text but without href attribute', function () {
-            const nextArticleLinkText = article.nextArticleLink.getText();
-            expect(nextArticleLinkText).to.equal('chevronLeft icon След.');
+        it('should have a correct link to the next article', function () {
+            const text = article.linkNext.getText();
+            expect(text).to.equal('След. chevronRight icon');
 
-            const href = article.nextArticleLink.getAttribute('href');
-            expect(href).to.be.null;
+            article.linkNext.click();
+            const pageTitle = browser.getTitle();
+            expect(pageTitle).to.include(secondArticleHeading);
         });
     });
 
     describe('Second', function () {
         beforeEach(function () {
             browser.url('./');
-            firstArticleTitle = homepage.itemsHeadings[0].getText();
-            secondArticleTitle = homepage.itemsHeadings[1].getText();
-            thirdArticleTitle = homepage.itemsHeadings[2].getText();
+            firstArticleHeading = homepage.itemsHeadings[0].getText();
+            secondArticleHeading = homepage.itemsHeadings[1].getText();
+            thirdArticleHeading = homepage.itemsHeadings[2].getText();
             homepage.itemsHeadings[1].click();
         });
 
-        it('should have correct header', function () {
-            const titleText = article.heading.getText();
-            expect(titleText).to.equal(secondArticleTitle);
+        it('should have correct heading', function () {
+            const heading = article.heading.getText();
+            expect(heading).to.equal(secondArticleHeading);
         });
 
-        it('should have correct meta', function () {
-            const metaText = article.meta.getText();
-            const regExpTest = article.metaRegExp.test(metaText);
-            expect(regExpTest).to.be.true;
-        });
-
-        it('should have clickable author', function () {
-            const authorText = article.authorLink.getText();
-            article.authorLink.click();
-
-            const pageTitle = browser.getTitle();
-            expect(pageTitle).to.include(authorText);
-        });
-
-        it('should have image with caption', function () {
-            const imgIsExisting = article.image.isExisting();
+        it('should have main image with caption', function () {
+            const imgIsExisting = article.mainImage.isExisting();
             expect(imgIsExisting).to.be.true;
 
-            const imgCaptionIsExisting = article.imageCaption.isExisting();
+            const imgCaptionIsExisting = article.mainImageCaption.isExisting();
             expect(imgCaptionIsExisting).to.be.true;
         });
 
@@ -108,27 +100,47 @@ describe('Article', function () {
             expect(paragrapsQty).to.be.at.least(1);
         });
 
+        it('should have correct author info', function () {
+            const info = article.authorInfo.getText();
+            const regExpTest = article.authorInfoRegExp.test(info);
+            expect(regExpTest).to.be.true;
+        });
+
+        it('should have clickable author link', function () {
+            const linkText = article.authorLink.getText();
+            article.authorLink.click();
+
+            const pageTitle = browser.getTitle();
+            expect(pageTitle).to.include(linkText);
+        });
+
+        it('should have correct date info', function () {
+            const dateInfo = article.dateInfo.getText();
+            const regExpTest = article.dateInfoRegExp.test(dateInfo);
+            expect(regExpTest).to.be.true;
+        });
+
         it('should have a Facebook container with height > 0', function() {
             const containerHeight = article.facebookContainer.getElementSize('height');
             expect(containerHeight).to.be.above(0);
         });
 
         it('should have correct link to the previous article', function () {
-            const prevArticleLinkText = article.prevArticleLink.getText();
-            expect(prevArticleLinkText).to.equal('Пред. chevronRight icon');
+            const text = article.linkPrev.getText();
+            expect(text).to.equal('chevronLeft icon Пред.');
 
-            article.prevArticleLink.click();
+            article.linkPrev.click();
             const pageTitle = browser.getTitle();
-            expect(pageTitle).to.include(thirdArticleTitle);
+            expect(pageTitle).to.include(firstArticleHeading);
         });
 
         it('should have correct link to the next article', function () {
-            const nextArticleLinkText = article.nextArticleLink.getText();
-            expect(nextArticleLinkText).to.equal('chevronLeft icon След.');
+            const text = article.linkNext.getText();
+            expect(text).to.equal('След. chevronRight icon');
 
-            article.nextArticleLink.click();
+            article.linkNext.click();
             const pageTitle = browser.getTitle();
-            expect(pageTitle).to.include(firstArticleTitle);
+            expect(pageTitle).to.include(thirdArticleHeading);
         });
     });
 
@@ -137,27 +149,16 @@ describe('Article', function () {
             browser.url('./novosti/1-kubok-mira-2008-po-vodnym-lyzham-i-vejkbordu')
         });
 
-        it('should have correct header', function () {
-            const titleText = article.heading.getText();
-            expect(titleText).to.equal('Кубок мира 2008 по водным лыжам и вейкборду');
+        it('should have correct heading', function () {
+            const heading = article.heading.getText();
+            expect(heading).to.equal('Кубок мира 2008 по водным лыжам и вейкборду');
         });
 
-        it('should have correct meta', function () {
-            const metaText = article.meta.getText();
-            expect(metaText).to.equal('10.06.2008, автор: Юрий Нехаевский (мл.)');
-        });
-
-        it('should have clickable author', function () {
-            article.authorLink.click();
-            const pageTitle = browser.getTitle();
-            expect(pageTitle).to.equal('Юрий Нехаевский (мл.), автор на WaterSkiWorld.ru');
-        });
-
-        it('should have image with caption', function () {
-            const imgIsExisting = article.image.isExisting();
+        it('should have main image with caption', function () {
+            const imgIsExisting = article.mainImage.isExisting();
             expect(imgIsExisting).to.be.true;
 
-            const imgCaptionText = article.imageCaption.getText();
+            const imgCaptionText = article.mainImageCaption.getText();
             expect(imgCaptionText).to.equal('Freddy Krueger, Jaret Llewellyn и Ryan Dodd (фото Des Burke-Kennedy)');
         });
 
@@ -166,26 +167,42 @@ describe('Article', function () {
             expect(paragrapsQty).to.equal(8);
         });
 
+        it('should have correct author info', function () {
+            const info = article.authorInfo.getText();
+            expect(info).to.equal('Автор: Юрий Нехаевский (мл.)');
+        });
+
+        it('should have clickable author link', function () {
+            article.authorLink.click();
+            const pageTitle = browser.getTitle();
+            expect(pageTitle).to.equal('Юрий Нехаевский (мл.), автор на WaterSkiWorld.ru');
+        });
+
+        it('should have correct date info', function () {
+            const dateInfo = article.dateInfo.getText();
+            expect(dateInfo).to.equal('Опубликовано: 10.06.2008');
+        });
+
         it('should have a Facebook container with height > 0', function() {
             const containerHeight = article.facebookContainer.getElementSize('height');
             expect(containerHeight).to.be.above(0);
         });
 
-        it('should have link to the previous article with correct text but without href attribute', function () {
-            const prevArticleLinkText = article.prevArticleLink.getText();
-            expect(prevArticleLinkText).to.equal('Пред. chevronRight icon');
+        it('should have correct link to the previous article', function () {
+            const text = article.linkPrev.getText();
+            expect(text).to.equal('chevronLeft icon Пред.');
 
-            const href = article.prevArticleLink.getAttribute('href');
-            expect(href).to.be.null;
+            article.linkPrev.click();
+            const pageTitle = browser.getTitle();
+            expect(pageTitle).to.equal('Избран новый Президент Федерации воднолыжного спорта России - WaterSkiWorld.ru');
         });
-
-        it('should have correct link to the next article', function () {
-           const nextArticleLinkText = article.nextArticleLink.getText();
-           expect(nextArticleLinkText).to.equal('chevronLeft icon След.');
-
-           article.nextArticleLink.click();
-           const pageTitle = browser.getTitle();
-           expect(pageTitle).to.equal('Избран новый Президент Федерации воднолыжного спорта России - WaterSkiWorld.ru');
+        
+        it('should have a link to the next article with correct text but without href attribute', function () {
+            const text = article.linkNext.getText();
+            expect(text).to.equal('След. chevronRight icon');
+            
+            const href = article.linkNext.getAttribute('href');
+            expect(href).to.be.null;
         });
     });
 });

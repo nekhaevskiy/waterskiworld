@@ -1,36 +1,42 @@
 class Article {
     get heading() {
-        return $('.article__title');
+        return $('[data-qa="articleHeading"]');
     }
-    get meta() {
-        return $('.article__meta');
+    get mainImage() {
+        return $('[data-qa="articleContent"] > figure.wp-caption > img');
     }
-    get metaRegExp() {
-        return /^\d{2}.\d{2}.\d{4}, автор: [a-zа-я\s]+$/gi;
-    }
-    get authorLink() {
-        return $('.article__meta a');
-    }
-    get image() {
-        return $('figure.wp-caption.aligncenter > img.size-full');
-    }
-    get imageCaption() {
-        return $('figure.wp-caption.aligncenter > figcaption.wp-caption-text');
+    get mainImageCaption() {
+        return $('[data-qa="articleContent"] > figure.wp-caption > figcaption.wp-caption-text');
     }
     get paragraphs() {
-        return $$('.article p:not(.article__meta)');
+        return $$('[data-qa="articleContent"] > p');
+    }
+    get authorInfo() {
+        return $('[data-qa="articleAuthorInfo"]');
+    }
+    get authorInfoRegExp() {
+        return /^Автор: [a-zа-я\s]+$/gi;
+    }
+    get authorLink() {
+        return $('[data-qa="articleAuthorLink"]');
+    }
+    get dateInfo() {
+        return $('[data-qa="articleDate"]');
+    }
+    get dateInfoRegExp() {
+        return /^Опубликовано: \d{2}.\d{2}.\d{4}$/gi;
     }
     get facebookContainer() {
         return $('.fb-like');
     }
+    get linkPrev() {
+        return $('[data-qa="articleLinkPrev"]');
+    }
+    get linkNext() {
+        return $('[data-qa="articleLinkNext"]');
+    }
     get comments() {
         return $('#hypercomments_widget');
-    }
-    get prevArticleLink() {
-        return $('[data-qa="linkPrevPage"]');
-    }
-    get nextArticleLink() {
-        return $('[data-qa="linkNextPage"]');
     }
 }
 
