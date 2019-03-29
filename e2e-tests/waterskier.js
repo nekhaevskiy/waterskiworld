@@ -7,28 +7,24 @@ describe('Waterskier', function () {
         });
 
         it('should have correct heading', function () {
-            const titleText = waterskierPage.pageHeading.getText();
-            expect(titleText).to.equal('Мэй Лунд Йепсен \nMaj Lund Jepsen');
-        });
-
-        it('should have correct subheading', function () {
-            const subtitleText = waterskierPage.pageSubheading.getText();
-            expect(subtitleText).to.equal('Бронзовый призер Чемпионата мира в прыжках с трамплина\nЧемпионка Европы в прыжках с трамплина\nЧемпионка Кубка мира в прыжках с трамплина');
+            const heading = waterskierPage.heading.getText();
+            expect(heading).to.equal('Jepsen Maj Lund (Дания)');
         });
 
         it('should have photo', function () {
-            const photoIsExistiing = waterskierPage.photo.isExisting();
-            expect(photoIsExistiing).to.be.true;
+            const isExisting = waterskierPage.photo.isExisting();
+            expect(isExisting).to.be.true;
         });
 
-        it('should have personal records heading', function () {
-            const heading = waterskierPage.personalRecordsHeading.getText();
-            expect(heading).to.equal('Личные рекорды');
+        it('should have at least 1 paragraph', function () {
+            const paragrapsQty = waterskierPage.paragraphs.length;
+            expect(paragrapsQty).to.be.at.least(1);
         });
 
-        it('should have correct meta', function () {
-            const metaText = waterskierPage.metaBlock.getText();
-            expect(metaText).to.equal('Обновлено: 08.11.2013');
+        it('should have correct date info', function () {
+            const dateInfo = waterskierPage.dateInfo.getText();
+            const regExpTest = waterskierPage.dateInfoRegExp.test(dateInfo);
+            expect(regExpTest).to.be.true;
         });
 
         it('should have a Facebook container with height > 0', function() {
@@ -36,21 +32,21 @@ describe('Waterskier', function () {
             expect(containerHeight).to.be.above(0);
         });
 
-        it('should have correct link to the previous waterskier page', function () {
-            const prevPageLinkText = waterskierPage.prevPageLink.getText();
-            expect(prevPageLinkText).to.equal('Пред. chevronRight icon');
+        it('should have link to the previous waterskier page with correct text but without href attribute', function () {
+            const text = waterskierPage.linkPrev.getText();
+            expect(text).to.equal('chevronLeft icon Пред.');
 
-            waterskierPage.prevPageLink.click();
-            const pageTitle = browser.getTitle();
-            expect(pageTitle).to.equal('Потэс Инесса - WaterSkiWorld.ru');
+            const href = waterskierPage.linkPrev.getAttribute('href');
+            expect(href).to.be.null;
         });
 
-        it('should have link to the next waterskier page with correct text but without href attribute', function () {
-            const text = waterskierPage.nextPageLink.getText();
-            expect(text).to.equal('chevronLeft icon След.');
+        it('should have correct link to the next waterskier page', function () {
+            const text = waterskierPage.linkNext.getText();
+            expect(text).to.equal('След. chevronRight icon');
 
-            const href = waterskierPage.nextPageLink.getAttribute('href');
-            expect(href).to.be.null;
+            waterskierPage.linkNext.click();
+            const pageTitle = browser.getTitle();
+            expect(pageTitle).to.equal('Потэс Инесса (Беларусь) - WaterSkiWorld.ru');
         });
     });
 
@@ -60,23 +56,24 @@ describe('Waterskier', function () {
         });
 
         it('should have correct heading', function () {
-            const titleText = waterskierPage.pageHeading.getText();
-            expect(titleText).to.equal('Инесса Потэс ');
-        });
-
-        it('should have correct subheading', function () {
-            const subtitleText = waterskierPage.pageSubheading.getText();
-            expect(subtitleText).to.equal('Заслуженный мастер спорта СССР\nСудья высшей международной категории');
+            const heading = waterskierPage.heading.getText();
+            expect(heading).to.equal('Потэс Инесса (Беларусь)');
         });
 
         it('should have photo', function () {
-            const photoIsExistiing = waterskierPage.photo.isExisting();
-            expect(photoIsExistiing).to.be.true;
+            const isExisting = waterskierPage.photo.isExisting();
+            expect(isExisting).to.be.true;
         });
 
-        it('should have correct meta', function () {
-            const metaText = waterskierPage.metaBlock.getText();
-            expect(metaText).to.equal('Обновлено: 31.10.2013');
+        it('should have at least 1 paragraph', function () {
+            const paragrapsQty = waterskierPage.paragraphs.length;
+            expect(paragrapsQty).to.be.at.least(1);
+        });
+
+        it('should have correct date info', function () {
+            const dateInfo = waterskierPage.dateInfo.getText();
+            const regExpTest = waterskierPage.dateInfoRegExp.test(dateInfo);
+            expect(regExpTest).to.be.true;
         });
 
         it('should have a Facebook container with height > 0', function() {
@@ -85,21 +82,21 @@ describe('Waterskier', function () {
         });
 
         it('should have correct link to the previous waterskier page', function () {
-            const prevPageLinkText = waterskierPage.prevPageLink.getText();
-            expect(prevPageLinkText).to.equal('Пред. chevronRight icon');
+            const text = waterskierPage.linkPrev.getText();
+            expect(text).to.equal('chevronLeft icon Пред.');
 
-            waterskierPage.prevPageLink.click();
+            waterskierPage.linkPrev.click();
             const pageTitle = browser.getTitle();
-            expect(pageTitle).to.equal('Жуков Юрий - WaterSkiWorld.ru');
+            expect(pageTitle).to.equal('Мэй Лунд Йепсен (Maj Lund Jepsen)');
         });
 
         it('should have correct link to the next waterskier page', function () {
-            const nextPageLinkText = waterskierPage.nextPageLink.getText();
-            expect(nextPageLinkText).to.equal('chevronLeft icon След.');
+            const text = waterskierPage.linkNext.getText();
+            expect(text).to.equal('След. chevronRight icon');
 
-            waterskierPage.nextPageLink.click();
+            waterskierPage.linkNext.click();
             const pageTitle = browser.getTitle();
-            expect(pageTitle).to.equal('Мэй Лунд Йепсен (Maj Lund Jepsen)');
+            expect(pageTitle).to.equal('Жуков Юрий (Россия) - WaterSkiWorld.ru');
         });
     });
 
@@ -109,23 +106,24 @@ describe('Waterskier', function () {
         });
 
         it('should have correct heading', function () {
-            const titleText = waterskierPage.pageHeading.getText();
-            expect(titleText).to.equal('Анна Коваленко');
-        });
-
-        it('should have correct subheading', function () {
-            const subtitleText = waterskierPage.pageSubheading.getText();
-            expect(subtitleText).to.equal('Мастер Спорта');
+            const heading = waterskierPage.heading.getText();
+            expect(heading).to.equal('Коваленко Анна (Россия)');
         });
 
         it('should have photo', function () {
-            const photoIsExistiing = waterskierPage.photo.isExisting();
-            expect(photoIsExistiing).to.be.true;
+            const isExisting = waterskierPage.photo.isExisting();
+            expect(isExisting).to.be.true;
         });
 
-        it('should have correct meta', function () {
-            const metaText = waterskierPage.metaBlock.getText();
-            expect(metaText).to.equal('Обновлено: 22.10.2013');
+        it('should have at least 1 paragraph', function () {
+            const paragrapsQty = waterskierPage.paragraphs.length;
+            expect(paragrapsQty).to.be.at.least(1);
+        });
+
+        it('should have correct date info', function () {
+            const dateInfo = waterskierPage.dateInfo.getText();
+            const regExpTest = waterskierPage.dateInfoRegExp.test(dateInfo);
+            expect(regExpTest).to.be.true;
         });
 
         it('should have a Facebook container with height > 0', function() {
@@ -133,21 +131,21 @@ describe('Waterskier', function () {
             expect(containerHeight).to.be.above(0);
         });
 
-        it('should have link to the previous waterskier page with correct text but without href attribute', function () {
-            const text = waterskierPage.prevPageLink.getText();
-            expect(text).to.equal('Пред. chevronRight icon');
+        it('should have correct link to the previous waterskier page', function () {
+            const text = waterskierPage.linkPrev.getText();
+            expect(text).to.equal('chevronLeft icon Пред.');
 
-            const href = waterskierPage.prevPageLink.getAttribute('href');
-            expect(href).to.be.null;
-        });
-
-        it('should have correct link to the next waterskier page', function () {
-            const nextPageLinkText = waterskierPage.nextPageLink.getText();
-            expect(nextPageLinkText).to.equal('chevronLeft icon След.');
-
-            waterskierPage.nextPageLink.click();
+            waterskierPage.linkPrev.click();
             const pageTitle = browser.getTitle();
-            expect(pageTitle).to.equal('Ветров Дмитрий - WaterSkiWorld.ru');
+            expect(pageTitle).to.equal('Ветров Дмитрий (Россия) - WaterSkiWorld.ru');
+        });
+        
+        it('should have link to the next waterskier page with correct text but without href attribute', function () {
+            const text = waterskierPage.linkNext.getText();
+            expect(text).to.equal('След. chevronRight icon');
+            
+            const href = waterskierPage.linkNext.getAttribute('href');
+            expect(href).to.be.null;
         });
     });
 });

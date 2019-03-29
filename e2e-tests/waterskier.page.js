@@ -1,27 +1,27 @@
 class Waterskier {
-    get pageHeading() {
-        return $('.article h2');
-    }
-    get pageSubheading() {
-        return $('.article h3');
+    get heading() {
+        return $('[data-qa="articleHeading"]');
     }
     get photo() {
-        return $('.article img.alignright');
+        return $('[data-qa="articleContent"] > p > img.alignright');
     }
-    get personalRecordsHeading() {
-        return $('.article h3:nth-of-type(2)');
+    get paragraphs() {
+        return $$('[data-qa="articleContent"] > p');
     }
-    get metaBlock() {
-        return $('.article__meta');
+    get dateInfo() {
+        return $('[data-qa="articleDate"]');
+    }
+    get dateInfoRegExp() {
+        return /^Обновлено: \d{2}.\d{2}.\d{4}$/gi;
     }
     get facebookContainer() {
         return $('.fb-like');
     }
-    get prevPageLink() {
-        return $('[data-qa="linkPrevPage"]');
+    get linkPrev() {
+        return $('[data-qa="articleLinkPrev"]');
     }
-    get nextPageLink() {
-        return $('[data-qa="linkNextPage"]');
+    get linkNext() {
+        return $('[data-qa="articleLinkNext"]');
     }
     get comments() {
         return $('#hypercomments_widget');
