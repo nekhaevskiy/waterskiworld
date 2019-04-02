@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning].
 ### Fixed
 - Links in CHANGELOG.md
 
-## [0.4.0] - 2019-02-19
+## [19.0.0] - 2019-02-19
 ### Added
 - Frontend source files including php
 - Tachyons
@@ -35,7 +35,7 @@ and this project adheres to [Semantic Versioning].
 - Map for `bootstrap.min.css`
 - Frontend output from Git
 
-## [0.3.0] - 2018-12-17
+## [18.2.0] - 2018-12-17
 ### Added
 - WordPress Theme files
 - Facebook Like/Share button and e2e-tests for it
@@ -51,16 +51,16 @@ and this project adheres to [Semantic Versioning].
 ### Removed
 - HyperComments and e2e-tests for them
 
-## [0.2.0] - 2018-12-08
+## [18.1.0] - 2018-12-08
 ### Added
 - CHANGELOG.md
 
-## 0.1.0 - 2018-12-08
+## 18.0.0 - 2018-12-08
 ### Added
 - e2e-tests for three sites: dev, st3, prod
 
 [Keep a Changelog]: https://keepachangelog.com/en/1.0.0/
 [Semantic Versioning]: https://semver.org/spec/v2.0.0.html
-[0.4.0]: https://github.com/nekhaevskiy/waterskiworld/compare/v0.3.0...v0.4.0
-[0.3.0]: https://github.com/nekhaevskiy/waterskiworld/compare/v0.2.0...v0.3.0
-[0.2.0]: https://github.com/nekhaevskiy/waterskiworld/compare/v0.1.0...v0.2.0
+[19.0.0]: https://github.com/nekhaevskiy/waterskiworld/compare/v18.2.0...v19.0.0
+[18.2.0]: https://github.com/nekhaevskiy/waterskiworld/compare/v18.1.0...v18.2.0
+[18.1.0]: https://github.com/nekhaevskiy/waterskiworld/compare/v18.0.0...v18.1.0
