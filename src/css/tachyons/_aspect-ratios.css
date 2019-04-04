@@ -22,7 +22,7 @@
   position: relative;
 }
 
-/* .aspect-ratio--16x9 { padding-bottom: 56.25%; }
+.aspect-ratio--16x9 { padding-bottom: 56.25%; }
 .aspect-ratio--9x16 { padding-bottom: 177.77%; }
 
 .aspect-ratio--4x3 {  padding-bottom: 75%; }
@@ -132,4 +132,4 @@
         height: 100%;
         z-index: 100;
     }
-} */
+}
