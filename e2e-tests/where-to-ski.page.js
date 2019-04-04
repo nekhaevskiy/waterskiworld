@@ -1,21 +1,15 @@
 class WhereToSki {
     get heading() {
-        return $('.page-header');
+        return $('[data-qa="pageHeading"]');
     }
     get clubsTable() {
-        return $('.table-responsive');
+        return $('[data-qa="clubsTable"]');
     }
     get clubsMap() {
-        return $('.embed-responsive');
-    }
-    get metaBlock() {
-        return $('.article__meta');
+        return $('[data-qa="clubsMap"]');
     }
     get facebookContainer() {
         return $('.fb-like');
-    }
-    get commentsBlock() {
-        return $('#hypercomments_widget');
     }
 }
 
