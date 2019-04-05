@@ -1,27 +1,27 @@
 class Records {
     get pageHeading() {
-        return $('.page-header h1');
+        return $('[data-qa="pageHeading"]');
     }
-    get boatRecordsHeading() {
-        return $('.article h2:nth-of-type(1)');
+    get boatWorldRecordsHeading() {
+        return $('[data-qa="pageContent"] h2:nth-of-type(1)');
     }
-    get boatRecordsBody() {
-        return $('.article .table-responsive:nth-of-type(1)');
+    get boatEuropeRecordsHeading() {
+        return $('[data-qa="pageContent"] h2:nth-of-type(2)');
     }
-    get cableRecordsHeading() {
-        return $('.article h2:nth-of-type(2)');
+    get boatRussiaRecordsHeading() {
+        return $('[data-qa="pageContent"] h2:nth-of-type(3)');
     }
-    get cableRecordsBody() {
-        return $('.article .table-responsive:nth-of-type(2)')
+    get cableRussiaRecordsHeading() {
+        return $('[data-qa="pageContent"] h2:nth-of-type(4)');
     }
-    get metaBlock() {
-        return $('.article__meta');
+    get dateInfo() {
+        return $('[data-qa="pageDate"]');
+    }
+    get dateInfoRegExp() {
+        return /^Обновлено: \d{2}.\d{2}.\d{4}$/gi;
     }
     get facebookContainer() {
         return $('.fb-like');
-    }
-    get commentsBlock() {
-        return $('#hypercomments_widget');
     }
 }
 

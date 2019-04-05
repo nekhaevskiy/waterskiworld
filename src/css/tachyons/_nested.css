@@ -6,6 +6,56 @@
 
 */
 
+.nested h1 {
+  font-size: 3rem;
+}
+
+.nested h2 {
+  font-size: 2.25rem;
+}
+
+.nested h3 {
+  font-size: 1.75rem;
+}
+
+.nested h4 {
+  font-size: 1.25rem;
+}
+
+.nested h5 {
+  font-size: 1rem;
+}
+
+.nested h6 {
+  font-size: 0.875rem;
+}
+
+.nested h1,
+.nested h2,
+.nested h3 {
+  font-weight: 500;
+}
+
+.nested h4,
+.nested h5,
+.nested h6 {
+  font-weight: 700;
+}
+
+.nested h1,
+.nested h2,
+.nested h3,
+.nested h4,
+.nested h5,
+.nested h6 {
+  font-family: georgia,
+               times,
+               serif;
+  line-height: 1.25;
+  margin-top: 1.25em;
+  margin-bottom: 0.625em;
+}
+
 .nested p,
 .nested ul,
 .nested ol {
@@ -63,15 +113,6 @@
 .nested-copy-line-height ul,
 .nested-copy-line-height ol {
   line-height: 1.5;
-}
-
-.nested-headline-line-height h1,
-.nested-headline-line-height h2,
-.nested-headline-line-height h3,
-.nested-headline-line-height h4,
-.nested-headline-line-height h5,
-.nested-headline-line-height h6 {
-  line-height: 1.25;
 }
 
 .nested-list-reset ul,

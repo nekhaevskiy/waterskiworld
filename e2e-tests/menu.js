@@ -29,7 +29,7 @@ describe('Menu', function () {
 
         menu.recordsLink.click();
         const title = browser.getTitle();
-        expect(title).to.equal('Рекорды в водных лыжах - WaterSkiWorld.ru');
+        expect(title).to.equal('Рекорды - WaterSkiWorld.ru');
     });
 
     it('should have correct and clickable Waterskiers link', function () {
