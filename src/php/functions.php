@@ -55,5 +55,11 @@ add_action( 'wp_enqueue_scripts', 'waterskiworld_scripts' );
 // Defining home page thumbnail size
 add_image_size('excerpt-thumbnail', 220, 220, true);
 
+// Disable full size image option
+add_filter('image_size_names_choose', function($sizes) {
+    unset($sizes['full']);
+    return $sizes;
+});
+
 // Disable top panel
 add_filter('show_admin_bar', '__return_false');
