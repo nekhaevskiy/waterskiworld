@@ -4,13 +4,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog],
 and this project adheres to [Semantic Versioning].
 
-## Unreleased
+## [19.1.0] - 2019-04-05
+### Added
+- New `nested` CSS class for all editorial content
+- Styles for aligning images in posts
+
 ### Changed
-- Create the only one `package.json` for folders *e2e-tests* and *src*
-- Create the only one README.md for folders *e2e-tests* and *src*
+- All posts moved to Tachyons
+- Where To Ski and Records pages moved to Tachyons
+- Content of Where To Ski page moved to `page-gde-katatsya.php`
+- Navigation buttons between posts (new implementation and Tachyons styles)
+- Created the only one `package.json` for folders *e2e-tests* and *src*
+- Created the only one `README.md` for folders *e2e-tests* and *src*
+- Disabled Wordpress' option to add full-size images
+- Release numbers in `CHANGELOG.md` to sync it with years
 
 ### Fixed
-- Links in CHANGELOG.md
+- Links in `CHANGELOG.md`
+- e2e-tests for the whole site
+
+### Removed
+- Placeholders for the form fields on the Contacts page
+- Tachyons as dev dependency
 
 ## [19.0.0] - 2019-02-19
 ### Added
@@ -61,6 +76,7 @@ and this project adheres to [Semantic Versioning].
 
 [Keep a Changelog]: https://keepachangelog.com/en/1.0.0/
 [Semantic Versioning]: https://semver.org/spec/v2.0.0.html
+[19.1.0]: https://github.com/nekhaevskiy/waterskiworld/compare/v19.0.0...v19.1.0
 [19.0.0]: https://github.com/nekhaevskiy/waterskiworld/compare/v18.2.0...v19.0.0
 [18.2.0]: https://github.com/nekhaevskiy/waterskiworld/compare/v18.1.0...v18.2.0
 [18.1.0]: https://github.com/nekhaevskiy/waterskiworld/compare/v18.0.0...v18.1.0
