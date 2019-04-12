@@ -35,9 +35,6 @@ class Category {
     get nextLink() {
         return $('.pager .previous a');
     }
-    get waterskiers() {
-        return $$('main ul>li>a');
-    }
     get searchInput() {
         return $('#page-search');
     }
