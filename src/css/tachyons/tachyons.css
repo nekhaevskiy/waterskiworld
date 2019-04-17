@@ -34,7 +34,7 @@
 @import './_images.css';
 /* @import './_background-size.css'; */
 /* @import './_background-position.css'; */
-/* @import './_outlines.css'; */
+@import './_outlines.css';
 @import './_borders.css';
 @import './_border-colors.css';
 @import './_border-radius.css';
@@ -56,7 +56,7 @@
 /* @import './_letter-spacing.css'; */
 @import './_line-height.css';
 @import './_links.css';
-/* @import './_lists.css'; */
+@import './_lists.css';
 @import './_max-widths.css';
 @import './_widths';
 @import './_overflow.css';

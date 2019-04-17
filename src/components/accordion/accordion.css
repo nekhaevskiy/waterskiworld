@@ -1,0 +1,98 @@
+.accordion__heading {
+    font-family: georgia, times, serif;
+    font-size: 2.25rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+.accordion__item {
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    margin-top: 0.5rem;
+}
+
+.accordion__btn {
+    background-color: #f4f4f4;
+    border-radius: 0.25rem;
+    border-width: 0;
+    color: #000;
+    cursor: pointer;
+    display: block;
+    font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.25;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0.5rem 2.5rem 0.5rem 1rem;
+    position: relative;
+    text-align: left;
+    user-select: none;
+    width: 100%;
+}
+
+.accordion__btn::before,
+.accordion__btn::after {
+    content: "";
+    background-color: #000;
+    height: 0.5rem;
+    margin-top: -0.1rem;
+    position: absolute;
+    right: 1.3rem;
+    top: 50%;
+    transition: transform 0.25s ease-in-out;
+    width: 0.125rem;
+}
+
+.accordion__btn::before {
+    transform: translate(-0.1875rem, 0) rotate(-45deg);
+}
+
+.accordion__btn::after {
+    transform: translate(0.125rem, 0) rotate(45deg);
+}
+
+.accordion__item--opened .accordion__btn::before {
+    transform: translate(-0.1875rem, 0) rotate(45deg);
+}
+
+.accordion__item--opened .accordion__btn::after {
+    transform: translate(0.125rem, 0) rotate(-45deg);
+}
+
+.accordion__content {
+    list-style: none;
+    margin: 0;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding-left: 0;
+    transform: translateY(50%);
+    transition: all 0.25s ease-in-out;
+    visibility: hidden;
+    width: 100%;
+}
+
+.accordion__item--opened .accordion__content {
+    max-height: 100rem;
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.accordion__list-item {
+    border-top: 1px solid #ccc;
+    font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+
+.accordion__link {
+    color: #357edd;
+    transition: color 0.15s ease-in;
+}
+
+.accordion__link:hover,
+.accordion__link:focus {
+    color: #96ccff;
+}
