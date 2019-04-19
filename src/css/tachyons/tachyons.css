@@ -45,7 +45,7 @@
 /* @import './_coordinates.css'; */
 @import './_clears.css';
 @import './_display.css';
-/* @import './_flexbox.css'; */
+@import './_flexbox.css';
 @import './_floats.css';
 @import './_font-family.css';
 @import './_font-style.css';

@@ -5,7 +5,7 @@
         <?php single_cat_title(); ?>
     </h1>
     
-    <section class="mb4 accordion" data-js="accordion">
+    <section class="accordion" data-js="accordion">
         <h2 class="accordion__heading">Циклы статей:</h2>
         
         <div id="collapseOne" class="accordion__item">

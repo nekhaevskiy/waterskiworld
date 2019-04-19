@@ -63,3 +63,14 @@ add_filter('image_size_names_choose', function($sizes) {
 
 // Disable top panel
 add_filter('show_admin_bar', '__return_false');
+
+/**
+ * Filter the excerpt "read more" string.
+ *
+ * @param string $more "Read more" excerpt string.
+ * @return string (Maybe) modified "read more" excerpt string.
+ */
+function wpdocs_excerpt_more( $more ) {
+    return '...';
+}
+add_filter('excerpt_more', 'wpdocs_excerpt_more');
