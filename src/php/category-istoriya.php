@@ -72,10 +72,14 @@
             <?php get_template_part('content', get_post_format()); ?>
         <?php endwhile; ?>
     
-        <nav>
-            <ul class="pager">
-                <li class="next"><?php next_posts_link('Пред. <span aria-hidden="true">&rarr;</span>'); ?></li>
-                <li class="previous"><?php previous_posts_link('<span aria-hidden="true">&larr;</span> След.'); ?></li>
+        <nav class="wsw-pagination mt5">
+            <ul class="wsw-pagination__list">
+                <li class="wsw-pagination__item wsw-pagination__item--prev">
+                    <?php previous_posts_link('Пред.'); ?>
+                </li>
+                <li class="wsw-pagination__item wsw-pagination__item--next">
+                    <?php next_posts_link('След.'); ?>
+                </li>
             </ul>
         </nav>
     <?php endif; ?>
