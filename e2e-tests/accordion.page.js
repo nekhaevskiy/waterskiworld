@@ -1,12 +1,12 @@
 class Accordion {
-    get panels() {
-        return $$('.panel');
+    get items() {
+        return $$('[data-qa="accordionItem"]');
     }
-    get panelHeadings() {
-        return $$('.panel-heading');
+    get headings() {
+        return $$('[data-qa="accordionItemHeading"]');
     }
-    get panelBodies() {
-        return $$('.panel-collapse');
+    get bodies() {
+        return $$('[data-qa="accordionItemBody"]');
     }
 }
 
