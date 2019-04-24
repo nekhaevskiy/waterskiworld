@@ -1,115 +1,85 @@
-const howToSkiPage = require('./category.page');
+const howToSkiCategory = require('./category.page');
 
-describe('How To Ski articles', function () {
-    describe('First page', function () {
+describe('category-how-to-ski.js - How to Ski category', function () {
+    describe(': First page', function () {
         beforeEach(function () {
             browser.url('./category/tekhnika-kataniya');
         });
 
-        it('should have correct page header', function () {
-            const pageHeader = howToSkiPage.categoryHeading.getText();
-            expect(pageHeader).to.equal('Техника катания');
+        it('should have correct heading', function () {
+            const heading = howToSkiCategory.categoryHeading.getText();
+            expect(heading).to.equal('Техника катания');
         });
 
-        it('should have 10 items', function () {
-            const items = howToSkiPage.items;
+        it('should have 10 article items', function () {
+            const items = howToSkiCategory.items;
             expect(items).to.have.lengthOf(10);
         });
 
-        it('should have 10 article titles', function () {
-            const titles = howToSkiPage.itemsHeadings;
-            expect(titles).to.have.lengthOf(10);
-        });
+        describe(': First article', function () {
+            it('should have correct and clickable link', function () {
+                const articleTitle = howToSkiCategory.itemsHeadings[0].getText();
+                const link = howToSkiCategory.itemsLinks[0];
 
-        it('should have 10 meta blocks', function () {
-            const metaBlocks = howToSkiPage.metaBlocks;
-            expect(metaBlocks).to.have.lengthOf(10);
-        });
+                link.click();
 
-        it('should have 10 links to author', function () {
-            const authorLinks = howToSkiPage.authorLinks;
-            expect(authorLinks).to.have.lengthOf(10);
-        });
-
-        it('should have 7 thumbs', function () {
-            const thumbs = howToSkiPage.thumbs;
-            expect(thumbs).to.have.lengthOf(7);
-        });
-
-        it('should have 10 summaries', function () {
-            const summmaries = howToSkiPage.summaries;
-            expect(summmaries).to.have.lengthOf(10);
-        });
-
-        it('should have 10 Read More links', function () {
-            const readMoreLinks = howToSkiPage.readMoreLinks;
-            expect(readMoreLinks).to.have.lengthOf(10);
-        });
-
-        describe('First item', function () {
-            it('should have correct and clickable heading', function () {
-                const articleTitle = howToSkiPage.itemsHeadings[0];
-                const text = articleTitle.getText();
-                articleTitle.click();
-                const pageTitle = browser.getTitle();
-                expect(pageTitle).to.include(text);
-            });
-
-            it('should have correct and clickable author', function () {
-                const authorLink = howToSkiPage.authorLinks[0];
-                const text = authorLink.getText();
-                authorLink.click();
-                const pageTitle = browser.getTitle();
-                expect(pageTitle).to.include(text);
-            });
-
-            it('should have correct and clickable Read More link', function () {
-                const articleTitle = howToSkiPage.itemsHeadings[0].getText();
-                const readMoreLink = howToSkiPage.readMoreLinks[0];
-
-                const linkText = readMoreLink.getText();
-                expect(linkText).to.equal('Читать далее →');
-
-                readMoreLink.click();
                 const pageTitle = browser.getTitle();
                 expect(pageTitle).to.include(articleTitle);
             });
+
+            it('should have a thumb', function () {
+                const isExisting = howToSkiCategory.thumbs[0].isExisting();
+                expect(isExisting).to.be.true;
+            });
+    
+            it('should have a summary', function () {
+                const summmaryHeight = howToSkiCategory.summaries[0].getElementSize('height');
+                expect(summmaryHeight).to.be.above(0);
+            });
+    
+            it('should have correct date', function () {
+                const date = howToSkiCategory.dates[0].getText();
+                const regExpTest = howToSkiCategory.dateRegExp.test(date);
+                expect(regExpTest).to.be.true;
+            });
         });
 
-        describe('Pagination', function () {
-            it('should not have link to the next page', function () {
-                const nextLinkExist = howToSkiPage.nextLink.isExisting();
-                expect(nextLinkExist).to.be.false;
+        describe(': Pagination', function () {
+            it('should not have link to the previous page', function () {
+                const isExisting = howToSkiCategory.prevLink.isExisting();
+                expect(isExisting).to.be.false;
             });
 
-            it('should have correct link to the previous page', function () {
-                const prevLinkText = howToSkiPage.prevLink.getText();
-                expect(prevLinkText).to.equal('Пред. →');
+            it('should have correct link to the next page', function () {
+                const text = howToSkiCategory.nextLink.getText();
+                expect(text).to.equal('След.');
 
-                howToSkiPage.prevLink.click();
+                howToSkiCategory.nextLink.click();
+
                 const pageTitle = browser.getTitle();
-                expect(pageTitle).to.equal('Техника катания на водных лыжах');
+                expect(pageTitle).to.equal('Техника катания — Страница 2 — WaterSkiWorld.ru');
             });
         });
     });
 
-    describe('Second page', function () {
+    describe(': Second page', function () {
         beforeEach(function () {
             browser.url('./category/tekhnika-kataniya/page/2');
         });
 
-        it('should have correct link to the next page', function () {
-            const nextLinkText = howToSkiPage.nextLink.getText();
-            expect(nextLinkText).to.equal('← След.');
+        it('should have correct link to the previous page', function () {
+            const text = howToSkiCategory.prevLink.getText();
+            expect(text).to.equal('Пред.');
 
-            howToSkiPage.nextLink.click();
+            howToSkiCategory.prevLink.click();
+
             const pageTitle = browser.getTitle();
-            expect(pageTitle).to.equal('Техника катания на водных лыжах');
+            expect(pageTitle).to.equal('Техника катания — WaterSkiWorld.ru');
         });
 
-        it('should not have link to the previous page', function () {
-            const prevLinkExist = howToSkiPage.prevLink.isExisting();
-            expect(prevLinkExist).to.be.false;
+        it('should not have link to the next page', function () {
+            const isExisting = howToSkiCategory.nextLink.isExisting();
+            expect(isExisting).to.be.false;
         });
     });
 });
