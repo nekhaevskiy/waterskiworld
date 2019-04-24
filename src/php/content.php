@@ -8,7 +8,7 @@
                     <?php the_post_thumbnail('excerpt-thumbnail', array('class' => 'br2 db h-auto')); ?>
                 </div>
                 <div class="pl2-ns w-100 w-70-ns">
-                    <div class="f6 f5-l lh-copy nested sans-serif" data-qa="articleSummary">
+                    <div class="db-ns dn f6 f5-l lh-copy nested sans-serif" data-qa="articleSummary">
                         <?php the_excerpt(); ?>
                     </div>
                     
