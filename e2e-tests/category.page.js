@@ -35,12 +35,6 @@ class Category {
     get nextLink() {
         return $('[data-qa="paginationNextLinkWrapper"] > a');
     }
-    get searchInput() {
-        return $('#page-search');
-    }
-    get searchBtn() {
-        return $('.main form button.btn');
-    }
 }
 
 module.exports = new Category();
