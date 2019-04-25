@@ -1,5 +1,5 @@
 const historyCategory = require('./category.page');
-const accordion = require('./accordion.page');
+const accordion = require('./category-history.page');
 
 describe('category-history.js - History category', function () {
     describe(': First page', function () {
