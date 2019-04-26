@@ -17,11 +17,11 @@ class Waterskier {
     get facebookContainer() {
         return $('.fb-like');
     }
-    get linkPrev() {
-        return $('[data-qa="articleLinkPrev"]');
+    get prevLink() {
+        return $('[data-qa="paginationPrevLinkWrapper"] > a');
     }
-    get linkNext() {
-        return $('[data-qa="articleLinkNext"]');
+    get nextLink() {
+        return $('[data-qa="paginationNextLinkWrapper"] > a');
     }
     get comments() {
         return $('#hypercomments_widget');
