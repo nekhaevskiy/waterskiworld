@@ -14,7 +14,7 @@
         <?php endwhile; ?>
 
         <div class="mt4">
-            <?php get_template_part('partials/facebook-like-button'); ?>
+            <?php get_template_part('components/facebook-like-button'); ?>
         </div>
 
         <nav class="wsw-pagination mt4">
