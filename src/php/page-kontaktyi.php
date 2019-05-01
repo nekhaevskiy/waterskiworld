@@ -34,10 +34,10 @@
 
 <?php get_header(); ?>
 
-<main class="bg-white black-70 center f4 lh-copy mb5 measure-wide sans-serif">
+<main class="bg-white black-70 center f4 lh-copy measure-wide pb5 pt4 sans-serif">
     <?php if ( have_posts() ) : ?>
         <?php while ( have_posts() ) : the_post(); ?>
-            <h1 class="b--light-gray bb f1 fw5 lh-solid mb4 mt2 pb4 serif" data-qa="blockPageHeader">
+            <h1 class="b--light-gray bb f1 fw5 lh-solid mb4 mt0 pb4 serif" data-qa="blockPageHeader">
                 <?php the_title(); ?>
             </h1>
 

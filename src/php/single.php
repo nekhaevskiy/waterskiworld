@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<main class="bg-white black-70 center f4 lh-copy mb5 measure-wide sans-serif">
+<main class="bg-white black-70 center f4 lh-copy measure-wide pb5 pt4 sans-serif">
     <?php if (have_posts()) : ?>
         <?php while (have_posts()) : the_post(); ?>
             <?php

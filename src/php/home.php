@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <div class="row">
-    <main class="col-md-8 main">
+    <main class="col-md-8 main pb5">
 
         <?php $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1; ?>
         <?php $query = new WP_Query( array( 'cat' => -354, 'paged' => $paged ) ); ?>   
