@@ -89,4 +89,4 @@
 
 <?php get_footer(); ?>
 
-<script src="<?php echo get_template_directory_uri() . '/js/accordion/accordion.js' ?>"></script>
+<script src="<?php echo get_template_directory_uri() . '/js/accordion/accordion.js' ?>" async></script>
