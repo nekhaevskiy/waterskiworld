@@ -42,7 +42,8 @@
     background-color: #ccc;
 }
 
-.menu-item.current-menu-item a {
+.menu-item.current-menu-item a,
+.menu-item.current-post-ancestor a {
     background-color: #00449e;
     color: #fff;
 }
