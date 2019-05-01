@@ -22,6 +22,7 @@
         ga('create', 'UA-109430591-1', 'auto');
         ga('send', 'pageview');
     </script>
+
     <script type="text/javascript">
         (function(d, w, c) {
             (w[c] = w[c] || []).push(function() {
@@ -104,7 +105,7 @@
                 </a>
             <?php } ?>
 
-            <button type="button" class="absolute hamburger hamburger--spin right-1 top-1" data-js="navbar-hamburger">
+            <button type="button" class="hamburger hamburger--spin" data-js="navbar-hamburger">
                 <span class="hamburger-box">
                     <span class="hamburger-inner"></span>
                 </span>

@@ -7,10 +7,12 @@
  */
 
 .hamburger {
-    padding: 0.35rem 0;
-    display: inline-block;
+    position: absolute;
+    top: 0.7rem;
+    right: 0.5rem;
+    padding: 0.5rem;
     cursor: pointer;
-    transition-property: opacity, filter;
+    transition-property: opacity;
     transition-duration: 0.15s;
     transition-timing-function: linear;
     font: inherit;
@@ -22,12 +24,9 @@
     overflow: visible;
 }
 
-.hamburger:hover {
-    opacity: 0.7;
-}
-
-.hamburger.is-active:hover {
-    opacity: 0.7;
+.hamburger:hover,
+.hamburger:focus {
+    outline: none;
 }
 
 .hamburger.is-active .hamburger-inner,
@@ -38,7 +37,7 @@
 
 .hamburger-box {
     width: 1.6rem;
-    height: 0.8rem;
+    height: 0.6rem;
     display: inline-block;
     position: relative;
 }
