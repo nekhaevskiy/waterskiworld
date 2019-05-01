@@ -42,7 +42,7 @@
 @import './_border-widths.css';
 /* @import './_box-shadow.css'; */
 /* @import './_code.css'; */
-/* @import './_coordinates.css'; */
+@import './_coordinates.css';
 @import './_clears.css';
 @import './_display.css';
 @import './_flexbox.css';
@@ -60,7 +60,7 @@
 @import './_max-widths.css';
 @import './_widths';
 @import './_overflow.css';
-/* @import './_position.css'; */
+@import './_position.css';
 /* @import './_opacity.css'; */
 /* @import './_rotations.css'; */
 @import './_skins.css';
@@ -78,7 +78,7 @@
 /* @import './_white-space.css'; */
 @import './_vertical-align.css';
 /* @import './_hovers.css'; */
-/* @import './_z-index.css'; */
+@import './_z-index.css';
 @import './_nested.css';
 @import './_styles.css';
 
