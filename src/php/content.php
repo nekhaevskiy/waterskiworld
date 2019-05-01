@@ -1,5 +1,5 @@
 <article class="b--black-10 bb" data-qa="articleBlock">
-    <a class="black-70 db dim hover-black-70 no-underline pv4" href="<?php the_permalink(); ?>" data-qa="articleLink">
+    <a class="black-70 db dim hover-black-70 no-underline pv3 pv4-ns" href="<?php the_permalink(); ?>" data-qa="articleLink">
         <h2 class="f3 fw5 lh-solid mb2 mt0 serif" data-qa="articleHeading"><?php the_title(); ?></h2>
     
         <?php if (has_post_thumbnail()) { ?>
