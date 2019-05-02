@@ -32,8 +32,8 @@
 /* @import './_box-sizing.css'; */
 @import './_aspect-ratios.css';
 @import './_images.css';
-/* @import './_background-size.css'; */
-/* @import './_background-position.css'; */
+@import './_background-size.css';
+@import './_background-position.css';
 @import './_outlines.css';
 @import './_borders.css';
 @import './_border-colors.css';

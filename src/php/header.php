@@ -56,46 +56,48 @@
 </head>
 
 <body>
-    <div class="container">
-        <header class="header">
-            <div class="row">
-                <div class="col-sm-6">
-                    <?php if (is_front_page() && !is_paged()) { ?>
-                        <h1 class="header__title"><?php echo get_bloginfo('name'); ?></h1>
-                        <p class="lead header__description"><?php echo get_bloginfo('description'); ?></p>
-                    <?php } else { ?>
-                        <a class="header__link" href="<?php echo get_bloginfo('wpurl'); ?>" title="На главную">
-                            <p class="header__title"><?php echo get_bloginfo('name'); ?></p>
-                            <p class="lead header__description"><?php echo get_bloginfo('description'); ?></p>
-                        </a>
-                    <?php } ?>
-                </div>
-                <div class="col-sm-6 hidden-xs">
-                    <ul class="socials">
-                        <li class="socials__item socials__item_twitter">
-                            <a href="https://twitter.com/waterskiworld" title="Читайте нас в Твиттере">Twitter</a>
-                        </li>
-                        <li class="socials__item socials__item_facebook">
-                            <a href="https://www.facebook.com/waterskiworld" title="Читайте нас на Фейсбуке">Facebook</a>
-                        </li>
-                        <li class="socials__item socials__item_vk">
-                            <a href="https://vk.com/waterskiworld" title="Читайте нас во ВКонтакте">VK</a>
-                        </li>
-                        <li class="socials__item socials__item_youtube">
-                            <a href="https://www.youtube.com/user/waterskiworld2008" title="Наш канал на YouTube">YouTube</a>
-                        </li>
-                        <li class="socials__item socials__item_rss">
-                            <a href="http://feeds.feedburner.com/waterskiworld" title="Наш RSS-фид">RSS</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </header>
-    </div>
+    <header class="bg-center center contain dn f4 flex-l flex-nowrap h4 items-center justify-between mv0 mw8 pa3" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/header-bg.png)">
+        <div> 
+            <?php if (is_front_page() && !is_paged()) { ?>
+                <h1 class="black-70 f2 fw5 lh-solid ma0 serif" data-qa="logoHeading">
+                    <?php echo get_bloginfo('name'); ?>
+                </h1>
+                <p class="black-70 f3 fw5 lh-solid mb0 mt1 serif" data-qa="logoSubheading">
+                    <?php echo get_bloginfo('description'); ?>
+                </p>
+            <?php } else { ?>
+                <a class="black-70 dim fw5 hover-black-70 lh-solid link serif" href="<?php echo get_bloginfo('wpurl'); ?>" title="На главную" data-qa="logoLink">
+                    <p class="f2 ma0" data-qa="logoHeaing">
+                        <?php echo get_bloginfo('name'); ?>
+                    </p>
+                    <p class="f3 mb0 mt1" data-qa="logoSubheading">
+                        <?php echo get_bloginfo('description'); ?>
+                    </p>
+                </a>
+            <?php } ?>
+        </div>
+        <div data-qa="socialsBlock"> 
+            <a href="https://twitter.com/waterskiworld" title="Twitter" data-qa="socialsTwitter">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/twitter.png" alt="Twitter" width="40" height="40">
+            </a>
+            <a href="https://www.facebook.com/waterskiworld" title="Facebook" data-qa="socialsFacebook">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/facebook.png" alt="Facebook" width="40" height="40">
+            </a>
+            <a href="https://vk.com/waterskiworld" title="VK" data-qa="socialsVK">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/vk.png" alt="VK" width="40" height="40">
+            </a>
+            <a href="https://www.youtube.com/user/waterskiworld2008" title="YouTube" data-qa="socialsYouTube">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/youtube.png" alt="YouTube" width="40" height="40">
+            </a>
+            <a href="http://feeds.feedburner.com/waterskiworld" title="RSS" data-qa="socialsRSS">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/rss.png" alt="RSS" width="40" height="40">
+            </a>
+        </div>
+    </header>
 
     <nav class="b--light-gray bb bg-near-white bt-l" data-js="navbar">
         <div class="b--black-10 bb bg-near-white dn-l pa3 relative z-1">
-            <?php if (is_front_page()) { ?>
+            <?php if (is_front_page() && !is_paged()) { ?>
                 <span class="black-80 dib f4 fw6 mr3 serif">
                     WaterSkiWorld.ru
                 </span>

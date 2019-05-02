@@ -1,13 +1,16 @@
 const socials = require('./socials.page');
 
-describe('Socials', function () {
+describe('socials.js - Socials', function () {
     beforeEach(function () {
         browser.url('/');
     });
 
-    it('should exist', function () {
+    it('should exist and have height > 0', function () {
         const isBlockExist = socials.block.isExisting();
         expect(isBlockExist).to.be.true;
+
+        const height = socials.block.getElementSize('height');
+        expect(height).to.be.above(0);
     });
 
     it('should have a link to Twitter', function () {

@@ -1,7 +1,7 @@
 const logo = require('./logo.page');
 
-describe('Logo', function () {
-    describe('Homepage', function () {
+describe('logo.js - Logo', function () {
+    describe(': Logo in Homepage', function () {
         beforeEach(function () {
             browser.url('/');
         });
@@ -22,7 +22,7 @@ describe('Logo', function () {
         });
     });
 
-    describe('Another page', function () {
+    describe(': Logo in another page', function () {
         beforeEach(function () {
             browser.url('/category/tekhnika-kataniya');
         });
@@ -30,7 +30,7 @@ describe('Logo', function () {
         it('should redirect to homepage after click', function () {
             logo.link.click();
             const title = browser.getTitle();
-            expect(title).to.be.equal('WaterSkiWorld.ru - Воднолыжный Мир');
+            expect(title).to.be.equal('WaterSkiWorld.ru — Воднолыжный Мир');
         });
     });
 });

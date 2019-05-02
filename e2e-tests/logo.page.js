@@ -1,12 +1,12 @@
 class Logo {
     get heading() {
-        return $('.header__title');
+        return $('[data-qa="logoHeading"]');
     }
     get subheading() {
-        return $('.header__description');
+        return $('[data-qa="logoSubheading"]');
     }
     get link() {
-        return $('.header__link');
+        return $('[data-qa="logoLink"]');
     }
 }
 
