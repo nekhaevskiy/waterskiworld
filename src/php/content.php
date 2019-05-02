@@ -18,7 +18,7 @@
                 </div>
             </div>
         <?php } else { ?>
-            <div class="f6 f5-l lh-copy nested sans-serif" data-qa="articleSummary">
+            <div class="db-ns dn f6 f5-l lh-copy nested sans-serif" data-qa="articleSummary">
                 <?php the_excerpt(); ?>
             </div>
             <div class="f6 lh-copy mt2" data-qa="articleDate">
