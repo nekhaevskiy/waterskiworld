@@ -1,6 +1,7 @@
 .accordion__heading {
     font-family: georgia, times, serif;
     font-size: 2.25rem;
+    font-weight: 500;
     line-height: 1;
     margin-bottom: 1rem;
     margin-top: 0;
@@ -101,11 +102,13 @@
 }
 
 .accordion__link {
-    color: #357edd;
-    transition: color 0.15s ease-in;
+    color: #00449e;
+    opacity: 1;
+    text-decoration: none;
+    transition: opacity 0.15s ease-in;
 }
 
 .accordion__link:hover,
 .accordion__link:focus {
-    color: #96ccff;
+    opacity: 0.5;
 }
