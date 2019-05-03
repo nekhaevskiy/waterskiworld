@@ -17,12 +17,12 @@
             <?php get_template_part('components/facebook-like-button'); ?>
         </div>
 
-        <nav class="wsw-pagination mt4">
-            <ul class="wsw-pagination__list">
-                <li class="wsw-pagination__item wsw-pagination__item--prev" data-qa="paginationPrevLinkWrapper">
+        <nav class="pagination mt4">
+            <ul class="pagination__list">
+                <li class="pagination__item pagination__item--prev" data-qa="paginationPrevLinkWrapper">
                     <?php next_post_link('%link', 'Пред.', true); ?>
                 </li>
-                <li class="wsw-pagination__item wsw-pagination__item--next" data-qa="paginationNextLinkWrapper">
+                <li class="pagination__item pagination__item--next" data-qa="paginationNextLinkWrapper">
                     <?php previous_post_link('%link', 'След.', true); ?>
                 </li>
             </ul>

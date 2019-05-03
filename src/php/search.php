@@ -14,12 +14,12 @@
             <?php get_template_part('content', get_post_format()); ?>
         <?php endwhile; ?>
 
-        <nav class="wsw-pagination mt5">
-            <ul class="wsw-pagination__list">
-                <li class="wsw-pagination__item wsw-pagination__item--prev" data-qa="paginationPrevLinkWrapper">
+        <nav class="pagination mt5">
+            <ul class="pagination__list">
+                <li class="pagination__item pagination__item--prev" data-qa="paginationPrevLinkWrapper">
                     <?php previous_posts_link('Пред.'); ?>
                 </li>
-                <li class="wsw-pagination__item wsw-pagination__item--next" data-qa="paginationNextLinkWrapper">
+                <li class="pagination__item pagination__item--next" data-qa="paginationNextLinkWrapper">
                     <?php next_posts_link('След.'); ?>
                 </li>
             </ul>
