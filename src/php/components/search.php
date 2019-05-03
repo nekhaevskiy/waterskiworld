@@ -14,7 +14,7 @@
         value="<?php echo get_search_query(); ?>"
     />
     <button 
-        class="bg-dark-blue br2 dim f4 flex-grow-0 flex-shrink-0 link ph3 pv2 sans-serif white" 
+        class="b--light-silver ba bg-dark-blue br2 dim f4 flex-grow-0 flex-shrink-0 link ph3 pointer pv2 sans-serif white" 
         data-qa="buttonSearch" 
         type="submit"
     >
