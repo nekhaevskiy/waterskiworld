@@ -1,39 +1,33 @@
 class Sidebar {
+    get searchHeading() {
+        return $('[data-qa="sidebarSearchHeading"]');
+    }
     get searchInput() {
-        return $('.sidebar-module:nth-child(1) #sidebar-search');
+        return $('[data-qa="sidebarSearchInput"]');
     }
     get searchBtn() {
-        return $('.sidebar-module:nth-child(1) button.btn');
-    }
-    get commentsHeading() {
-        return $('.sidebar-module:nth-child(2) h4');
-    }
-    get commentsItems() {
-        return $$('.sidebar-module:nth-child(2) .hc__mix__message');
-    }
-    get firstCommentLink() {
-        return $('.sidebar-module:nth-child(2) .hc__mix__link a');
+        return $('[data-qa="sidebarSearchBtn"]');
     }
     get facebookHeading() {
-        return $('.sidebar-module:nth-child(2) h4');
+        return $('[data-qa="sidebarFacebookHeading"]');
     }
     get facebookBody() {
-        return $('.sidebar-module:nth-child(2) iframe');
+        return $('[data-qa="sidebarFacebookBody"]');
     }
     get vkHeading() {
-        return $('.sidebar-module:nth-child(3) h4');
+        return $('[data-qa="sidebarVKHeading"]');
     }
     get vkBody() {
-        return $('.sidebar-module:nth-child(3) #vk_groups');
+        return $('[data-qa="sidebarVKBody"]');
     }
     get subscribeHeading() {
-        return $('.sidebar-module:nth-child(4) h4');
+        return $('[data-qa="sidebarSubscribeHeading"]');
     }
     get subscribeInput() {
-        return $('.sidebar-module:nth-child(4) #subscriber-email');
+        return $('[data-qa="sidebarSubscribeInput"]');
     }
     get subscribeBtn() {
-        return $('.sidebar-module:nth-child(4) button[type="submit"]');
+        return $('[data-qa="sidebarSubscribeBtn"]');
     }
 }
 
