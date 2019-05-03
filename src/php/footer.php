@@ -1,5 +1,3 @@
-</div> <!-- /.container -->
-
 <footer class="b--black-10 bg-near-white bt ">
     <div class="center f6 flex flex-column flex-nowrap flex-row-ns items-center justify-between lh-solid mw8 pa3 sans-serif">
         <div class="black-70 ma0" data-qa="footerCopyright">

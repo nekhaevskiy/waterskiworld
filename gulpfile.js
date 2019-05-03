@@ -19,9 +19,6 @@ lazyRequireTask('clean', './src/tasks/clean.js', {
 
 lazyRequireTask('styles', './src/tasks/styles.js', {
     src: [
-        './src/css/bootstrap.min.css',
-        './src/css/ie10-viewport-bug-workaround.css',
-        './src/css/style.css',
         './src/css/tachyons/tachyons.css',
         './src/components/**/*.css'
     ],
@@ -31,7 +28,6 @@ lazyRequireTask('styles', './src/tasks/styles.js', {
 
 lazyRequireTask('scripts', './src/tasks/scripts.js', {
     src: [
-        './src/js/**/*.js',
         './src/components/**/*.js'
     ],
     dst: './vm/www/wp-content/themes/waterskiworld/js'

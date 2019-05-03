@@ -121,5 +121,3 @@
         )); ?>
     </nav>
     <script src="<?php echo get_template_directory_uri() . '/js/navbar/navbar.js' ?>" async></script>
-
-    <div class="container">
