@@ -42,11 +42,15 @@
             </h1>
 
             <?php if (!$submitted) { ?>
-                <div class="mb3" data-qa="blockPageContent">
+                <div class="mb3 nested" data-qa="blockPageContent">
                     <p>Связаться с командой WaterSkiWorld.ru можно написав нам в социальных сетях:</p>
                     <ul>
-                        <li><a class="blue hover-light-blue link" href="https://www.facebook.com/waterskiworld/">Facebook</a></li>
-                        <li><a class="blue hover-light-blue link" href="https://vk.com/waterskiworld">ВКонтакте</a></li>
+                        <li>
+                            <a href="https://www.facebook.com/waterskiworld/">Facebook</a>
+                        </li>
+                        <li>
+                            <a href="https://vk.com/waterskiworld">ВКонтакте</a>
+                        </li>
                     </ul>
                     <p>или воспользовавшись формой ниже:</p>
                 </div>
