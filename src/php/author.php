@@ -2,18 +2,21 @@
 
 <main class="bg-white black-70 center f4 lh-copy measure-wide pb5 ph3 pt4 sans-serif">
     <div class="b--light-gray bb flex flex-column flex-nowrap flex-row-ns items-center items-start-ns pb4">
-        <?php echo get_avatar(get_the_author_meta('ID'), 120, '', '', array('class' => 'br2')); ?>
+        <?php echo get_avatar(get_the_author_meta('ID'), 120, '', '', array(
+            'class' => 'br2',
+            'extra_attr' => 'data-qa="authorAvatar"'
+        )); ?>
         <div class="ml3-ns mt0-ns mt3">
-            <h1 class="f1 fw5 lh-solid mv0 serif tc tl-ns">
+            <h1 class="f1 fw5 lh-solid mv0 serif tc tl-ns" data-qa="authorName">
                 <?php the_author_meta('display_name') ?>
             </h1>
-            <p class="f4 lh-copy mb0 mt3 sans-serif">
+            <p class="f4 lh-copy mb0 mt3 sans-serif" data-qa="authorDescription">
                 <?php the_author_meta('description'); ?>
             </p>
         </div>
     </div>
 
-    <div class="f2 fw5 lh-solid mt4 serif">
+    <div class="f2 fw5 lh-solid mt4 serif" data-qa="authorSubheading">
         Статьи автора:
     </div>
 
