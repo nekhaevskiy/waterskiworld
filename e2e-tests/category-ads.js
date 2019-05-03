@@ -1,6 +1,6 @@
 const adsCategory = require('./category.page');
 
-describe('category-ads - Adverts category', function () {
+describe('category-ads.js - Adverts category', function () {
     beforeEach(function () {
         browser.url('./category/adverts');
     });
