@@ -76,21 +76,71 @@
                 </a>
             <?php } ?>
         </div>
-        <div data-qa="socialsBlock"> 
-            <a href="https://twitter.com/waterskiworld" title="Twitter" data-qa="socialsTwitter">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/twitter.png" alt="Twitter" width="40" height="40">
+
+        <div class="flex flex-nowrap" data-qa="socialsBlock"> 
+            <a 
+                data-qa="socialsTwitter"
+                href="https://twitter.com/waterskiworld" 
+                title="Twitter" 
+            >
+                <img 
+                    alt="Twitter" 
+                    height="40"
+                    src="<?php echo get_template_directory_uri(); ?>/img/twitter.png" 
+                    width="40" 
+                >
             </a>
-            <a href="https://www.facebook.com/waterskiworld" title="Facebook" data-qa="socialsFacebook">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/facebook.png" alt="Facebook" width="40" height="40">
+            <a 
+                class="ml1"
+                data-qa="socialsFacebook"
+                href="https://www.facebook.com/waterskiworld"
+                title="Facebook" 
+            >
+                <img 
+                    alt="Facebook" 
+                    height="40"
+                    src="<?php echo get_template_directory_uri(); ?>/img/facebook.png" 
+                    width="40" 
+                >
             </a>
-            <a href="https://vk.com/waterskiworld" title="VK" data-qa="socialsVK">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/vk.png" alt="VK" width="40" height="40">
+            <a 
+                class="ml1"    
+                data-qa="socialsVK"
+                href="https://vk.com/waterskiworld" 
+                title="VK" 
+            >
+                <img 
+                    alt="VK" 
+                    height="40"
+                    src="<?php echo get_template_directory_uri(); ?>/img/vk.png" 
+                    width="40" 
+                >
             </a>
-            <a href="https://www.youtube.com/user/waterskiworld2008" title="YouTube" data-qa="socialsYouTube">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/youtube.png" alt="YouTube" width="40" height="40">
+            <a 
+                class="ml1"    
+                data-qa="socialsYouTube"
+                href="https://www.youtube.com/user/waterskiworld2008" 
+                title="YouTube" 
+            >
+                <img 
+                    alt="YouTube" 
+                    height="40"
+                    src="<?php echo get_template_directory_uri(); ?>/img/youtube.png" 
+                    width="40" 
+                >
             </a>
-            <a href="http://feeds.feedburner.com/waterskiworld" title="RSS" data-qa="socialsRSS">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/rss.png" alt="RSS" width="40" height="40">
+            <a 
+                class="ml1"    
+                data-qa="socialsRSS"
+                href="http://feeds.feedburner.com/waterskiworld" 
+                title="RSS" 
+            >
+                <img 
+                    alt="RSS" 
+                    height="40"
+                    src="<?php echo get_template_directory_uri(); ?>/img/rss.png" 
+                    width="40" 
+                >
             </a>
         </div>
     </header>
