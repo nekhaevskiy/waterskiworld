@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <div class="bg-white black-70 center flex-l flex-nowrap justify-between mw8 ph3">
-    <main class="f4 measure-wide pb5">
+    <main class="center f4 measure-wide mh0-l pb5">
         <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; ?>
         <?php $query = new WP_Query(array('cat' => -354, 'paged' => $paged)); ?>
         <?php if ($query->have_posts()) : while ($query->have_posts()) : $query->the_post(); ?>

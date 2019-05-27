@@ -78,7 +78,7 @@
 /* @import './_visibility.css'; */
 /* @import './_white-space.css'; */
 @import './_widths';
-/* @import './_word-break.css'; */
+@import './_word-break.css';
 @import './_z-index.css';
 @import './_module-template.css';
 @import './_styles.css';

@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
-<main class="bg-white black-70 center f4 lh-copy measure-wide pb5 pt4 sans-serif">
-    <h1 class="b--light-gray bb f1 fw5 lh-solid mb4 mt0 pb4 serif" data-qa="pageHeading">
+<main class="bg-white black-70 center f4 lh-copy measure-wide pb5 ph3 ph0-l pt4 sans-serif">
+    <h1 class="b--light-gray bb f1 fw5 lh-solid mb4 mt0 pb4 serif word-wrap" data-qa="pageHeading">
         <?php single_cat_title(); ?>
     </h1>
 
