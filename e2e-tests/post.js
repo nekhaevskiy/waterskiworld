@@ -20,7 +20,6 @@ describe('post.js - Post in Home category', function () {
         it('should have main image with caption', function () {
             const imgIsExisting = post.mainImage.isExisting();
             expect(imgIsExisting).to.be.true;
-
             const imgCaptionIsExisting = post.mainImageCaption.isExisting();
             expect(imgCaptionIsExisting).to.be.true;
         });
@@ -39,7 +38,6 @@ describe('post.js - Post in Home category', function () {
         it('should have clickable author link', function () {
             const linkText = post.authorLink.getText();
             post.authorLink.click();
-
             const pageTitle = browser.getTitle();
             expect(pageTitle).to.include(linkText);
         });
@@ -63,11 +61,9 @@ describe('post.js - Post in Home category', function () {
         it('should have correct link to the next post', function () {
             const text = post.nextLink.getText();
             expect(text).to.equal('След.');
-
             post.nextLink.click();
-
             const pageTitle = browser.getTitle();
-            expect(pageTitle).to.equal('Мировые рейтинги 2018: Молодежь укрепляет позиции — WaterSkiWorld.ru');
+            expect(pageTitle).to.include(secondArticleHeading);
         });
     });
 
@@ -88,7 +84,6 @@ describe('post.js - Post in Home category', function () {
         it('should have main image with caption', function () {
             const imgIsExisting = post.mainImage.isExisting();
             expect(imgIsExisting).to.be.true;
-
             const imgCaptionIsExisting = post.mainImageCaption.isExisting();
             expect(imgCaptionIsExisting).to.be.true;
         });
