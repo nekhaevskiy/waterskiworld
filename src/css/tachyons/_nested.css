@@ -108,6 +108,9 @@
   transition: opacity .15s ease-in;
 }
 
+.nested td {
+  padding: 0.25rem;
+}
 
 
 .nested-copy-line-height p,
