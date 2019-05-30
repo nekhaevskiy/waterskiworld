@@ -16,7 +16,7 @@
             type="search"
         >
         <button 
-            class="b--light-silver ba bg-dark-blue br2 dim f6 flex-grow-0 flex-shrink-0 link pointer pv2 tc sans-serif white w3" 
+            class="b--dark-blue bg-white br2 bw1 dark-blue dim f6 flex-grow-0 flex-shrink-0 fw5 link pointer pv2 tc sans-serif w3" 
             data-qa="sidebarSearchBtn"
             type="submit"
         >
@@ -63,7 +63,7 @@
         <input type="hidden" value="waterskiworld" name="uri">
         <input type="hidden" name="loc" value="ru_RU">
         <button 
-            class="b--light-silver ba bg-dark-blue br2 dim f6 flex-grow-0 flex-shrink-0 link pointer pv2 tc sans-serif white w3" 
+            class="b--dark-blue bg-white br2 bw1 dark-blue dim f6 flex-grow-0 flex-shrink-0 fw5 link pointer pv2 tc sans-serif w3" 
             data-qa="sidebarSubscribeBtn"
             type="submit" 
         >

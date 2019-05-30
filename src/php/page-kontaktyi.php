@@ -154,7 +154,8 @@
                     
                     <input type="hidden" name="message_submitted" value="true">
                     <div class="mt3 tc">
-                        <button class="b--light-silver ba bg-dark-blue br2 dib dim f4 link ph3 pointer pv2 white" 
+                        <button 
+                            class="b--dark-blue bg-white br2 bw1 dark-blue dib dim f4 link ph3 pointer pv2" 
                             data-qa="btnSubmit"
                             type="submit"
                         >
