@@ -59,14 +59,14 @@
     <header class="bg-center center contain dn f4 flex-l flex-nowrap h4 items-center justify-between mv0 mw8 pa3" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/header-bg.png)">
         <div> 
             <?php if (is_front_page() && !is_paged()) { ?>
-                <h1 class="black-70 f2 fw5 lh-solid ma0 serif" data-qa="logoHeading">
+                <h1 class="dark-blue f2 fw5 lh-solid ma0 serif" data-qa="logoHeading">
                     <?php echo get_bloginfo('name'); ?>
                 </h1>
-                <p class="black-70 f3 fw5 lh-solid mb0 mt1 serif" data-qa="logoSubheading">
+                <p class="dark-blue f3 fw5 lh-solid mb0 mt1 serif" data-qa="logoSubheading">
                     <?php echo get_bloginfo('description'); ?>
                 </p>
             <?php } else { ?>
-                <a class="black-70 dim fw5 hover-black-70 lh-solid link serif" href="<?php echo get_bloginfo('wpurl'); ?>" title="На главную" data-qa="logoLink">
+                <a class="dark-blue dim fw5 hover-dark-blue lh-solid link serif" href="<?php echo get_bloginfo('wpurl'); ?>" title="На главную" data-qa="logoLink">
                     <p class="f2 ma0" data-qa="logoHeaing">
                         <?php echo get_bloginfo('name'); ?>
                     </p>
