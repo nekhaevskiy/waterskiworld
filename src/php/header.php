@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
-
+<html lang="ru" class="h-100">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -55,119 +54,120 @@
     </noscript>
 </head>
 
-<body>
-    <header class="bg-center center contain dn f4 flex-l flex-nowrap h4 items-center justify-between mv0 mw8 pa3" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/header-bg.png)">
-        <div> 
-            <?php if (is_front_page() && !is_paged()) { ?>
-                <h1 class="dark-blue f2 fw5 lh-solid ma0 serif" data-qa="logoHeading">
-                    <?php echo get_bloginfo('name'); ?>
-                </h1>
-                <p class="dark-blue f3 fw5 lh-solid mb0 mt1 serif" data-qa="logoSubheading">
-                    <?php echo get_bloginfo('description'); ?>
-                </p>
-            <?php } else { ?>
-                <a class="dark-blue dim fw5 hover-dark-blue lh-solid link serif" href="<?php echo get_bloginfo('wpurl'); ?>" title="На главную" data-qa="logoLink">
-                    <p class="f2 ma0" data-qa="logoHeaing">
+<body class="flex flex-column h-100">
+    <div class="flex-grow-1 flex-shrink-0">
+        <header class="bg-center center contain dn f4 flex-l flex-nowrap h4 items-center justify-between mv0 mw8 pa3" style="background-image: url(<?php echo get_template_directory_uri(); ?>/img/header-bg.png)">
+            <div> 
+                <?php if (is_front_page() && !is_paged()) { ?>
+                    <h1 class="dark-blue f2 fw5 lh-solid ma0 serif" data-qa="logoHeading">
                         <?php echo get_bloginfo('name'); ?>
-                    </p>
-                    <p class="f3 mb0 mt1" data-qa="logoSubheading">
+                    </h1>
+                    <p class="dark-blue f3 fw5 lh-solid mb0 mt1 serif" data-qa="logoSubheading">
                         <?php echo get_bloginfo('description'); ?>
                     </p>
+                <?php } else { ?>
+                    <a class="dark-blue dim fw5 hover-dark-blue lh-solid link serif" href="<?php echo get_bloginfo('wpurl'); ?>" title="На главную" data-qa="logoLink">
+                        <p class="f2 ma0" data-qa="logoHeaing">
+                            <?php echo get_bloginfo('name'); ?>
+                        </p>
+                        <p class="f3 mb0 mt1" data-qa="logoSubheading">
+                            <?php echo get_bloginfo('description'); ?>
+                        </p>
+                    </a>
+                <?php } ?>
+            </div>
+
+            <div class="flex flex-nowrap" data-qa="socialsBlock"> 
+                <a 
+                    data-qa="socialsTwitter"
+                    href="https://twitter.com/waterskiworld" 
+                    title="Twitter" 
+                >
+                    <img 
+                        alt="Twitter" 
+                        height="40"
+                        src="<?php echo get_template_directory_uri(); ?>/img/twitter.png" 
+                        width="40" 
+                    >
                 </a>
-            <?php } ?>
-        </div>
-
-        <div class="flex flex-nowrap" data-qa="socialsBlock"> 
-            <a 
-                data-qa="socialsTwitter"
-                href="https://twitter.com/waterskiworld" 
-                title="Twitter" 
-            >
-                <img 
-                    alt="Twitter" 
-                    height="40"
-                    src="<?php echo get_template_directory_uri(); ?>/img/twitter.png" 
-                    width="40" 
+                <a 
+                    class="ml1"
+                    data-qa="socialsFacebook"
+                    href="https://www.facebook.com/waterskiworld"
+                    title="Facebook" 
                 >
-            </a>
-            <a 
-                class="ml1"
-                data-qa="socialsFacebook"
-                href="https://www.facebook.com/waterskiworld"
-                title="Facebook" 
-            >
-                <img 
-                    alt="Facebook" 
-                    height="40"
-                    src="<?php echo get_template_directory_uri(); ?>/img/facebook.png" 
-                    width="40" 
-                >
-            </a>
-            <a 
-                class="ml1"    
-                data-qa="socialsVK"
-                href="https://vk.com/waterskiworld" 
-                title="VK" 
-            >
-                <img 
-                    alt="VK" 
-                    height="40"
-                    src="<?php echo get_template_directory_uri(); ?>/img/vk.png" 
-                    width="40" 
-                >
-            </a>
-            <a 
-                class="ml1"    
-                data-qa="socialsYouTube"
-                href="https://www.youtube.com/user/waterskiworld2008" 
-                title="YouTube" 
-            >
-                <img 
-                    alt="YouTube" 
-                    height="40"
-                    src="<?php echo get_template_directory_uri(); ?>/img/youtube.png" 
-                    width="40" 
-                >
-            </a>
-            <a 
-                class="ml1"    
-                data-qa="socialsRSS"
-                href="http://feeds.feedburner.com/waterskiworld" 
-                title="RSS" 
-            >
-                <img 
-                    alt="RSS" 
-                    height="40"
-                    src="<?php echo get_template_directory_uri(); ?>/img/rss.png" 
-                    width="40" 
-                >
-            </a>
-        </div>
-    </header>
-
-    <nav class="b--light-gray bb bg-near-white bt-l" data-js="navbar">
-        <div class="b--black-10 bb bg-near-white dn-l pa3 relative z-1">
-            <?php if (is_front_page() && !is_paged()) { ?>
-                <span class="black-80 dib f4 fw6 mr3 serif">
-                    WaterSkiWorld.ru
-                </span>
-            <?php } else { ?>
-                <a href="<?php echo get_bloginfo('wpurl'); ?>" class="black-80 dib dim f4 fw6 hover-black-80 link mr3 serif">
-                    WaterSkiWorld.ru
+                    <img 
+                        alt="Facebook" 
+                        height="40"
+                        src="<?php echo get_template_directory_uri(); ?>/img/facebook.png" 
+                        width="40" 
+                    >
                 </a>
-            <?php } ?>
+                <a 
+                    class="ml1"    
+                    data-qa="socialsVK"
+                    href="https://vk.com/waterskiworld" 
+                    title="VK" 
+                >
+                    <img 
+                        alt="VK" 
+                        height="40"
+                        src="<?php echo get_template_directory_uri(); ?>/img/vk.png" 
+                        width="40" 
+                    >
+                </a>
+                <a 
+                    class="ml1"    
+                    data-qa="socialsYouTube"
+                    href="https://www.youtube.com/user/waterskiworld2008" 
+                    title="YouTube" 
+                >
+                    <img 
+                        alt="YouTube" 
+                        height="40"
+                        src="<?php echo get_template_directory_uri(); ?>/img/youtube.png" 
+                        width="40" 
+                    >
+                </a>
+                <a 
+                    class="ml1"    
+                    data-qa="socialsRSS"
+                    href="http://feeds.feedburner.com/waterskiworld" 
+                    title="RSS" 
+                >
+                    <img 
+                        alt="RSS" 
+                        height="40"
+                        src="<?php echo get_template_directory_uri(); ?>/img/rss.png" 
+                        width="40" 
+                    >
+                </a>
+            </div>
+        </header>
 
-            <button type="button" class="hamburger hamburger--spin" data-js="navbar-hamburger">
-                <span class="hamburger-box">
-                    <span class="hamburger-inner"></span>
-                </span>
-            </button>
-        </div>
+        <nav class="b--light-gray bb bg-near-white bt-l" data-js="navbar">
+            <div class="b--black-10 bb bg-near-white dn-l pa3 relative z-1">
+                <?php if (is_front_page() && !is_paged()) { ?>
+                    <span class="black-80 dib f4 fw6 mr3 serif">
+                        WaterSkiWorld.ru
+                    </span>
+                <?php } else { ?>
+                    <a href="<?php echo get_bloginfo('wpurl'); ?>" class="black-80 dib dim f4 fw6 hover-black-80 link mr3 serif">
+                        WaterSkiWorld.ru
+                    </a>
+                <?php } ?>
 
-        <?php wp_nav_menu(array(
-            'container' => '',
-            'menu_class' => 'menu js-menu',
-            'theme_location' => 'primary-menu'
-        )); ?>
-    </nav>
-    <script src="<?php echo get_template_directory_uri() . '/js/navbar/navbar.js' ?>" async></script>
+                <button type="button" class="hamburger hamburger--spin" data-js="navbar-hamburger">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+            </div>
+
+            <?php wp_nav_menu(array(
+                'container' => '',
+                'menu_class' => 'menu js-menu',
+                'theme_location' => 'primary-menu'
+            )); ?>
+        </nav>
+        <script src="<?php echo get_template_directory_uri() . '/js/navbar/navbar.js' ?>" async></script>
