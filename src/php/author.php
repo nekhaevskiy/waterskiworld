@@ -1,9 +1,9 @@
 <?php get_header(); ?>
 
-<main class="bg-white black-70 center f4 lh-copy measure-wide pb5 ph3 pt4 sans-serif">
+<main class="bg-white black-70 center db f4 lh-copy measure-wide pb5 ph3 pt4 sans-serif">
     <div class="b--light-gray bb flex flex-column flex-nowrap flex-row-ns items-center items-start-ns pb4">
         <?php echo get_avatar(get_the_author_meta('ID'), 120, '', '', array(
-            'class' => 'br2',
+            'class' => 'br2 flex-shrink-0',
             'extra_attr' => 'data-qa="authorAvatar"'
         )); ?>
         <div class="ml3-ns mt0-ns mt3">

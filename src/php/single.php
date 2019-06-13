@@ -1,5 +1,6 @@
 <?php get_header(); ?>
-<main class="bg-white black-70 center f4 lh-copy measure-wide pb5 ph3 ph0-l pt4 sans-serif">
+
+<main class="bg-white black-70 center db f4 lh-copy measure-wide pb5 ph3 ph0-l pt4 sans-serif">
     <?php if (have_posts()) : ?>
         <?php while (have_posts()) : the_post(); ?>
             <?php
@@ -29,4 +30,5 @@
         </nav>
     <?php endif; ?>
 </main>
+
 <?php get_footer(); ?>
