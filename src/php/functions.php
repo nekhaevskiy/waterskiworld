@@ -47,8 +47,6 @@ add_action( 'after_setup_theme', 'waterskiworld_setup' );
 // Add scripts and stylesheets
 function waterskiworld_scripts() {
 	wp_enqueue_style( 'style', get_template_directory_uri() . '/css/style.css' );
-	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), '3.3.7', true );
-	wp_enqueue_script( 'ie10-viewport-bug-workaround', get_template_directory_uri() . '/js/ie10-viewport-bug-workaround.js', array(), false, true );
 }
 add_action( 'wp_enqueue_scripts', 'waterskiworld_scripts' );
 
@@ -63,3 +61,14 @@ add_filter('image_size_names_choose', function($sizes) {
 
 // Disable top panel
 add_filter('show_admin_bar', '__return_false');
+
+/**
+ * Filter the excerpt "read more" string.
+ *
+ * @param string $more "Read more" excerpt string.
+ * @return string (Maybe) modified "read more" excerpt string.
+ */
+function wpdocs_excerpt_more( $more ) {
+    return '...';
+}
+add_filter('excerpt_more', 'wpdocs_excerpt_more');

@@ -1,194 +1,163 @@
-const historyPage = require('./category.page');
-const accordion = require('./accordion.page');
+const historyCategory = require('./category.page');
+const accordion = require('./category-history.page');
 
-describe('History articles', function () {
-    describe('First page', function () {
+describe('category-history.js - History category', function () {
+    describe(': First page', function () {
         beforeEach(function () {
             browser.url('./category/istoriya');
         });
 
-        it('should have correct page header', function () {
-            const pageHeader = historyPage.categoryHeading.getText();
-            expect(pageHeader).to.equal('История');
+        it('should have correct heading', function () {
+            const heading = historyCategory.categoryHeading.getText();
+            expect(heading).to.equal('История');
         });
 
-        it('should have 10 items', function () {
-            const items = historyPage.items;
+        describe(': Description', function () {
+            it('should have correct heading', function () {
+                const isExisting = historyCategory.description.isExisting();
+                expect(isExisting).to.be.true;
+
+                const heading = historyCategory.descriptionHeading.getText();
+                expect(heading).to.equal('Циклы статей:');
+            });
+
+            it('should have 2 panel items with correct headings', function () {
+                const items = accordion.items;
+                expect(items).to.have.lengthOf(2);
+
+                const firstHeading = accordion.headings[0].getText();
+                expect(firstHeading).to.equal('Вера Федорова: История побед 1967-2010');
+
+                const secondHeading = accordion.headings[1].getText();
+                expect(secondHeading).to.equal('Юрий Жуков: История воднолыжного спорта глазами очевидца 1963-1980');
+            });
+
+            it('should open first panel body after click on the first panel heading', function () {
+                let firstPanelIsVisible = accordion.bodies[0].isVisible();
+                let secondPanelIsVisible = accordion.bodies[1].isVisible();
+                expect(firstPanelIsVisible).to.be.false;
+                expect(secondPanelIsVisible).to.be.false;
+
+                accordion.headings[0].click();
+                browser.pause(500);
+
+                firstPanelIsVisible = accordion.bodies[0].isVisible();
+                secondPanelIsVisible = accordion.bodies[1].isVisible();
+                expect(firstPanelIsVisible).to.be.true;
+                expect(secondPanelIsVisible).to.be.false;
+            });
+
+            it('should open second panel body after click on the second panel heading', function () {
+                let firstPanelIsVisible = accordion.bodies[0].isVisible();
+                let secondPanelIsVisible = accordion.bodies[1].isVisible();
+                expect(firstPanelIsVisible).to.be.false;
+                expect(secondPanelIsVisible).to.be.false;
+
+                accordion.headings[1].click();
+                browser.pause(500);
+
+                firstPanelIsVisible = accordion.bodies[0].isVisible();
+                secondPanelIsVisible = accordion.bodies[1].isVisible();
+                expect(firstPanelIsVisible).to.be.false;
+                expect(secondPanelIsVisible).to.be.true;
+            });
+        });
+
+        it('should have 10 article items', function () {
+            const items = historyCategory.items;
             expect(items).to.have.lengthOf(10);
         });
 
-        it('should have 10 article titles', function () {
-            const titles = historyPage.itemsHeadings;
-            expect(titles).to.have.lengthOf(10);
-        });
+        describe(': First article', function () {
+            it('should have correct and clickable link', function () {
+                const articleTitle = historyCategory.itemsHeadings[0].getText();
+                const link = historyCategory.itemsLinks[0];
 
-        it('should have 10 meta blocks', function () {
-            const metaBlocks = historyPage.metaBlocks;
-            expect(metaBlocks).to.have.lengthOf(10);
-        });
+                link.click();
 
-        it('should have 10 links to author', function () {
-            const authorLinks = historyPage.authorLinks;
-            expect(authorLinks).to.have.lengthOf(10);
-        });
-
-        it('should have 10 thumbs', function () {
-            const thumbs = historyPage.thumbs;
-            expect(thumbs).to.have.lengthOf(10);
-        });
-
-        it('should have 10 summaries', function () {
-            const summmaries = historyPage.summaries;
-            expect(summmaries).to.have.lengthOf(10);
-        });
-
-        it('should have 10 Read More links', function () {
-            const readMoreLinks = historyPage.readMoreLinks;
-            expect(readMoreLinks).to.have.lengthOf(10);
-        });
-
-        describe('Description', function () {
-            it('should have description block with correct heading', function () {
-                const descriptionIsExisting = historyPage.description.isExisting();
-                expect(descriptionIsExisting).to.be.true;
-
-                const descriptionHeading = historyPage.descriptionHeading.getText();
-                expect(descriptionHeading).to.equal('Циклы статей:');
-            });
-
-            describe('Accordion', function () {
-                it('should have 2 panels with correct headings', function () {
-                    const panels = accordion.panels;
-                    expect(panels).to.have.lengthOf(2);
-
-                    const firstPanelHeading = accordion.panelHeadings[0].getText();
-                    expect(firstPanelHeading).to.equal('Вера Федорова: История побед 1967-2010');
-
-                    const secondPanelHeading = accordion.panelHeadings[1].getText();
-                    expect(secondPanelHeading).to.equal('Юрий Жуков: История воднолыжного спорта глазами очевидца 1963-1980');
-                });
-
-                it('should open first panel after click on the first heading', function () {
-                    let firstPanelIsVisible = accordion.panelBodies[0].isVisible();
-                    let secondPanelIsVisible = accordion.panelBodies[1].isVisible();
-                    expect(firstPanelIsVisible).to.be.false;
-                    expect(secondPanelIsVisible).to.be.false;
-
-                    accordion.panelHeadings[0].click();
-                    browser.pause(500);
-
-                    firstPanelIsVisible = accordion.panelBodies[0].isVisible();
-                    secondPanelIsVisible = accordion.panelBodies[1].isVisible();
-                    expect(firstPanelIsVisible).to.be.true;
-                    expect(secondPanelIsVisible).to.be.false;
-                });
-
-                it('should close first panel after click on the second heading', function () {
-                    accordion.panelHeadings[0].click();
-                    browser.pause(500);
-                    let firstPanelIsVisible = accordion.panelBodies[0].isVisible();
-                    let secondPanelIsVisible = accordion.panelBodies[1].isVisible();
-                    expect(firstPanelIsVisible).to.be.true;
-                    expect(secondPanelIsVisible).to.be.false;
-
-                    accordion.panelHeadings[1].click();
-                    browser.pause(500);
-                    firstPanelIsVisible = accordion.panelBodies[0].isVisible();
-                    secondPanelIsVisible = accordion.panelBodies[1].isVisible();
-                    expect(firstPanelIsVisible).to.be.false;
-                    expect(secondPanelIsVisible).to.be.true;
-                });
-            });
-        });
-
-        describe('First item', function () {
-            it('should have correct and clickable heading', function () {
-                const articleTitle = historyPage.itemsHeadings[0];
-                const text = articleTitle.getText();
-                articleTitle.click();
-                const pageTitle = browser.getTitle();
-                expect(pageTitle).to.include(text);
-            });
-
-            it('should have correct and clickable author', function () {
-                const authorLink = historyPage.authorLinks[0];
-                const text = authorLink.getText();
-                authorLink.click();
-                const pageTitle = browser.getTitle();
-                expect(pageTitle).to.include(text);
-            });
-
-            it('should have correct and clickable Read More link', function () {
-                const articleTitle = historyPage.itemsHeadings[0].getText();
-                const readMoreLink = historyPage.readMoreLinks[0];
-
-                const linkText = readMoreLink.getText();
-                expect(linkText).to.equal('Читать далее →');
-
-                readMoreLink.click();
                 const pageTitle = browser.getTitle();
                 expect(pageTitle).to.include(articleTitle);
             });
+
+            it('should have a thumb', function () {
+                const isExisting = historyCategory.thumbs[0].isExisting();
+                expect(isExisting).to.be.true;
+            });
+    
+            it('should have a summary', function () {
+                const summmaryHeight = historyCategory.summaries[0].getElementSize('height');
+                expect(summmaryHeight).to.be.above(0);
+            });
+    
+            it('should have correct date', function () {
+                const date = historyCategory.dates[0].getText();
+                const regExpTest = historyCategory.dateRegExp.test(date);
+                expect(regExpTest).to.be.true;
+            });
         });
 
-        describe('Pagination', function () {
-            it('should not have link to the next page', function () {
-                const nextLinkExist = historyPage.nextLink.isExisting();
-                expect(nextLinkExist).to.be.false;
+        describe(': Pagination', function () {
+            it('should not have link to the previous page', function () {
+                const isExisting = historyCategory.prevLink.isExisting();
+                expect(isExisting).to.be.false;
             });
 
-            it('should have correct link to the previous page', function () {
-                const prevLinkText = historyPage.prevLink.getText();
-                expect(prevLinkText).to.equal('Пред. →');
+            it('should have correct link to the next page', function () {
+                const text = historyCategory.nextLink.getText();
+                expect(text).to.equal('След.');
 
-                historyPage.prevLink.click();
+                historyCategory.nextLink.click();
+
                 const pageTitle = browser.getTitle();
-                expect(pageTitle).to.equal('История - Страница 2 из 9 - WaterSkiWorld.ru');
+                expect(pageTitle).to.equal('История — Страница 2 — WaterSkiWorld.ru');
             });
         });
     });
 
-    describe('Second page', function () {
+    describe(': Second page', function () {
         beforeEach(function () {
             browser.url('./category/istoriya/page/2');
         });
 
-        it('should have correct link to the next page', function () {
-            const nextLinkText = historyPage.nextLink.getText();
-            expect(nextLinkText).to.equal('← След.');
+        it('should have correct link to the previous page', function () {
+            const text = historyCategory.prevLink.getText();
+            expect(text).to.equal('Пред.');
 
-            historyPage.nextLink.click();
+            historyCategory.prevLink.click();
+
             const pageTitle = browser.getTitle();
-            expect(pageTitle).to.equal('История - WaterSkiWorld.ru');
+            expect(pageTitle).to.equal('История — WaterSkiWorld.ru');
         });
 
-        it('should have correct link to the previous page', function () {
-            const prevLinkText = historyPage.prevLink.getText();
-            expect(prevLinkText).to.equal('Пред. →');
+        it('should have correct link to the next page', function () {
+            const text = historyCategory.nextLink.getText();
+            expect(text).to.equal('След.');
 
-            historyPage.prevLink.click();
+            historyCategory.nextLink.click();
+            
             const pageTitle = browser.getTitle();
-            expect(pageTitle).to.equal('История - Страница 3 из 9 - WaterSkiWorld.ru');
+            expect(pageTitle).to.equal('История — Страница 3 — WaterSkiWorld.ru');
         });
     });
 
-    describe('Last page', function () {
+    describe(': Last page', function () {
         beforeEach(function () {
             browser.url('./category/istoriya/page/9');
         });
 
-        it('should have correct link to the next page', function () {
-            const nextLinkText = historyPage.nextLink.getText();
-            expect(nextLinkText).to.equal('← След.');
+        it('should have correct link to the previous page', function () {
+            const text = historyCategory.prevLink.getText();
+            expect(text).to.equal('Пред.');
 
-            historyPage.nextLink.click();
+            historyCategory.prevLink.click();
+            
             const pageTitle = browser.getTitle();
-            expect(pageTitle).to.equal('История - Страница 8 из 9 - WaterSkiWorld.ru');
+            expect(pageTitle).to.equal('История — Страница 8 — WaterSkiWorld.ru');
         });
 
-        it('should not have link to the previous page', function () {
-            const prevLinkExist = historyPage.prevLink.isExisting();
-            expect(prevLinkExist).to.be.false;
+        it('should not have link to the next page', function () {
+            const isExisting = historyCategory.nextLink.isExisting();
+            expect(isExisting).to.be.false;
         });
     });
 });

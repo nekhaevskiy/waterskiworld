@@ -1,20 +1,26 @@
 <?php get_header(); ?>
-<div class="row">
-  <main class="col-md-10 col-md-offset-1 main main_no-sidebar">
-    <div class="page-header">
-      <h1><?php single_cat_title(); ?></h1>
-    </div>
-    <?php if ( have_posts() ) : ?>
-      <?php while ( have_posts() ) : the_post(); ?>
-        <?php get_template_part( 'content', get_post_format() ); ?>
-      <?php endwhile; ?>
-      <nav>
-        <ul class="pager">
-        <li class="next"><?php next_posts_link( 'Пред. <span aria-hidden="true">&rarr;</span>' ); ?></li>
-        <li class="previous"><?php previous_posts_link( '<span aria-hidden="true">&larr;</span> След.' ); ?></li>
-        </ul>
-      </nav>
+
+<main class="bg-white black-70 center db f4 lh-copy measure-wide pb5 ph3 ph0-l pt4 sans-serif">
+    <h1 class="b--light-gray bb f1 fw5 lh-solid mv0 pb4 serif" data-qa="categoryHeading">
+        <?php single_cat_title(); ?>
+    </h1>
+
+    <?php if (have_posts()) : ?>
+        <?php while (have_posts()) : the_post(); ?>
+            <?php get_template_part('content', get_post_format()); ?>
+        <?php endwhile; ?>
+
+        <nav class="pagination mt5">
+            <ul class="pagination__list">
+                <li class="pagination__item pagination__item--prev" data-qa="paginationPrevLinkWrapper">
+                    <?php previous_posts_link('Пред.'); ?>
+                </li>
+                <li class="pagination__item pagination__item--next" data-qa="paginationNextLinkWrapper">
+                    <?php next_posts_link('След.'); ?>
+                </li>
+            </ul>
+        </nav>
     <?php endif; ?>
-  </main>
-</div> <!-- .row -->
+</main>
+
 <?php get_footer(); ?>

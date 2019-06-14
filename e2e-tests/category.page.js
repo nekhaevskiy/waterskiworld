@@ -1,48 +1,39 @@
 class Category {
     get categoryHeading() {
-        return $('.page-header h1');
+        return $('[data-qa="categoryHeading"]');
     }
     get description() {
-        return $('.description');
+        return $('[data-qa="categoryDescription"]');
     }
     get descriptionHeading() {
-        return $('.description__heading');
+        return $('[data-qa="categoryDescriptionHeading"]');
     }
     get items() {
-        return $$('.article');
+        return $$('[data-qa="articleBlock"]');
+    }
+    get itemsLinks() {
+        return $$('[data-qa="articleLink"]');
     }
     get itemsHeadings() {
-        return $$('.article__title');
-    }
-    get metaBlocks() {
-        return $$('.article__meta');
-    }
-    get authorLinks() {
-        return $$('.article__meta a');
+        return $$('[data-qa="articleHeading"]');
     }
     get thumbs() {
-        return $$('.article__thumb');
+        return $$('[data-qa="articleImageWrapper"] > img');
     }
     get summaries() {
-        return $$('.article__summary');
+        return $$('[data-qa="articleSummary"]');
     }
-    get readMoreLinks() {
-        return $$('.article a.btn.btn-default');
+    get dates() {
+        return $$('[data-qa="articleDate"]');
+    }
+    get dateRegExp() {
+        return /^\d{2}.\d{2}.\d{4}$/gi;
     }
     get prevLink() {
-        return $('.pager .next a');
+        return $('[data-qa="paginationPrevLinkWrapper"] > a');
     }
     get nextLink() {
-        return $('.pager .previous a');
-    }
-    get waterskiers() {
-        return $$('main ul>li>a');
-    }
-    get searchInput() {
-        return $('#page-search');
-    }
-    get searchBtn() {
-        return $('.main form button.btn');
+        return $('[data-qa="paginationNextLinkWrapper"] > a');
     }
 }
 

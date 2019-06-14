@@ -1,11 +1,16 @@
 const sidebar = require('./sidebar.page');
 
-describe('Sidebar', function () {
+describe('sidebar.js - Sidebar', function () {
     beforeEach(function () {
         browser.url('./');
     });
 
-    describe('Search', function () {
+    describe(': Search', function () {
+        it('should have correct heading', function () {
+            const heading = sidebar.searchHeading.getText();
+            expect(heading).to.equal('Поиск по сайту');
+        });
+
         it('should not redirect to the search page after submit empty field', function () {
             sidebar.searchBtn.click();
             const inputHasFocus = sidebar.searchInput.hasFocus();
@@ -17,38 +22,14 @@ describe('Sidebar', function () {
             sidebar.searchBtn.click();
 
             const pageTitle = browser.getTitle();
-            expect(pageTitle).to.equal('Вы искали василий - WaterSkiWorld.ru');
+            expect(pageTitle).to.equal('Результаты поиска «василий» — WaterSkiWorld.ru');
         });
     });
 
-    // describe('Comments', function () {
-    //     it('should have correct header', function () {
-    //         const headerText = sidebar.commentsHeading.getText();
-    //         expect(headerText).to.equal('Последние комментарии');
-    //     });
-
-    //     it('should have at least 1 item and at most 5 items', function () {
-    //         const commentsQty = sidebar.commentsItems.length;
-    //         expect(commentsQty).to.be.at.least(1);
-    //         expect(commentsQty).to.be.at.most(5);
-    //     });
-
-    //     it('should have first item with link that opens new tab with corresponding article after click', function () {
-    //         const linkText = sidebar.firstCommentLink.getText();
-
-    //         sidebar.firstCommentLink.click();
-    //         const tabIds = browser.getTabIds();
-    //         browser.switchTab(tabIds[1]);
-
-    //         const pageTitle = browser.getTitle();
-    //         expect(pageTitle).to.equal(linkText);
-    //     });
-    // });
-
-    describe('Facebook', function () {
-        it('should have correct header', function () {
-            const headerText = sidebar.facebookHeading.getText();
-            expect(headerText).to.equal('Facebook');
+    describe(':Facebook', function () {
+        it('should have correct heading', function () {
+            const heading = sidebar.facebookHeading.getText();
+            expect(heading).to.equal('Facebook');
         });
 
         it('should have body', function () {
@@ -57,10 +38,10 @@ describe('Sidebar', function () {
         });
     });
 
-    describe('VK', function () {
-        it('should have correct header', function () {
-            const headerText = sidebar.vkHeading.getText();
-            expect(headerText).to.equal('ВКонтакте');
+    describe(': VK', function () {
+        it('should have correct heading', function () {
+            const heading = sidebar.vkHeading.getText();
+            expect(heading).to.equal('ВКонтакте');
         });
 
         it('should have body', function () {
@@ -69,10 +50,10 @@ describe('Sidebar', function () {
         });
     });
 
-    describe('Subscribe', function () {
-        it('should have correct header', function () {
-            const headerText = sidebar.subscribeHeading.getText();
-            expect(headerText).to.equal('Подписка');
+    describe(': Subscribe', function () {
+        it('should have correct heading', function () {
+            const heading = sidebar.subscribeHeading.getText();
+            expect(heading).to.equal('Подписка');
         });
 
         it('should not allow enter invalid email', function () {

@@ -97,16 +97,20 @@
 }
 
 .nested a {
-  color: var(--blue);
-  transition: color .15s ease-in;
+  color: var(--dark-blue);
+  text-decoration: none;
+  transition: opacity .15s ease-in;
 }
 
 .nested a:hover,
 .nested a:focus {
-  color: var(--light-blue);
-  transition: color .15s ease-in;
+  opacity: 0.5;
+  transition: opacity .15s ease-in;
 }
 
+.nested td {
+  padding: 0.25rem;
+}
 
 
 .nested-copy-line-height p,

@@ -1,0 +1,67 @@
+.menu {
+    display: block;
+    font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
+    font-size: 0;
+    list-style: none;
+    margin: 0 auto;
+    max-height: 0;
+    max-width: 64rem;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+    text-align: center;
+    transform: translateY(-50%);
+    transition: all 0.25s ease-in-out;
+    visibility: hidden;
+    width: 100%;
+}
+
+.menu.is-active {
+    max-height: 100rem;
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+.menu-item {
+    display: block;
+}
+
+.menu-item a {
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.8);
+    display: block;
+    font-size: 0.875rem;
+    padding: 1em;
+    text-decoration: none;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.menu-item a:hover, .menu-item a:focus {
+    background-color: #ccc;
+}
+
+.menu-item.current-menu-item a,
+.menu-item.current-post-ancestor a {
+    background-color: #00449e;
+    color: #fff;
+}
+
+@media (min-width: 60em) {
+    .menu {
+        max-height: 100rem;
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
+    
+    .menu-item {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .menu-item a {
+        border-bottom-width: 0;
+        font-size: 1rem;
+    }
+}

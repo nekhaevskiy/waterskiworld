@@ -1,21 +1,21 @@
 class Socials {
     get block() {
-        return $('.socials');
+        return $('[data-qa="socialsBlock"]');
     }
     get twitterLink() {
-        return $('.socials__item_twitter a');
+        return $('[data-qa="socialsTwitter"]');
     }
     get facebookLink() {
-        return $('.socials__item_facebook a');
+        return $('[data-qa="socialsFacebook"]');
     }
     get vkLink() {
-        return $('.socials__item_vk a');
+        return $('[data-qa="socialsVK"]');
     }
     get youtubeLink() {
-        return $('.socials__item_youtube a');
+        return $('[data-qa="socialsYouTube"]');
     }
     get rssLink() {
-        return $('.socials__item_rss a');
+        return $('[data-qa="socialsRSS"]');
     }
 }
 

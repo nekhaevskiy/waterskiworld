@@ -1,6 +1,6 @@
 const menu = require('./menu.page');
 
-describe('Menu', function () {
+describe('menu.js - Menu', function () {
     beforeEach(function () {
         browser.url('/');
     });
@@ -11,7 +11,7 @@ describe('Menu', function () {
 
         menu.howToSkiLink.click();
         var title = browser.getTitle();
-        expect(title).to.equal('Техника катания на водных лыжах');
+        expect(title).to.equal('Техника катания — WaterSkiWorld.ru');
     });
 
     it('should have correct and clickable Where-To-Ski link', function () {
@@ -20,7 +20,7 @@ describe('Menu', function () {
 
         menu.whereToSkiLink.click();
         var title = browser.getTitle();
-        expect(title).to.equal('Где кататься на водных лыжах в России, Беларуси, Украине');
+        expect(title).to.equal('Где кататься — WaterSkiWorld.ru');
     });
 
     it('should have correct and clickable Records link', function () {
@@ -29,7 +29,7 @@ describe('Menu', function () {
 
         menu.recordsLink.click();
         const title = browser.getTitle();
-        expect(title).to.equal('Рекорды - WaterSkiWorld.ru');
+        expect(title).to.equal('Рекорды — WaterSkiWorld.ru');
     });
 
     it('should have correct and clickable Waterskiers link', function () {
@@ -38,7 +38,7 @@ describe('Menu', function () {
 
         menu.waterskiersLink.click();
         const title = browser.getTitle();
-        expect(title).to.equal('Воднолыжники - WaterSkiWorld.ru');
+        expect(title).to.equal('Воднолыжники — WaterSkiWorld.ru');
     });
 
     it('should have correct and clickable History link', function () {
@@ -47,7 +47,7 @@ describe('Menu', function () {
 
         menu.historyLink.click();
         var title = browser.getTitle();
-        expect(title).to.equal('История - WaterSkiWorld.ru');
+        expect(title).to.equal('История — WaterSkiWorld.ru');
     });
 
     it('should have correct and clickable Ads link', function () {
@@ -56,7 +56,7 @@ describe('Menu', function () {
 
         menu.adsLink.click();
         var title = browser.getTitle();
-        expect(title).to.equal('Объявления - WaterSkiWorld.ru');
+        expect(title).to.equal('Объявления — WaterSkiWorld.ru');
     });
 
     it('should have correct and clickable Contacts link', function () {
@@ -65,6 +65,6 @@ describe('Menu', function () {
 
         menu.contactsLink.click();
         var title = browser.getTitle();
-        expect(title).to.equal('Контакты - WaterSkiWorld.ru');
+        expect(title).to.equal('Контакты — WaterSkiWorld.ru');
     });
 });

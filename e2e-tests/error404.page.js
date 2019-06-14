@@ -1,21 +1,24 @@
 class Error404 {
     get pageHeading() {
-        return $('.page-header h1');
+        return $('[data-qa="pageHeading"]');
     }
-    get articleHeading() {
-        return $('.article h2');
+    get image() {
+        return $('[data-qa="image"]');
+    }
+    get textHeading() {
+        return $('[data-qa="textHeading"]');
     }
     get searchInput() {
-        return $('#search');
+        return $('[data-qa="inputSearch"]');
     }
     get searchBtn() {
-        return $('.article form button[type="submit"]');
+        return $('[data-qa="buttonSearch"]');
     }
-    get lastLinks() {
-        return $$('.article ul > li > a')
+    get lastArticleLinks() {
+        return $$('[data-qa="lastArticleLink"]')
     }
     get homepageLink() {
-        return $('.article p:last-of-type a');
+        return $('[data-qa="homepageLink"]');
     }
 }
 

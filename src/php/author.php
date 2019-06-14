@@ -1,25 +1,41 @@
 <?php get_header(); ?>
-<div class="row">
-  <main class="col-md-10 col-md-offset-1 main main_no-sidebar">
-    <div class="jumbotron clearfix">
-      <div class="author-avatar">
-        <?php echo get_avatar( get_the_author_meta( 'ID' ), 120 ); ?>
-      </div>
-      <h1 class="author-name"><?php the_author_meta( 'display_name' ) ?></h1>
-      <p class="author-descr"><?php the_author_meta('description'); ?></p>
+
+<main class="bg-white black-70 center db f4 lh-copy measure-wide pb5 ph3 pt4 sans-serif">
+    <div class="b--light-gray bb flex flex-column flex-nowrap flex-row-ns items-center items-start-ns pb4">
+        <?php echo get_avatar(get_the_author_meta('ID'), 120, '', '', array(
+            'class' => 'br2 flex-shrink-0',
+            'extra_attr' => 'data-qa="authorAvatar"'
+        )); ?>
+        <div class="ml3-ns mt0-ns mt3">
+            <h1 class="f1 fw5 lh-solid mv0 serif tc tl-ns" data-qa="authorName">
+                <?php the_author_meta('display_name') ?>
+            </h1>
+            <p class="f4 lh-copy mb0 mt3 sans-serif" data-qa="authorDescription">
+                <?php the_author_meta('description'); ?>
+            </p>
+        </div>
     </div>
-    <p class="author-articles">Статьи автора:</p>
-    <?php if ( have_posts() ) : ?>
-      <?php while ( have_posts() ) : the_post(); ?>
-        <?php get_template_part( 'content', get_post_format() ); ?>
-      <?php endwhile; ?>
-      <nav>
-        <ul class="pager">
-        <li class="next"><?php next_posts_link( 'Пред. <span aria-hidden="true">&rarr;</span>' ); ?></li>
-        <li class="previous"><?php previous_posts_link( '<span aria-hidden="true">&larr;</span> След.' ); ?></li>
-        </ul>
-      </nav>
+
+    <div class="f2 fw5 lh-solid mt4 serif" data-qa="authorSubheading">
+        Статьи автора:
+    </div>
+
+    <?php if (have_posts()) : ?>
+        <?php while (have_posts()) : the_post(); ?>
+            <?php get_template_part('content', get_post_format()); ?>
+        <?php endwhile; ?>
+
+        <nav class="pagination mt5">
+            <ul class="pagination__list">
+                <li class="pagination__item pagination__item--prev" data-qa="paginationPrevLinkWrapper">
+                    <?php previous_posts_link('Пред.'); ?>
+                </li>
+                <li class="pagination__item pagination__item--next" data-qa="paginationNextLinkWrapper">
+                    <?php next_posts_link('След.'); ?>
+                </li>
+            </ul>
+        </nav>
     <?php endif; ?>
-  </main>
-</div> <!-- .row -->
+</main>
+
 <?php get_footer(); ?>

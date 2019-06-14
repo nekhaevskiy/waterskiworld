@@ -1,17 +1,17 @@
-const waterskiersPage = require('./category.page');
+const category = require('./category-waterskiers.page');
 
-describe('Waterskiers Page', function () {
+describe('category-waterskiers.js: Category Waterskiers', function () {
     beforeEach(function () {
         browser.url('./category/vodnolyzhniki');
     });
 
     it('should have correct heading', function () {
-        const titleText = waterskiersPage.categoryHeading.getText();
-        expect(titleText).to.equal('Воднолыжники');
+        const heading = category.heading.getText();
+        expect(heading).to.equal('Воднолыжники');
     });
 
-    it('should have 70 waterskiers', function () {
-        const links = waterskiersPage.waterskiers;
+    it('should have 70 links to waterskiers', function () {
+        const links = category.links;
         expect(links).to.have.lengthOf(70);
     });
 });

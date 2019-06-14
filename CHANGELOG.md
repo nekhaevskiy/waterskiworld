@@ -4,6 +4,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog],
 and this project adheres to [Semantic Versioning].
 
+## [19.2.0] - 2019-06-14
+### Added
+- Accordion component
+- Pagination component
+- Search component
+
+### Changed
+- Tachyons styles used for the rest of the site
+- Release version in package.json
+- Unified appearance of buttons
+
+### Fixed
+- All broken e2e-test
+- Styles across the whole site
+
+## Removed
+- Displaying excerpt for mobiles
+- Bootstrap CSS/JS/Fonts and old CSS
+- `home.php`
+
 ## [19.1.0] - 2019-04-05
 ### Added
 - New `nested` CSS class for all editorial content
@@ -76,6 +96,7 @@ and this project adheres to [Semantic Versioning].
 
 [Keep a Changelog]: https://keepachangelog.com/en/1.0.0/
 [Semantic Versioning]: https://semver.org/spec/v2.0.0.html
+[19.2.0]: https://github.com/nekhaevskiy/waterskiworld/compare/v19.1.0...v19.2.0
 [19.1.0]: https://github.com/nekhaevskiy/waterskiworld/compare/v19.0.0...v19.1.0
 [19.0.0]: https://github.com/nekhaevskiy/waterskiworld/compare/v18.2.0...v19.0.0
 [18.2.0]: https://github.com/nekhaevskiy/waterskiworld/compare/v18.1.0...v18.2.0

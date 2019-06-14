@@ -19,17 +19,17 @@ lazyRequireTask('clean', './src/tasks/clean.js', {
 
 lazyRequireTask('styles', './src/tasks/styles.js', {
     src: [
-        './src/css/bootstrap.min.css',
-        './src/css/ie10-viewport-bug-workaround.css',
-        './src/css/style.css',
-        './src/css/tachyons/tachyons.css'
+        './src/css/tachyons/tachyons.css',
+        './src/components/**/*.css'
     ],
     concatFile: 'style.css',
     dst: './vm/www/wp-content/themes/waterskiworld/css'
 });
 
 lazyRequireTask('scripts', './src/tasks/scripts.js', {
-    src: './src/js/**/*.js',
+    src: [
+        './src/components/**/*.js'
+    ],
     dst: './vm/www/wp-content/themes/waterskiworld/js'
 });
 
@@ -57,7 +57,9 @@ gulp.task('build', gulp.series(
 gulp.task('watch', function () {
     gulp.watch('./src/php/**/*.php', gulp.series('php'));
     gulp.watch('./src/css/**/*.css', gulp.series('styles'));
+    gulp.watch('./src/components/**/*.css', gulp.series('styles'));
     gulp.watch('./src/js/**/*.js', gulp.series('scripts'));
+    gulp.watch('./src/components/**/*.js', gulp.series('scripts'));
     gulp.watch('./src/assets/**/*.*', gulp.series('assets'));
 });
 

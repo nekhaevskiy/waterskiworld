@@ -34,19 +34,23 @@
 
 <?php get_header(); ?>
 
-<main class="bg-white black-70 center f4 lh-copy mb5 measure-wide sans-serif">
+<main class="bg-white black-70 center db f4 lh-copy measure-wide pb5 ph3 ph0-l pt4 sans-serif">
     <?php if ( have_posts() ) : ?>
         <?php while ( have_posts() ) : the_post(); ?>
-            <h1 class="b--light-gray bb f1 fw5 lh-solid mb4 mt2 pb4 serif" data-qa="blockPageHeader">
+            <h1 class="b--light-gray bb f1 fw5 lh-solid mb4 mt0 pb4 serif" data-qa="blockPageHeader">
                 <?php the_title(); ?>
             </h1>
 
             <?php if (!$submitted) { ?>
-                <div class="mb3" data-qa="blockPageContent">
+                <div class="mb3 nested" data-qa="blockPageContent">
                     <p>Связаться с командой WaterSkiWorld.ru можно написав нам в социальных сетях:</p>
                     <ul>
-                        <li><a class="blue hover-light-blue link" href="https://www.facebook.com/waterskiworld/">Facebook</a></li>
-                        <li><a class="blue hover-light-blue link" href="https://vk.com/waterskiworld">ВКонтакте</a></li>
+                        <li>
+                            <a href="https://www.facebook.com/waterskiworld/">Facebook</a>
+                        </li>
+                        <li>
+                            <a href="https://vk.com/waterskiworld">ВКонтакте</a>
+                        </li>
                     </ul>
                     <p>или воспользовавшись формой ниже:</p>
                 </div>
@@ -150,7 +154,8 @@
                     
                     <input type="hidden" name="message_submitted" value="true">
                     <div class="mt3 tc">
-                        <button class="bg-dark-blue br2 dib dim f5 link ph3 pv2 white" 
+                        <button 
+                            class="b--dark-blue bg-white br2 bw1 dark-blue dib dim f4 link ph3 pointer pv2" 
                             data-qa="btnSubmit"
                             type="submit"
                         >

@@ -1,12 +1,12 @@
 class Footer {
     get copyright() {
-        return $('.footer p');
-    }
-    get linkToTop() {
-        return $('.footer p a');
+        return $('[data-qa="footerCopyright"]');
     }
     get linkToTopSelector() {
-        return '.footer p a';
+        return '[data-qa="footerLinkToTop"]';
+    }
+    get linkToTop() {
+        return $(this.linkToTopSelector);
     }
 }
 
